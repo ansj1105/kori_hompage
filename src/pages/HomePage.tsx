@@ -19,7 +19,7 @@ import {
 import { useLanguage } from '../contexts/LanguageContext';
 import { useReveal } from '../hooks/useReveal';
 import korionLogo from '../../assets/logo/korion-ek-logo.png';
-import './HomePage.css';
+import './homepage.css';
 
 export function HomePage() {
   const { t } = useLanguage();
