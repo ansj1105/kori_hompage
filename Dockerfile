@@ -6,7 +6,7 @@ COPY package.json package-lock.json ./
 RUN npm ci
 
 COPY . .
-ARG VITE_SITE_URL=https://example.com
+ARG VITE_SITE_URL=https://www.korion.network
 ENV VITE_SITE_URL=${VITE_SITE_URL}
 ENV SITE_URL=${VITE_SITE_URL}
 RUN npm run build

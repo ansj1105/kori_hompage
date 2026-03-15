@@ -13,8 +13,8 @@ Run `npm run dev` to start the development server.
 Set your production domain in `.env.production`:
 
 ```bash
-VITE_SITE_URL=https://your-domain.com
-SITE_URL=https://your-domain.com
+VITE_SITE_URL=https://www.korion.network
+SITE_URL=https://www.korion.network
 ```
 
 Then build:

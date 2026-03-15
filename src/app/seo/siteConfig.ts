@@ -1,4 +1,4 @@
-const fallbackSiteUrl = 'https://example.com';
+const fallbackSiteUrl = 'https://www.korion.network';
 
 export function getAbsoluteSiteUrl() {
   const envSiteUrl =

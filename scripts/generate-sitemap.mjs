@@ -2,7 +2,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const projectRoot = process.cwd();
-const siteUrl = (process.env.SITE_URL || process.env.VITE_SITE_URL || 'https://example.com').replace(/\/+$/, '');
+const siteUrl = (
+  process.env.SITE_URL ||
+  process.env.VITE_SITE_URL ||
+  'https://www.korion.network'
+).replace(/\/+$/, '');
 
 const staticRoutes = [
   '/',
@@ -54,10 +58,12 @@ function extractNewsEntries() {
 
   while ((match = entryPattern.exec(source)) !== null) {
     const [, slug, publishedAt, updatedAt] = match;
-    entries.push({
-      route: `/news/${slug}`,
-      lastmod: updatedAt || publishedAt,
-    });
+    if (slug !== 'new-post-slug') {
+      entries.push({
+        route: `/news/${slug}`,
+        lastmod: updatedAt || publishedAt,
+      });
+    }
   }
 
   return entries;

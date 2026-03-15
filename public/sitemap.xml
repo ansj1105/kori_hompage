@@ -1,151 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/</loc>
+    <loc>https://www.korion.network/</loc>
   </url>
   <url>
-    <loc>https://example.com/ecosystem</loc>
+    <loc>https://www.korion.network/ecosystem</loc>
   </url>
   <url>
-    <loc>https://example.com/technology</loc>
+    <loc>https://www.korion.network/technology</loc>
   </url>
   <url>
-    <loc>https://example.com/korionpay</loc>
+    <loc>https://www.korion.network/korionpay</loc>
   </url>
   <url>
-    <loc>https://example.com/about</loc>
+    <loc>https://www.korion.network/about</loc>
   </url>
   <url>
-    <loc>https://example.com/foundation</loc>
+    <loc>https://www.korion.network/foundation</loc>
   </url>
   <url>
-    <loc>https://example.com/treasury</loc>
+    <loc>https://www.korion.network/treasury</loc>
   </url>
   <url>
-    <loc>https://example.com/policy</loc>
+    <loc>https://www.korion.network/policy</loc>
   </url>
   <url>
-    <loc>https://example.com/smart-contract</loc>
+    <loc>https://www.korion.network/smart-contract</loc>
   </url>
   <url>
-    <loc>https://example.com/news</loc>
+    <loc>https://www.korion.network/news</loc>
   </url>
   <url>
-    <loc>https://example.com/tokenomics</loc>
+    <loc>https://www.korion.network/tokenomics</loc>
   </url>
   <url>
-    <loc>https://example.com/roadmap</loc>
+    <loc>https://www.korion.network/roadmap</loc>
   </url>
   <url>
-    <loc>https://example.com/support</loc>
+    <loc>https://www.korion.network/support</loc>
   </url>
   <url>
-    <loc>https://example.com/team</loc>
+    <loc>https://www.korion.network/team</loc>
   </url>
   <url>
-    <loc>https://example.com/download</loc>
+    <loc>https://www.korion.network/download</loc>
   </url>
   <url>
-    <loc>https://example.com/foxyya</loc>
+    <loc>https://www.korion.network/foxyya</loc>
   </url>
   <url>
-    <loc>https://example.com/mining</loc>
+    <loc>https://www.korion.network/mining</loc>
   </url>
   <url>
-    <loc>https://example.com/media-kit</loc>
+    <loc>https://www.korion.network/media-kit</loc>
   </url>
   <url>
-    <loc>https://example.com/faq</loc>
+    <loc>https://www.korion.network/faq</loc>
   </url>
   <url>
-    <loc>https://example.com/contact</loc>
+    <loc>https://www.korion.network/contact</loc>
   </url>
   <url>
-    <loc>https://example.com/explorer</loc>
+    <loc>https://www.korion.network/explorer</loc>
   </url>
   <url>
-    <loc>https://example.com/listing-info</loc>
+    <loc>https://www.korion.network/listing-info</loc>
   </url>
   <url>
-    <loc>https://example.com/security</loc>
+    <loc>https://www.korion.network/security</loc>
   </url>
   <url>
-    <loc>https://example.com/whitepaper</loc>
+    <loc>https://www.korion.network/whitepaper</loc>
   </url>
   <url>
-    <loc>https://example.com/developers</loc>
+    <loc>https://www.korion.network/developers</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/api</loc>
+    <loc>https://www.korion.network/developers/api</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/sdk</loc>
+    <loc>https://www.korion.network/developers/sdk</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/authentication</loc>
+    <loc>https://www.korion.network/developers/authentication</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/webhooks</loc>
+    <loc>https://www.korion.network/developers/webhooks</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/errors</loc>
+    <loc>https://www.korion.network/developers/errors</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/sandbox</loc>
+    <loc>https://www.korion.network/developers/sandbox</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/examples</loc>
+    <loc>https://www.korion.network/developers/examples</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/rate-limits</loc>
+    <loc>https://www.korion.network/developers/rate-limits</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/partners</loc>
+    <loc>https://www.korion.network/developers/partners</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/changelog</loc>
+    <loc>https://www.korion.network/developers/changelog</loc>
   </url>
   <url>
-    <loc>https://example.com/developers/preregister</loc>
+    <loc>https://www.korion.network/developers/preregister</loc>
   </url>
   <url>
-    <loc>https://example.com/news/new-post-slug</loc>
-    <lastmod>2026-03-15</lastmod>
-  </url>
-  <url>
-    <loc>https://example.com/news/korion-policy-governance-page-launch</loc>
+    <loc>https://www.korion.network/news/korion-policy-governance-page-launch</loc>
     <lastmod>2026-03-14</lastmod>
   </url>
   <url>
-    <loc>https://example.com/news/korion-ecosystem-progress-report-q1</loc>
+    <loc>https://www.korion.network/news/korion-ecosystem-progress-report-q1</loc>
     <lastmod>2026-03-13</lastmod>
   </url>
   <url>
-    <loc>https://example.com/news/korion-service-maintenance-guidance</loc>
+    <loc>https://www.korion.network/news/korion-service-maintenance-guidance</loc>
     <lastmod>2026-03-12</lastmod>
   </url>
   <url>
-    <loc>https://example.com/news/korion-community-event-announcement</loc>
+    <loc>https://www.korion.network/news/korion-community-event-announcement</loc>
     <lastmod>2026-03-11</lastmod>
   </url>
   <url>
-    <loc>https://example.com/news/korion-homepage-subpage-expansion</loc>
+    <loc>https://www.korion.network/news/korion-homepage-subpage-expansion</loc>
     <lastmod>2026-03-10</lastmod>
   </url>
   <url>
-    <loc>https://example.com/news/korion-platform-security-operations-note</loc>
+    <loc>https://www.korion.network/news/korion-platform-security-operations-note</loc>
     <lastmod>2026-03-09</lastmod>
   </url>
   <url>
-    <loc>https://example.com/news/korion-wallet-ui-improvement</loc>
+    <loc>https://www.korion.network/news/korion-wallet-ui-improvement</loc>
     <lastmod>2026-03-08</lastmod>
   </url>
   <url>
-    <loc>https://example.com/news/korion-ecosystem-roadmap-communication</loc>
+    <loc>https://www.korion.network/news/korion-ecosystem-roadmap-communication</loc>
     <lastmod>2026-03-07</lastmod>
   </url>
   <url>
-    <loc>https://example.com/news/korion-operational-transparency-update</loc>
+    <loc>https://www.korion.network/news/korion-operational-transparency-update</loc>
     <lastmod>2026-03-06</lastmod>
   </url>
 </urlset>
