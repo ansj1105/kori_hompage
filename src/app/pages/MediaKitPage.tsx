@@ -263,7 +263,7 @@ import {
         </section>
 
         <section className="media-kit-facts">
-            <div className="media-kit-page__container">
+            <div className="media-kit-page__container-01">
             <div className="media-kit-facts__grid">
                 {quickFacts.map((item, index) => (
                 <motion.div
@@ -287,7 +287,7 @@ import {
         </section>
 
         <section className="media-kit-assets" id="assets">
-            <div className="media-kit-page__container">
+            <div className="media-kit-page__container-01">
             <div className="media-kit-section-heading">
                 <span>{isKo ? "자산 라이브러리" : "ASSET LIBRARY"}</span>
                 <h2>
@@ -349,7 +349,7 @@ import {
         </section>
 
         <section className="media-kit-brand">
-            <div className="media-kit-page__container media-kit-brand__container">
+            <div className="media-kit-page__container-01 media-kit-brand__container">
             <motion.div
                 className="media-kit-brand__panel"
                 initial={{ opacity: 0, x: -24 }}
@@ -447,7 +447,7 @@ import {
         </section>
 
         <section className="media-kit-rules">
-            <div className="media-kit-page__container">
+            <div className="media-kit-page__container-01">
             <div className="media-kit-section-heading">
                 <span>{isKo ? "사용 가이드라인" : "USAGE GUIDELINES"}</span>
                 <h2>
@@ -479,7 +479,7 @@ import {
         </section>
 
         <section className="media-kit-cta">
-            <div className="media-kit-page__container">
+            <div className="media-kit-page__container-01">
             <motion.div
                 className="media-kit-cta__panel"
                 initial={{ opacity: 0, y: 26 }}

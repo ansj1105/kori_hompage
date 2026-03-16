@@ -227,7 +227,7 @@ import {
                     className="foxyya-btn foxyya-btn--primary"
                 >
                     <FaGooglePlay size={18} />
-                    {t('Google Play', '구글 플레이')}
+                    {t('Google Play (To be released)', '구글 플레이 (출시 예정)')}
                 </a>
 
                 <a
@@ -237,7 +237,7 @@ import {
                     className="foxyya-btn foxyya-btn--primary"
                 >
                     <FaApple size={18} />
-                    {t('App Store', '앱스토어')}
+                    {t('App Store (To be released)', '앱스토어 (출시 예정)')}
                 </a>
 
                 </div>
@@ -295,7 +295,7 @@ import {
         </section>
 
         <section className="foxyya-section">
-            <div className="foxyya-page__container">
+            <div className="foxyya-page__container-01">
             <div className="foxyya-section__head">
                 <span className="foxyya-section__label">{t('Platform Overview', '플랫폼 개요')}</span>
                 <h2>
@@ -337,7 +337,7 @@ import {
         </section>
 
         <section className="foxyya-section foxyya-section--deep">
-            <div className="foxyya-page__container">
+            <div className="foxyya-page__container-01">
             <div className="foxyya-section__head">
                 <span className="foxyya-section__label">{t('KORI Utility', 'KORI 유틸리티')}</span>
                 <h2>
@@ -372,7 +372,7 @@ import {
         </section>
 
         <section className="foxyya-section">
-            <div className="foxyya-page__container">
+            <div className="foxyya-page__container-01">
             <div className="foxyya-layout-grid">
                 <div className="foxyya-preview-card">
                 <div className="foxyya-preview-card__header">
@@ -416,7 +416,7 @@ import {
         </section>
 
         <section className="foxyya-section foxyya-section--deep">
-            <div className="foxyya-page__container">
+            <div className="foxyya-page__container-01">
             <div className="foxyya-section__head">
                 <span className="foxyya-section__label">{t('Ecosystem Value', '생태계 가치')}</span>
                 <h2>
@@ -442,7 +442,7 @@ import {
         </section>
 
         <section className="foxyya-section">
-            <div className="foxyya-page__container">
+            <div className="foxyya-page__container-01">
             <div className="foxyya-cta-box">
                 <div className="foxyya-cta-box__label">
                 <Star size={16} />
