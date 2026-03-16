@@ -1,9 +1,9 @@
 import { Link } from 'react-router';
+import { useState } from 'react';
 import {
     ChevronDown,
     FileCode2,
     KeyRound,
-    LockKeyhole,
     ShieldCheck,
     TimerReset,
     Workflow,
@@ -70,6 +70,7 @@ import {
     export function DevelopersAuthenticationPage() {
     const { language } = useLanguage();
     const isKo = language === 'KR';
+    const [activeSection, setActiveSection] = useState('auth-overview');
 
     return (
         <div className="developers-auth-page">
@@ -81,7 +82,7 @@ import {
                 <span>{isKo ? '인증' : 'Authentication'}</span>
             </div>
 
-            <h1>{isKo ? 'Authentication Guide' : 'Authentication Guide'}</h1>
+            <h1>Authentication Guide</h1>
             <p>
                 {isKo
                 ? 'KORION 공개 API는 API Key와 서명 기반 요청 구조를 중심으로 설계됩니다. 문서에는 인증 방식, 서명 규칙, 필수 헤더, 재전송 방지 구조, 대표 오류 코드가 함께 정리되는 것이 가장 자연스럽습니다.'
@@ -97,11 +98,24 @@ import {
                 <span className="developers-auth-sidebar__title">
                     {isKo ? '인증 문서' : 'Authentication Docs'}
                 </span>
-                {authSections.map((section) => (
-                    <a key={section.id} href={`#${section.id}`}>
-                    {isKo ? section.titleKo : section.titleEn}
+
+                <nav className="developers-auth-sidebar__nav" aria-label="Authentication navigation">
+                    {authSections.map((section) => (
+                    <a
+                        key={section.id}
+                        href={`#${section.id}`}
+                        className={`developers-auth-sidebar__link${
+                        activeSection === section.id ? ' is-active' : ''
+                        }`}
+                        onClick={() => setActiveSection(section.id)}
+                    >
+                        <span className="developers-auth-sidebar__dot" />
+                        <span className="developers-auth-sidebar__text">
+                        {isKo ? section.titleKo : section.titleEn}
+                        </span>
                     </a>
-                ))}
+                    ))}
+                </nav>
                 </div>
             </aside>
 
@@ -198,10 +212,22 @@ import {
                 </div>
 
                 <div className="developers-auth-headers">
-                    <div><code>X-KORION-API-KEY</code><span>{isKo ? '발급된 API 키' : 'Issued API key'}</span></div>
-                    <div><code>X-KORION-TIMESTAMP</code><span>{isKo ? '요청 시각' : 'Request timestamp'}</span></div>
-                    <div><code>X-KORION-NONCE</code><span>{isKo ? '고유 요청 식별값' : 'Unique request nonce'}</span></div>
-                    <div><code>X-KORION-SIGNATURE</code><span>{isKo ? '서명값' : 'Request signature'}</span></div>
+                    <div>
+                    <code>X-KORION-API-KEY</code>
+                    <span>{isKo ? '발급된 API 키' : 'Issued API key'}</span>
+                    </div>
+                    <div>
+                    <code>X-KORION-TIMESTAMP</code>
+                    <span>{isKo ? '요청 시각' : 'Request timestamp'}</span>
+                    </div>
+                    <div>
+                    <code>X-KORION-NONCE</code>
+                    <span>{isKo ? '고유 요청 식별값' : 'Unique request nonce'}</span>
+                    </div>
+                    <div>
+                    <code>X-KORION-SIGNATURE</code>
+                    <span>{isKo ? '서명값' : 'Request signature'}</span>
+                    </div>
                 </div>
                 </section>
 
@@ -221,9 +247,21 @@ import {
                 </div>
 
                 <ul className="developers-auth-list">
-                    <li>{isKo ? '요청 타임스탬프는 예: 5분 이내만 허용' : 'Request timestamp can be limited to a short validity window, for example 5 minutes'}</li>
-                    <li>{isKo ? '동일 nonce 재사용 시 요청 거절' : 'Duplicate nonce values should be rejected'}</li>
-                    <li>{isKo ? '민감 요청은 더 엄격한 유효시간 적용 가능' : 'Sensitive operations can use stricter expiry policies'}</li>
+                    <li>
+                    {isKo
+                        ? '요청 타임스탬프는 예: 5분 이내만 허용'
+                        : 'Request timestamp can be limited to a short validity window, for example 5 minutes'}
+                    </li>
+                    <li>
+                    {isKo
+                        ? '동일 nonce 재사용 시 요청 거절'
+                        : 'Duplicate nonce values should be rejected'}
+                    </li>
+                    <li>
+                    {isKo
+                        ? '민감 요청은 더 엄격한 유효시간 적용 가능'
+                        : 'Sensitive operations can use stricter expiry policies'}
+                    </li>
                 </ul>
                 </section>
 

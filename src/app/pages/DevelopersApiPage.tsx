@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { useEffect, useMemo, useState } from 'react';
 import {
     ChevronDown,
@@ -72,7 +72,7 @@ import {
     },
     ];
 
-    const recommendedDocs = [
+    const integrationDocs = [
     {
         titleEn: 'Authentication Guide',
         titleKo: '인증 가이드',
@@ -172,11 +172,12 @@ import {
 
     export function DevelopersApiPage() {
     const { language } = useLanguage();
+    const { hash } = useLocation();
     const isKo = language === 'KR';
 
     const tocItems = useMemo(() => {
         return [
-        { id: 'quick-start', label: isKo ? 'Quick Start' : 'Quick Start' },
+        { id: 'quick-start', label: isKo ? '빠른 시작' : 'Quick Start' },
         { id: 'base-structure', label: isKo ? '기본 구조' : 'Base Structure' },
         { id: 'authentication', label: isKo ? '인증 방식' : 'Authentication' },
         { id: 'rate-limits', label: isKo ? '호출 제한' : 'Rate Limits' },
@@ -186,8 +187,8 @@ import {
             label: isKo ? group.titleKo : group.titleEn,
         })),
         {
-            id: 'recommended-docs',
-            label: isKo ? '추가 문서' : 'Recommended Docs',
+            id: 'integration-guides',
+            label: isKo ? '연동 가이드' : 'Integration Guides',
         },
         ];
     }, [isKo]);
@@ -195,34 +196,29 @@ import {
     const [activeSection, setActiveSection] = useState<string>('quick-start');
 
     useEffect(() => {
-        const handleScroll = () => {
-        const offset = 180;
-        let currentSection = tocItems[0]?.id ?? 'quick-start';
+        const currentHash = hash.replace('#', '');
+        if (currentHash) {
+        setActiveSection(currentHash);
+        }
+    }, [hash]);
 
-        for (const item of tocItems) {
-            const el = document.getElementById(item.id);
-            if (!el) continue;
+    const handleTocClick = (
+        event: React.MouseEvent<HTMLAnchorElement>,
+        id: string
+    ) => {
+        event.preventDefault();
+        setActiveSection(id);
 
-            const top = el.getBoundingClientRect().top;
-
-            if (top - offset <= 0) {
-            currentSection = item.id;
-            }
+        const target = document.getElementById(id);
+        if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - 120;
+        window.scrollTo({
+            top: y,
+            behavior: 'smooth',
+        });
         }
 
-        setActiveSection(currentSection);
-        };
-
-        handleScroll();
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        return () => {
-        window.removeEventListener('scroll', handleScroll);
-        };
-    }, [tocItems]);
-
-    const handleTocClick = (id: string) => {
-        setActiveSection(id);
+        window.history.replaceState(null, '', `#${id}`);
     };
 
     return (
@@ -254,14 +250,16 @@ import {
                     <a
                     href="#quick-start"
                     className="developers-api-hero__button developers-api-hero__button--primary"
+                    onClick={(e) => handleTocClick(e, 'quick-start')}
                     >
                     {isKo ? '빠르게 시작하기' : 'Quick Start'}
                     </a>
                     <a
-                    href="#recommended-docs"
+                    href="#integration-guides"
                     className="developers-api-hero__button developers-api-hero__button--ghost"
+                    onClick={(e) => handleTocClick(e, 'integration-guides')}
                     >
-                    {isKo ? '연동 문서 보기' : 'View Integration Docs'}
+                    {isKo ? '연동 가이드 보기' : 'View Integration Guides'}
                     </a>
                 </div>
                 </div>
@@ -307,7 +305,7 @@ import {
                     <a
                     key={item.id}
                     href={`#${item.id}`}
-                    onClick={() => handleTocClick(item.id)}
+                    onClick={(e) => handleTocClick(e, item.id)}
                     className={`developers-api-sidebar__link ${
                         activeSection === item.id ? 'is-active' : ''
                     }`}
@@ -321,7 +319,7 @@ import {
             <main className="developers-api-main">
                 <section className="developers-api-section" id="quick-start">
                 <div className="developers-api-section__heading-block">
-                    <h2>Quick Start</h2>
+                    <h2>{isKo ? '빠른 시작' : 'Quick Start'}</h2>
                     <p>
                     {isKo
                         ? 'KORION 연동은 인증 정보 발급, 지갑 상태 확인, 거래 생성, 웹훅 처리 순서로 접근하면 가장 빠르고 안정적으로 구현할 수 있습니다.'
@@ -514,20 +512,20 @@ import {
                 );
                 })}
 
-                <section className="developers-api-section" id="recommended-docs">
+                <section className="developers-api-section" id="integration-guides">
                 <div className="developers-api-section__heading-block">
-                    <h2>{isKo ? '추가로 붙이면 좋은 문서' : 'Recommended Next Documents'}</h2>
+                    <h2>{isKo ? '연동 가이드' : 'Integration Guides'}</h2>
                     <p>
                     {isKo
-                        ? 'API Reference만으로는 실제 운영 연동에 필요한 모든 정보를 전달하기 어렵기 때문에, 아래 문서들을 함께 제공하면 개발자 포털의 완성도가 크게 올라갑니다.'
-                        : 'API references become much more useful when paired with onboarding, security, sandbox, and troubleshooting documents.'}
+                        ? '아래 문서는 인증, 보안 검증, 샌드박스 테스트, 오류 대응 등 실제 운영 연동에 필요한 핵심 가이드를 정리한 자료입니다.'
+                        : 'The documents below cover the core guides needed for production integration, including authentication, security validation, sandbox testing, and error handling.'}
                     </p>
                 </div>
 
                 <div className="developers-api-divider" />
 
                 <div className="developers-api-doc-grid">
-                    {recommendedDocs.map((doc) => {
+                    {integrationDocs.map((doc) => {
                     const Icon = doc.icon;
 
                     return (

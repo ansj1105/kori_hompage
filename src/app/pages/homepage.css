@@ -39,7 +39,7 @@
   width: min(1440px, calc(100% - 40px));
   min-height: 100vh;
   margin: 0 auto;
-  padding: 95px 0 160px;
+  padding: 95px 0 170px;
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
   align-items: center;

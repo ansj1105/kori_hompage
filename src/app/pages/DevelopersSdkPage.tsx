@@ -1,4 +1,5 @@
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
+import { useEffect, useMemo, useState } from 'react';
 import {
     Box,
     ChevronDown,
@@ -98,7 +99,48 @@ import {
 
     export function DevelopersSdkPage() {
     const { language } = useLanguage();
+    const { hash } = useLocation();
     const isKo = language === 'KR';
+
+    const tocItems = useMemo(
+        () => [
+        { id: 'sdk-overview', label: isKo ? '개요' : 'Overview' },
+        { id: 'sdk-modules', label: isKo ? 'SDK 모듈' : 'SDK Modules' },
+        { id: 'sdk-examples', label: isKo ? '예제 코드' : 'Examples' },
+        { id: 'sdk-roadmap', label: isKo ? '공개 로드맵' : 'Release Roadmap' },
+        ],
+        [isKo]
+    );
+
+    const [activeSection, setActiveSection] = useState<string>('sdk-overview');
+
+    useEffect(() => {
+        const currentHash = hash.replace('#', '');
+        if (currentHash) {
+        setActiveSection(currentHash);
+        } else {
+        setActiveSection('sdk-overview');
+        }
+    }, [hash]);
+
+    const handleTocClick = (
+        event: React.MouseEvent<HTMLAnchorElement>,
+        id: string
+    ) => {
+        event.preventDefault();
+        setActiveSection(id);
+
+        const target = document.getElementById(id);
+        if (target) {
+        const y = target.getBoundingClientRect().top + window.scrollY - 110;
+        window.scrollTo({
+            top: y,
+            behavior: 'smooth',
+        });
+        }
+
+        window.history.replaceState(null, '', `#${id}`);
+    };
 
     return (
         <div className="developers-sdk-page">
@@ -126,10 +168,17 @@ import {
                 <span className="developers-sdk-sidebar__title">
                     {isKo ? 'SDK 문서' : 'SDK Docs'}
                 </span>
-                <a href="#sdk-overview">{isKo ? '개요' : 'Overview'}</a>
-                <a href="#sdk-modules">{isKo ? 'SDK 모듈' : 'SDK Modules'}</a>
-                <a href="#sdk-examples">{isKo ? '예제 코드' : 'Examples'}</a>
-                <a href="#sdk-roadmap">{isKo ? '공개 로드맵' : 'Release Roadmap'}</a>
+
+                {tocItems.map((item) => (
+                    <a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(e) => handleTocClick(e, item.id)}
+                    className={activeSection === item.id ? 'is-current' : ''}
+                    >
+                    {item.label}
+                    </a>
+                ))}
                 </div>
             </aside>
 

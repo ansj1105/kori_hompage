@@ -35,7 +35,7 @@ const leadership = [
     role: 'CEO / Founder',
     roleKo: '대표이사 / Founder',
     name: 'Richard Jang',
-    image: ceoImage,
+    image: null,
     icon: Crown,
     summary:
       'Leads the overall vision, planning, development direction, and ecosystem strategy of the project.',
@@ -59,7 +59,7 @@ const leadership = [
     role: 'Development Director',
     roleKo: '개발이사',
     name: 'Seo-Jeong Ahn',
-    image: devDirectorImage,
+    image: null,
     icon: Code2,
     summary:
       'Oversees the full technical execution of the ecosystem including platform architecture and development.',
@@ -122,7 +122,7 @@ const partnerProfiles = [
     nameKo: '대한민국 커뮤니티 파트너',
     country: 'Korea',
     countryKo: '대한민국',
-    image: partnerAvatarImage,   // 사진이 있으면
+    image: 'partner-avatar',
     icon: Flag,
     desc:
       'Supports domestic awareness growth, local campaigns, and regional community communication.',

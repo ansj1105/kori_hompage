@@ -1,6 +1,8 @@
-    .developers-changelog-page {
+.developers-changelog-page {
     min-height: 100vh;
-    background: #f4f5f7;
+    background:
+        radial-gradient(circle at top, rgba(124, 146, 255, 0.05), transparent 28%),
+        #f4f5f7;
     color: #1f2f44;
     }
 
@@ -9,12 +11,14 @@
     margin: 0 auto;
     }
 
+    /* topbar */
     .developers-changelog-topbar {
     position: sticky;
     top: 0;
     z-index: 60;
     background: linear-gradient(180deg, #0a1020 0%, #0c1224 100%);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
     }
 
     .developers-changelog-topbar__inner {
@@ -44,6 +48,7 @@
     color: #fff;
     font-size: 0.9rem;
     font-weight: 900;
+    box-shadow: 0 10px 24px rgba(92, 84, 204, 0.28);
     }
 
     .developers-changelog-topbar__nav {
@@ -54,9 +59,10 @@
     }
 
     .developers-changelog-topbar__nav a {
-    color: rgba(230,236,255,0.82);
+    color: rgba(230, 236, 255, 0.82);
     text-decoration: none;
     font-weight: 700;
+    transition: color 0.2s ease, opacity 0.2s ease;
     }
 
     .developers-changelog-topbar__nav a.is-active,
@@ -64,13 +70,16 @@
     color: #fff;
     }
 
+    /* hero */
     .developers-changelog-hero {
+    position: relative;
+    overflow: hidden;
     background:
-        radial-gradient(circle at 20% 20%, rgba(124,146,255,0.18), transparent 24%),
-        radial-gradient(circle at 80% 10%, rgba(125,92,255,0.18), transparent 24%),
+        radial-gradient(circle at 20% 20%, rgba(124, 146, 255, 0.18), transparent 24%),
+        radial-gradient(circle at 80% 10%, rgba(125, 92, 255, 0.18), transparent 24%),
         linear-gradient(180deg, #0b1325 0%, #101b34 100%);
     color: #fff;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .developers-changelog-hero .developers-changelog-page__container {
@@ -82,6 +91,7 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 18px;
+    flex-wrap: wrap;
     }
 
     .developers-changelog-hero__crumbs a,
@@ -89,6 +99,10 @@
     color: #d5e0ff;
     text-decoration: none;
     font-weight: 700;
+    }
+
+    .developers-changelog-hero__crumbs a:hover {
+    color: #ffffff;
     }
 
     .developers-changelog-hero h1 {
@@ -102,10 +116,11 @@
     .developers-changelog-hero p {
     margin: 0;
     max-width: 840px;
-    color: rgba(234,240,255,0.82);
+    color: rgba(234, 240, 255, 0.82);
     line-height: 1.85;
     }
 
+    /* body */
     .developers-changelog-body__grid {
     display: grid;
     grid-template-columns: 250px minmax(0, 1fr);
@@ -121,10 +136,12 @@
     }
 
     .developers-changelog-sidebar__box {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.86);
     border: 1px solid #e3e7ee;
-    border-radius: 16px;
+    border-radius: 18px;
     padding: 18px 16px;
+    box-shadow: 0 14px 32px rgba(31, 47, 68, 0.06);
+    backdrop-filter: blur(10px);
     }
 
     .developers-changelog-sidebar__title {
@@ -141,14 +158,26 @@
     display: block;
     text-decoration: none;
     color: #46566a;
-    padding: 8px 0;
-    font-weight: 600;
+    padding: 10px 12px;
+    font-weight: 700;
+    border-radius: 10px;
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+    }
+
+    .developers-changelog-sidebar__box a:hover {
+    background: #eef3ff;
+    color: #d14a67;
+    transform: translateX(2px);
     }
 
     .developers-changelog-main {
     min-width: 0;
     }
 
+    /* summary */
     .developers-changelog-summary {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -157,13 +186,14 @@
     }
 
     .developers-changelog-summary__card {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.94);
     border: 1px solid #e3e7ee;
-    border-radius: 18px;
+    border-radius: 20px;
     padding: 20px 18px;
     display: flex;
     gap: 14px;
     align-items: center;
+    box-shadow: 0 14px 32px rgba(31, 47, 68, 0.05);
     }
 
     .developers-changelog-summary__icon,
@@ -173,7 +203,7 @@
     display: grid;
     place-items: center;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(124,146,255,0.14), rgba(124,93,255,0.12));
+    background: linear-gradient(135deg, rgba(124, 146, 255, 0.14), rgba(124, 93, 255, 0.12));
     color: #5166d2;
     flex: 0 0 auto;
     }
@@ -185,16 +215,23 @@
     font-size: 0.82rem;
     font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: 0.03em;
     }
 
     .developers-changelog-summary__card strong {
     color: #23344b;
+    line-height: 1.4;
     }
 
+    /* list */
     .developers-changelog-list {
     display: grid;
     grid-template-columns: 1fr;
     gap: 18px;
+    }
+
+    .developers-changelog-entry {
+    scroll-margin-top: 110px;
     }
 
     .developers-changelog-entry__meta {
@@ -202,6 +239,7 @@
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
+    flex-wrap: wrap;
     }
 
     .developers-changelog-entry__version {
@@ -214,6 +252,7 @@
     padding: 6px 12px;
     font-weight: 800;
     font-size: 0.85rem;
+    box-shadow: 0 10px 24px rgba(24, 36, 58, 0.12);
     }
 
     .developers-changelog-entry__date {
@@ -222,13 +261,28 @@
     }
 
     .developers-changelog-entry__card {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid #e3e7ee;
-    border-radius: 18px;
+    border-radius: 20px;
     padding: 22px 20px;
     display: flex;
     gap: 16px;
     align-items: flex-start;
+    box-shadow: 0 16px 36px rgba(31, 47, 68, 0.06);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+    }
+
+    .developers-changelog-entry__card:hover {
+    transform: translateY(-2px);
+    border-color: #d7def2;
+    box-shadow: 0 20px 44px rgba(31, 47, 68, 0.08);
+    }
+
+    .developers-changelog-entry__content {
+    min-width: 0;
     }
 
     .developers-changelog-entry__content h2 {
@@ -245,9 +299,79 @@
     line-height: 1.85;
     }
 
+    .developers-changelog-entry__content li + li {
+    margin-top: 4px;
+    }
+
+
+
+    .developers-changelog-sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #46566a;
+    padding: 10px 12px;
+    font-weight: 700;
+    border-radius: 10px;
+    transition:
+        background 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .developers-changelog-sidebar__link:hover {
+    background: #ffffff;
+    color: #d14a67;
+    font-weight: 800;
+    border-color: rgba(209, 74, 103, 0.12);
+    box-shadow: 0 8px 20px rgba(209, 74, 103, 0.08);
+    }
+
+    .developers-changelog-sidebar__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #c8d2e2;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+    flex: 0 0 auto;
+    }
+
+    .developers-changelog-sidebar__link.is-active {
+    background: #ffffff;
+    color: #d14a67;
+    font-weight: 800;
+    border-color: rgba(209, 74, 103, 0.18);
+    box-shadow: 0 8px 20px rgba(209, 74, 103, 0.1);
+    }
+
+    .developers-changelog-sidebar__link.is-active .developers-changelog-sidebar__dot {
+    background: #ffffff;
+    color: #d14a67;
+    font-weight: 800;
+    border-color: rgba(209, 74, 103, 0.18);
+    box-shadow: 0 8px 20px rgba(209, 74, 103, 0.1);
+    }
+
+
+
+
+
+
+
+    /* responsive */
     @media (max-width: 920px) {
     .developers-changelog-page__container {
         width: min(100%, calc(100% - 24px));
+    }
+
+    .developers-changelog-hero .developers-changelog-page__container {
+        padding: 46px 0 40px;
     }
 
     .developers-changelog-body__grid,
@@ -259,7 +383,31 @@
         position: static;
     }
 
+    .developers-changelog-sidebar__box {
+        padding: 16px 14px;
+    }
+
     .developers-changelog-entry__card {
         flex-direction: column;
+        padding: 20px 18px;
+    }
+    }
+
+    @media (max-width: 640px) {
+    .developers-changelog-hero h1 {
+        font-size: clamp(2rem, 8vw, 2.6rem);
+    }
+
+    .developers-changelog-hero p {
+        line-height: 1.75;
+    }
+
+    .developers-changelog-summary__card,
+    .developers-changelog-entry__card {
+        border-radius: 18px;
+    }
+
+    .developers-changelog-entry__content h2 {
+        font-size: 1.12rem;
     }
     }
