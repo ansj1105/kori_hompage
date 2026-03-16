@@ -328,7 +328,7 @@ import {
         </section>
 
         <section className="foundation-page__section foundation-page__section--intro">
-            <div className="foundation-page__container">
+            <div className="foundation-page__container-01">
             <div className="foundation-page__section-head foundation-page__section-head--center">
                 <span className="foundation-page__section-kicker">
                 {isKo ? 'FOUNDATION OVERVIEW' : 'FOUNDATION OVERVIEW'}
@@ -373,7 +373,7 @@ import {
             id="foundation-structure"
             className="foundation-page__section foundation-page__section--structure"
         >
-            <div className="foundation-page__container">
+            <div className="foundation-page__container-01">
             <div className="foundation-page__section-head">
                 <span className="foundation-page__section-kicker">
                 {isKo ? 'FOUNDATION STRUCTURE' : 'FOUNDATION STRUCTURE'}
@@ -420,7 +420,7 @@ import {
         </section>
 
         <section className="foundation-page__section foundation-page__section--principles">
-            <div className="foundation-page__container foundation-page__principles-layout">
+            <div className="foundation-page__container-01 foundation-page__principles-layout">
             <div className="foundation-page__principles-copy">
                 <span className="foundation-page__section-kicker">
                 {isKo ? 'OPERATING PRINCIPLES' : 'OPERATING PRINCIPLES'}
@@ -464,7 +464,7 @@ import {
         </section>
 
         <section className="foundation-page__section foundation-page__section--expansion">
-            <div className="foundation-page__container">
+            <div className="foundation-page__container-01">
             <div className="foundation-page__section-head foundation-page__section-head--center">
                 <span className="foundation-page__section-kicker">
                 {isKo ? 'LONG-TERM EXPANSION' : 'LONG-TERM EXPANSION'}
@@ -501,7 +501,7 @@ import {
         </section>
 
         <section className="foundation-page__section foundation-page__section--cta">
-            <div className="foundation-page__container">
+            <div className="foundation-page__container-01">
             <motion.div
                 className="foundation-page__cta-box"
                 initial={{ opacity: 0, y: 28 }}

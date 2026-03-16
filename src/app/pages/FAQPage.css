@@ -13,6 +13,13 @@
     z-index: 2;
     }
 
+    .faq-page__container-01 {
+    width: min(1240px, calc(100% - 48px));
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    }
+
     .faq-hero {
     position: relative;
     overflow: hidden;
@@ -604,7 +611,7 @@
 
     .faq-cta__content h2 {
     margin: 0;
-    font-size: clamp(1.9rem, 3vw, 2.8rem);
+    font-size: clamp(1.9rem, 3vw, 2.5rem);
     font-weight: 900;
     letter-spacing: -0.04em;
     }

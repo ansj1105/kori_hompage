@@ -23,8 +23,9 @@ import {
     TimerReset,
     } from 'lucide-react';
     import { Link } from 'react-router';
+    import { ImageWithFallback } from '../components/figma/ImageWithFallback';
     import { useLanguage } from '../contexts/LanguageContext';
-    import walletMainImage from '../../assets/wallet/wallet-main.png';
+    import { useAssetUrl } from '../utils/assetLoader';
     import './EcosystemPage.css';
 
     const featureCards = [
@@ -194,6 +195,10 @@ import {
     ];
     export function EcosystemPage() {
     const { t } = useLanguage();
+    const walletMainImage = useAssetUrl(
+        'wallet-main-image',
+        () => import('../../assets/wallet/wallet-main.png')
+    );
 
     return (
         <div className="ecosystem-page">
@@ -292,7 +297,7 @@ import {
 
                 <div className="wallet-stage__frame">
                     <div className="wallet-stage__frame-shine" />
-                    <img
+                    <ImageWithFallback
                     src={walletMainImage}
                     alt="KORION Wallet App Screen"
                     className="wallet-stage__image"
@@ -375,7 +380,7 @@ import {
                 >
                 <div className="ecosystem-highlight__image-card">
                     <div className="ecosystem-highlight__image-glow" />
-                    <img
+                    <ImageWithFallback
                     src={walletMainImage}
                     alt="KORION Wallet Interface"
                     className="ecosystem-highlight__image"

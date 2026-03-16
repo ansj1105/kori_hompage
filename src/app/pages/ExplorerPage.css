@@ -91,7 +91,7 @@
 
     font-size: 16px;
 
-    max-width: 1440px;
+    max-width: 630px;
 
     margin-left: auto;
     margin-right: auto;
@@ -161,7 +161,7 @@
 
     .explorer-hero__contract-strip {
     margin-top: 36px;
-    max-width: 440px;
+    max-width: 640px;
     padding: 22px;
 
     border-radius: 20px;
@@ -205,9 +205,9 @@
     /* address */
 
     .explorer-hero__contract-value {
-    font-size: 14px;
+    font-size: 19px;
 
-    padding: 12px 16px;
+    padding: 7px 16px;
 
     border-radius: 12px;
 
@@ -216,6 +216,7 @@
     border: 1px solid rgba(255,255,255,0.08);
 
     word-break: break-all;
+    min-width: 490px;
     }
 
     /* copy button */

@@ -14,12 +14,17 @@
     margin: 0 auto;
     }
 
+
+    .smart-contract-page__container-01 {
+    width: min(1240px, calc(100% - 32px));
+    margin: 0 auto;
+    }
     /* hero */
 
     .smart-contract-hero {
     position: relative;
     overflow: hidden;
-    padding: 132px 0 42px;
+    padding: 132px 0 192px;
     }
 
     .smart-contract-hero__ambient {
@@ -636,7 +641,7 @@
     .smart-contract-specs__header h2 {
     margin: 0;
     white-space: pre-line;
-    font-size: clamp(2.05rem, 3vw, 3.2rem);
+    font-size: clamp(2.05rem, 3vw, 2.6rem);
     line-height: 1.1;
     letter-spacing: -0.045em;
     }

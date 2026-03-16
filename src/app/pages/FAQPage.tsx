@@ -444,7 +444,7 @@ import {
         </section>
 
         <section className="faq-insights">
-            <div className="faq-page__container">
+            <div className="faq-page__container-01">
             <div className="faq-insights__grid">
                 {insightCards.map((item, index) => {
                 const Icon = item.icon;
@@ -470,7 +470,7 @@ import {
         </section>
 
         <section className="faq-main" id="faq-list">
-            <div className="faq-page__container faq-main__container">
+            <div className="faq-page__container-01 faq-main__container">
             <div className="faq-main__header">
                 <div className="faq-section-heading faq-section-heading--left">
                 <span>{isKo ? "핵심 질문" : "KEY QUESTIONS"}</span>
@@ -570,7 +570,7 @@ import {
         </section>
 
         <section className="faq-guide">
-            <div className="faq-page__container faq-guide__container">
+            <div className="faq-page__container-01 faq-guide__container">
             <motion.div
                 className="faq-guide__panel"
                 initial={{ opacity: 0, x: -24 }}
@@ -661,7 +661,7 @@ import {
         </section>
 
         <section className="faq-cta">
-            <div className="faq-page__container">
+            <div className="faq-page__container-01">
             <motion.div
                 className="faq-cta__panel"
                 initial={{ opacity: 0, y: 26 }}

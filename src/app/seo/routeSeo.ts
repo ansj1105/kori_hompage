@@ -50,6 +50,18 @@ const staticSeo: Record<string, SeoEntry> = {
       'Read the KORION mission, operating direction, and long-term platform vision.',
     canonicalPath: '/about',
   },
+  '/partner': {
+    title: 'KORION Partner',
+    description:
+      'Apply for partnerships, team collaboration, business proposals, and technical integration with KORION.',
+    canonicalPath: '/partner',
+  },
+  '/Partner': {
+    title: 'KORION Partner',
+    description:
+      'Apply for partnerships, team collaboration, business proposals, and technical integration with KORION.',
+    canonicalPath: '/partner',
+  },
   '/foundation': {
     title: 'KORION Foundation',
     description:

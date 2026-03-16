@@ -188,7 +188,9 @@
 .support-page__channels,
 .support-page__categories,
 .support-page__faq {
-  margin-top: 34px;
+  margin-top: 74px !important;
+  max-width: 1240px;
+  margin: auto;
 }
 
 .support-page__highlight-grid {
@@ -208,6 +210,7 @@
   box-shadow:
     0 20px 44px rgba(0, 0, 0, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  
 }
 
 .support-page__highlight-icon {

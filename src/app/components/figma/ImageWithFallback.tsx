@@ -5,12 +5,13 @@ const ERROR_IMG_SRC =
 
 export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElement>) {
   const [didError, setDidError] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const handleError = () => {
     setDidError(true)
   }
 
-  const { src, alt, style, className, ...rest } = props
+  const { src, alt, style, className, loading = 'lazy', decoding = 'async', ...rest } = props
 
   return didError ? (
     <div
@@ -18,10 +19,23 @@ export function ImageWithFallback(props: React.ImgHTMLAttributes<HTMLImageElemen
       style={style}
     >
       <div className="flex items-center justify-center w-full h-full">
-        <img src={ERROR_IMG_SRC} alt="Error loading image" {...rest} data-original-url={src} />
+        <img src={ERROR_IMG_SRC} alt="Error loading image" loading={loading} decoding={decoding} {...rest} data-original-url={src} />
       </div>
     </div>
   ) : (
-    <img src={src} alt={alt} className={className} style={style} {...rest} onError={handleError} />
+    <div className={`relative overflow-hidden ${className ?? ''}`} style={style}>
+      {!isLoaded && <div className="absolute inset-0 animate-pulse bg-white/8" aria-hidden="true" />}
+      <img
+        src={src}
+        alt={alt}
+        className={`${className ?? ''} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+        style={style}
+        loading={loading}
+        decoding={decoding}
+        {...rest}
+        onError={handleError}
+        onLoad={() => setIsLoaded(true)}
+      />
+    </div>
   )
 }

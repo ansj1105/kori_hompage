@@ -1,15 +1,11 @@
+import { memo } from 'react';
 import { Link } from 'react-router';
 import {
-  Mail,
   ShieldCheck,
   ChevronRight,
   Github,
   Send,
   FileText,
-  Globe2,
-  LifeBuoy,
-  Boxes,
-  Building2,
   ExternalLink,
 } from 'lucide-react';
 import {
@@ -26,35 +22,50 @@ import logo from '../../assets/logo/logo.png';
 import { useLanguage } from '../contexts/LanguageContext';
 import './FooterNew.css';
 
-export function FooterNew() {
+export const FooterNew = memo(function FooterNew() {
   const { t } = useLanguage();
 
   const companyLinks = [
     { label: t('About', '회사소개'), to: '/about' },
     { label: t('Team', '팀'), to: '/team' },
     { label: t('Foundation', '재단'), to: '/foundation' },
+    { label: t('Treasury', '트레저리'), to: '/treasury' },
     { label: t('Roadmap', '로드맵'), to: '/roadmap' },
+    { label: t('News', '회사 소식'), to: '/news' },
   ];
 
   const ecosystemLinks = [
     { label: t('Ecosystem', '생태계'), to: '/ecosystem' },
     { label: t('KORION Pay', 'KORION Pay'), to: '/korionpay' },
-    { label: t('Products', '제품'), to: '/products' },
+    { label: t('Foxyya Platform', 'Foxyya 플랫폼'), to: '/foxyya' },
+    { label: t('Mining Hub', '채굴 허브'), to: '/mining' },
     { label: t('Download', '다운로드'), to: '/download' },
   ];
 
   const resourceLinks = [
     { label: t('Whitepaper', '백서'), to: '/whitepaper' },
     { label: t('Tokenomics', '토크노믹스'), to: '/tokenomics' },
-    { label: t('Developers', '개발자'), to: '/developers', blank: true },
-    { label: t('News', '회사 소식'), to: '/news' },
+    { label: t('Smart Contract', '스마트 컨트랙트'), to: '/smart-contract' },
+    { label: t('Media Kit', '미디어킷'), to: '/media-kit' },
+    { label: t('Developers', '개발자'), to: '/developers' },
   ];
 
   const supportLinks = [
+    { label: t('FAQ', '자주 묻는 질문'), to: '/faq' },
     { label: t('Help Center', '고객지원'), to: '/support' },
     { label: t('Contact', '문의하기'), to: '/contact' },
     { label: t('Policy', '정책'), to: '/policy' },
     { label: t('Security', '보안'), to: '/security' },
+  ];
+
+  const marketLinks = [
+    {
+      label: t('Sun.io Listing', 'SUN.io 거래'),
+      to: 'https://sun.io/?lang=en-US#/scan/pairDetail?pairAddress=TCHbWJUBZ9DVpaPb6QW9vb31yTSz7sfhQh&version=v2',
+      blank: true,
+    },
+    { label: t('Explorer', '익스플로러'), to: '/explorer' },
+    { label: t('Listing Info', '상장 정보'), to: '/listing-info' },
   ];
 
   const socialLinks = [
@@ -161,61 +172,17 @@ export function FooterNew() {
 
         <div className="footer-new__grid">
           <div className="footer-new__brand-card">
-            <Link to="/" className="footer-new__brand">
-              <div className="footer-new__logo-box">
-                <img src={logo} alt="KORION" className="footer-new__logo" />
-              </div>
-
-              <div>
-                <div className="footer-new__brand-title">KORION</div>
-                <div className="footer-new__brand-subtitle">FOUNDATION</div>
-              </div>
-            </Link>
-
-
-
-
-          </div>
-
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">
-
-              {t('Company', '회사')}
-            </h3>
-            <div className="footer-new__links">
-              {companyLinks.map((item) => renderFooterLink(item))}
+  
+          <Link to="/" className="footer-new__brand">
+            <div className="footer-new__logo-box">
+              <img src={logo} alt="KORION" className="footer-new__logo" />
             </div>
-          </div>
 
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">
-
-              {t('Ecosystem', '생태계')}
-            </h3>
-            <div className="footer-new__links">
-              {ecosystemLinks.map((item) => renderFooterLink(item))}
+            <div>
+              <div className="footer-new__brand-title">KORION</div>
+              <div className="footer-new__brand-subtitle">FOUNDATION</div>
             </div>
-          </div>
-
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">
-
-              {t('Resources', '자료')}
-            </h3>
-            <div className="footer-new__links">
-              {resourceLinks.map((item) => renderFooterLink(item))}
-            </div>
-          </div>
-
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">
-
-              {t('Support', '지원')}
-            </h3>
-            <div className="footer-new__links">
-              {supportLinks.map((item) => renderFooterLink(item))}
-            </div>
-          </div>
+          </Link>
 
           <div className="footer-new__column footer-new__column--wide">
             <div className="footer-new__trust-card">
@@ -230,12 +197,47 @@ export function FooterNew() {
                   '공개 문서, 생태계 업데이트, 개발자 자료, 마켓 가시성은 사용자와 빌더, 파트너를 위해 지속적으로 확장됩니다.'
                 )}
               </p>
-
-
-
-
             </div>
           </div>
+
+        </div>
+
+          <div className="footer-new__column">
+            <h3 className="footer-new__heading">{t('Company', '회사')}</h3>
+            <div className="footer-new__links">
+              {companyLinks.map((item) => renderFooterLink(item))}
+            </div>
+          </div>
+
+          <div className="footer-new__column">
+            <h3 className="footer-new__heading">{t('Ecosystem', '생태계')}</h3>
+            <div className="footer-new__links">
+              {ecosystemLinks.map((item) => renderFooterLink(item))}
+            </div>
+          </div>
+
+          <div className="footer-new__column">
+            <h3 className="footer-new__heading">{t('Resources', '자료')}</h3>
+            <div className="footer-new__links">
+              {resourceLinks.map((item) => renderFooterLink(item))}
+            </div>
+          </div>
+
+          <div className="footer-new__column">
+            <h3 className="footer-new__heading">{t('Support', '지원')}</h3>
+            <div className="footer-new__links">
+              {supportLinks.map((item) => renderFooterLink(item))}
+            </div>
+          </div>
+
+          <div className="footer-new__column">
+            <h3 className="footer-new__heading">{t('Market', '마켓')}</h3>
+            <div className="footer-new__links">
+              {marketLinks.map((item) => renderFooterLink(item))}
+            </div>
+          </div>
+
+
         </div>
 
         <div className="footer-new__subscribe">
@@ -291,12 +293,13 @@ export function FooterNew() {
           </div>
 
           <div className="footer-new__bottom-links">
-              <a
-                href="mailto:dianainteen@dianainteen.com"
-                className="footer-new__bottom-link footer-new__bottom-link--email"
-              >
-                dianainteen@dianainteen.com
-              </a>
+            <a
+              href="mailto:dianainteen@dianainteen.com"
+              className="footer-new__bottom-link footer-new__bottom-link--email"
+            >
+              dianainteen@dianainteen.com
+            </a>
+
             <Link to="/policy" className="footer-new__bottom-link">
               {t('Policy', '정책')}
             </Link>
@@ -311,6 +314,6 @@ export function FooterNew() {
       </div>
     </footer>
   );
-}
+})
 
 export default FooterNew;

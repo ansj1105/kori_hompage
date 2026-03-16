@@ -423,7 +423,7 @@ export function TokenomicsPage() {
       </section>
 
       <section className="tokenomics-section">
-        <div className="tokenomics-page__container">
+        <div className="tokenomics-page__container-01">
           <motion.div
             className="tokenomics-section__heading"
             initial={{ opacity: 0, y: 24 }}
@@ -472,7 +472,7 @@ export function TokenomicsPage() {
       </section>
 
       <section className="tokenomics-section tokenomics-section--alt">
-        <div className="tokenomics-page__container">
+        <div className="tokenomics-page__container-01">
           <div className="tokenomics-utility">
             <motion.div
               className="tokenomics-utility__left"
@@ -550,7 +550,7 @@ export function TokenomicsPage() {
       </section>
 
       <section className="tokenomics-section">
-        <div className="tokenomics-page__container">
+        <div className="tokenomics-page__container-01">
           <motion.div
             className="tokenomics-section__heading"
             initial={{ opacity: 0, y: 24 }}
@@ -594,7 +594,7 @@ export function TokenomicsPage() {
       </section>
 
       <section className="tokenomics-section tokenomics-section--alt">
-        <div className="tokenomics-page__container">
+        <div className="tokenomics-page__container-01">
           <div className="tokenomics-governance">
             <motion.div
               className="tokenomics-governance__panel"
@@ -691,7 +691,7 @@ export function TokenomicsPage() {
       </section>
 
       <section className="tokenomics-section">
-        <div className="tokenomics-page__container">
+        <div className="tokenomics-page__container-01">
           <motion.div
             className="tokenomics-section__heading"
             initial={{ opacity: 0, y: 24 }}
@@ -739,7 +739,7 @@ export function TokenomicsPage() {
       </section>
 
       <section className="tokenomics-section tokenomics-section--alt">
-        <div className="tokenomics-page__container">
+        <div className="tokenomics-page__container-01">
           <div className="tokenomics-burn">
             <motion.div
               className="tokenomics-burn__left"
@@ -820,7 +820,7 @@ export function TokenomicsPage() {
       </section>
 
       <section className="tokenomics-section">
-        <div className="tokenomics-page__container">
+        <div className="tokenomics-page__container-01">
           <motion.div
             className="tokenomics-section__heading"
             initial={{ opacity: 0, y: 24 }}

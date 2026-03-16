@@ -8,6 +8,12 @@
 
     }
 
+    .foundation-page__container-01 {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+
+    }
+
     .foundation-page__section {
     position: relative;
     z-index: 2;
@@ -344,7 +350,7 @@
 
     .foundation-page__floating-card--two {
     right: -2%;
-    top: 48%;
+    top: 18%;
     animation: foundationFloat 7s ease-in-out infinite;
     }
 

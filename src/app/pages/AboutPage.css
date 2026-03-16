@@ -11,7 +11,7 @@
     .about-page__container {
     position: relative;
     z-index: 2;
-    width: min(1440px, calc(100% - 48px));
+    width: min(1240px, calc(100% - 48px));
     margin: 0 auto;
     }
 
@@ -332,7 +332,14 @@
     position: relative;
     padding: 110px 0;
     scroll-margin-top: 120px;
+    
     }
+
+    .about-story{
+
+    }
+
+    
 
     /* statement */
     .about-statement {
@@ -436,6 +443,7 @@
         0 22px 54px rgba(0, 0, 0, 0.22),
         inset 0 1px 0 rgba(255, 255, 255, 0.045);
     backdrop-filter: blur(18px);
+    
     }
 
     .about-story__no {
@@ -531,6 +539,7 @@
     background:
         radial-gradient(circle at 15% 20%, rgba(76, 120, 255, 0.07), transparent 26%),
         radial-gradient(circle at 85% 80%, rgba(139, 92, 246, 0.08), transparent 26%);
+    
     }
 
     .about-signature__panel {
@@ -544,6 +553,8 @@
         0 28px 70px rgba(0, 0, 0, 0.28),
         inset 0 1px 0 rgba(255, 255, 255, 0.05);
     overflow: hidden;
+    max-width: 1240px;
+    margin: 0 auto;
     }
 
     .about-signature__panel::before {
@@ -672,6 +683,7 @@
     position: relative;
     padding: 0 0 120px;
     scroll-margin-top: 120px;
+
     }
 
     .about-company__wrap {
@@ -685,6 +697,8 @@
     box-shadow:
         0 30px 80px rgba(0, 0, 0, 0.28),
         inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    min-width: 1140px;
+    margin: 0 auto;
     }
 
     .about-company__header {

@@ -246,7 +246,7 @@ import './MiningPage.css';
         </section>
 
         <section className="mining-section">
-            <div className="mining-page__container">
+            <div className="mining-page__container-01">
             <div className="mining-section__head">
                 <span className="mining-section__label">{t('Overview', '개요')}</span>
                 <h2>
@@ -288,7 +288,7 @@ import './MiningPage.css';
         </section>
 
         <section className="mining-section mining-section--deep">
-            <div className="mining-page__container">
+            <div className="mining-page__container-01">
             <div className="mining-section__head">
                 <span className="mining-section__label">{t('Flow', '구조')}</span>
                 <h2>
@@ -318,7 +318,7 @@ import './MiningPage.css';
         </section>
 
         <section className="mining-section">
-            <div className="mining-page__container">
+            <div className="mining-page__container-01">
             <div className="mining-section__head">
                 <span className="mining-section__label">{t('Value', '가치')}</span>
                 <h2>
@@ -344,7 +344,7 @@ import './MiningPage.css';
         </section>
 
         <section className="mining-section mining-section--deep">
-            <div className="mining-page__container">
+            <div className="mining-page__container-01">
             <div className="mining-cta-box">
                 <div className="mining-cta-box__label">
                 <Sparkles size={16} />

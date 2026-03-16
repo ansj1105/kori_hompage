@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Link } from 'react-router';
 import {
     ChevronLeft,
@@ -12,13 +12,10 @@ import {
     X,
     } from 'lucide-react';
     import FooterNew from '../components/FooterNew';
-    import pdfFile from '../../whitepaper/Whitepaper Version-1.1.pdf?url';
     import { useLanguage } from '../contexts/LanguageContext';
+    import { loadAssetUrl } from '../utils/assetLoader';
     
     import './WhitepaperPage.css';
-
-    const PDF_URL = pdfFile;
-
     const sections = [
     { titleEn: 'Front Matter', titleKr: '서문', page: 1 },
     { titleEn: 'Executive Summary', titleKr: '요약', page: 5 },
@@ -96,11 +93,37 @@ import {
     export default function WhitepaperPage() {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
+    const [pdfUrl, setPdfUrl] = useState<string | null>(null);
+    const [isPdfLoading, setIsPdfLoading] = useState(false);
 
     const { t, language, toggleLanguage } = useLanguage();
     const isKr = language === 'KR';
 
-    const pdfSrc = `${PDF_URL}#toolbar=0&navpanes=0&scrollbar=0&page=${currentPage}`;
+    const ensurePdfUrl = useCallback(async () => {
+        if (pdfUrl) {
+            return pdfUrl;
+        }
+
+        setIsPdfLoading(true);
+        try {
+            const loadedUrl = await loadAssetUrl(
+                'whitepaper-v1-1-pdf',
+                () => import('../../whitepaper/Whitepaper Version-1.1.pdf?url')
+            );
+            setPdfUrl(loadedUrl);
+            return loadedUrl;
+        } finally {
+            setIsPdfLoading(false);
+        }
+    }, [pdfUrl]);
+
+    const pdfSrc = useMemo(() => {
+        if (!pdfUrl) {
+            return null;
+        }
+
+        return `${pdfUrl}#toolbar=0&navpanes=0&scrollbar=0&page=${currentPage}`;
+    }, [currentPage, pdfUrl]);
 
     const goToPage = (page: number) => {
         const safePage = Math.max(1, Math.min(TOTAL_PAGES, page));
@@ -108,8 +131,33 @@ import {
         setMobileSidebarOpen(false);
     };
 
-    const onPrev = () => goToPage(currentPage - 1);
-    const onNext = () => goToPage(currentPage + 1);
+    const onPrev = async () => {
+        await ensurePdfUrl();
+        goToPage(currentPage - 1);
+    };
+    const onNext = async () => {
+        await ensurePdfUrl();
+        goToPage(currentPage + 1);
+    };
+
+    const handleOpenPdf = useCallback(async () => {
+        const loadedUrl = await ensurePdfUrl();
+        window.open(loadedUrl, '_blank', 'noopener,noreferrer');
+    }, [ensurePdfUrl]);
+
+    const handleDownloadPdf = useCallback(async () => {
+        const loadedUrl = await ensurePdfUrl();
+        const anchor = document.createElement('a');
+        anchor.href = loadedUrl;
+        anchor.download = 'KORION-Whitepaper-Version-1.1.pdf';
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+    }, [ensurePdfUrl]);
+
+    const handleLoadViewer = useCallback(async () => {
+        await ensurePdfUrl();
+    }, [ensurePdfUrl]);
 
     const progress = (currentPage / TOTAL_PAGES) * 100;
 
@@ -147,15 +195,15 @@ import {
                     {t('Home', '홈')}
                 </Link>
 
-                <a
-                    href={PDF_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    type="button"
+                    onClick={handleOpenPdf}
                     className="whitepaper-page__ghost-button"
+                    disabled={isPdfLoading}
                 >
                     <ExternalLink size={16} />
-                    {t('Open PDF', 'PDF 열기')}
-                </a>
+                    {isPdfLoading ? t('Loading PDF...', 'PDF 불러오는 중...') : t('Open PDF', 'PDF 열기')}
+                </button>
 
                 <button
                     type="button"
@@ -168,10 +216,15 @@ import {
 
 
 
-                <a href={PDF_URL} download className="korion-nav__cta-button">
+                <button
+                    type="button"
+                    onClick={handleDownloadPdf}
+                    className="korion-nav__cta-button"
+                    disabled={isPdfLoading}
+                >
                     <Download size={16} />
-                    {t('Download', '다운로드')}
-                </a>
+                    {isPdfLoading ? t('Preparing...', '준비 중...') : t('Download', '다운로드')}
+                </button>
                 </div>
 
                 <button
@@ -341,24 +394,25 @@ import {
                     {t('Home', '홈')}
                     </Link>
 
-                    <a
-                    href={PDF_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    <button
+                    type="button"
+                    onClick={handleOpenPdf}
                     className="whitepaper-page__ghost-button whitepaper-page__ghost-button--small"
+                    disabled={isPdfLoading}
                     >
                     <ExternalLink size={16} />
-                    {t('Open', '열기')}
-                    </a>
+                    {isPdfLoading ? t('Loading...', '로딩 중...') : t('Open', '열기')}
+                    </button>
 
-                    <a
-                    href={PDF_URL}
-                    download
+                    <button
+                    type="button"
+                    onClick={handleDownloadPdf}
                     className="whitepaper-page__ghost-button whitepaper-page__ghost-button--small"
+                    disabled={isPdfLoading}
                     >
                     <Download size={16} />
-                    {t('Save', '저장')}
-                    </a>
+                    {isPdfLoading ? t('Preparing...', '준비 중...') : t('Save', '저장')}
+                    </button>
 
                     <button
                     type="button"
@@ -392,12 +446,36 @@ import {
                 </div>
 
                 <div className="whitepaper-page__viewer-frame">
+                    {pdfSrc ? (
                     <iframe
-                    key={pdfSrc}
-                    src={pdfSrc}
-                    title={t('KORION Whitepaper PDF Viewer', 'KORION 백서 PDF 뷰어')}
-                    className="whitepaper-page__iframe"
+                        key={pdfSrc}
+                        src={pdfSrc}
+                        title={t('KORION Whitepaper PDF Viewer', 'KORION 백서 PDF 뷰어')}
+                        className="whitepaper-page__iframe"
                     />
+                    ) : (
+                    <div className="whitepaper-page__viewer-placeholder">
+                        <div className="whitepaper-page__viewer-placeholder-card">
+                        <FileText size={28} />
+                        <h4>{t('Load the whitepaper when you need it', '필요할 때만 백서를 불러옵니다')}</h4>
+                        <p>
+                            {t(
+                            'The PDF stays out of the initial render path until you open, download, or load the viewer.',
+                            'PDF는 열기, 다운로드, 또는 뷰어 불러오기를 누르기 전까지 초기 렌더 경로에서 제외됩니다.'
+                            )}
+                        </p>
+                        <button
+                            type="button"
+                            onClick={handleLoadViewer}
+                            className="korion-nav__cta-button"
+                            disabled={isPdfLoading}
+                        >
+                            <FileText size={16} />
+                            {isPdfLoading ? t('Loading PDF...', 'PDF 불러오는 중...') : t('Load Viewer', '뷰어 불러오기')}
+                        </button>
+                        </div>
+                    </div>
+                    )}
                 </div>
                 </div>
             </section>

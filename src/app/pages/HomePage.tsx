@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { motion } from 'motion/react';
 import {
@@ -34,58 +34,70 @@ export function HomePage() {
   const pageRef = useReveal<HTMLDivElement>();
 
   const heroRef = useRef<HTMLElement | null>(null);
-  const [pointer, setPointer] = useState({ x: 0, y: 0 });
-  const [smooth, setSmooth] = useState({ x: 0, y: 0 });
+  const sceneRef = useRef<HTMLDivElement | null>(null);
+  const pointerRef = useRef({ x: 0, y: 0 });
+  const smoothRef = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    const hero = heroRef.current;
+    const scene = sceneRef.current;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+    if (!hero || !scene || prefersReducedMotion || !supportsHover) {
+      return;
+    }
+
     let rafId = 0;
 
     const animate = () => {
-      setSmooth((prev) => ({
-        x: prev.x + (pointer.x - prev.x) * 0.08,
-        y: prev.y + (pointer.y - prev.y) * 0.08,
-      }));
+      const smooth = smoothRef.current;
+      const pointer = pointerRef.current;
+
+      smooth.x += (pointer.x - smooth.x) * 0.08;
+      smooth.y += (pointer.y - smooth.y) * 0.08;
+
+      const rotateX = smooth.y * -9;
+      const rotateY = smooth.x * 14;
+      const moveX = smooth.x * 22;
+      const moveY = smooth.y * 16;
+      const glowX = 50 + smooth.x * 16;
+      const glowY = 50 + smooth.y * 16;
+
+      hero.style.setProperty('--mx', `${smooth.x}`);
+      hero.style.setProperty('--my', `${smooth.y}`);
+      hero.style.setProperty('--glow-x', `${glowX}%`);
+      hero.style.setProperty('--glow-y', `${glowY}%`);
+      scene.style.transform = `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
       rafId = requestAnimationFrame(animate);
     };
 
-    rafId = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(rafId);
-  }, [pointer]);
-
-  useEffect(() => {
-    const el = heroRef.current;
-    if (!el) return;
-
     const handleMove = (e: MouseEvent) => {
-      const rect = el.getBoundingClientRect();
+      const rect = hero.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top) / rect.height;
 
-      setPointer({
+      pointerRef.current = {
         x: (x - 0.5) * 2,
         y: (y - 0.5) * 2,
-      });
+      };
     };
 
     const handleLeave = () => {
-      setPointer({ x: 0, y: 0 });
+      pointerRef.current = { x: 0, y: 0 };
     };
 
-    el.addEventListener('mousemove', handleMove);
-    el.addEventListener('mouseleave', handleLeave);
+    hero.addEventListener('mousemove', handleMove, { passive: true });
+    hero.addEventListener('mouseleave', handleLeave);
+    rafId = requestAnimationFrame(animate);
 
     return () => {
-      el.removeEventListener('mousemove', handleMove);
-      el.removeEventListener('mouseleave', handleLeave);
+      cancelAnimationFrame(rafId);
+      hero.removeEventListener('mousemove', handleMove);
+      hero.removeEventListener('mouseleave', handleLeave);
     };
   }, []);
-
-  const rotateX = smooth.y * -9;
-  const rotateY = smooth.x * 14;
-  const moveX = smooth.x * 22;
-  const moveY = smooth.y * 16;
-  const glowX = 50 + smooth.x * 16;
-  const glowY = 50 + smooth.y * 16;
 
   const trustItems = useMemo(
     () => [
@@ -171,14 +183,7 @@ export function HomePage() {
         ref={heroRef}
         id="hero"
         className="korion-hero"
-        style={
-          {
-            ['--mx' as string]: `${smooth.x}`,
-            ['--my' as string]: `${smooth.y}`,
-            ['--glow-x' as string]: `${glowX}%`,
-            ['--glow-y' as string]: `${glowY}%`,
-          } as React.CSSProperties
-        }
+        style={{ ['--mx' as string]: '0', ['--my' as string]: '0', ['--glow-x' as string]: '50%', ['--glow-y' as string]: '50%' } as React.CSSProperties}
       >
         <div className="korion-hero__noise" />
         <div className="korion-hero__grid" />
@@ -296,10 +301,9 @@ export function HomePage() {
             transition={{ duration: 1, delay: 0.14 }}
           >
             <div
+              ref={sceneRef}
               className="korion-crystal-scene"
-              style={{
-                transform: `translate3d(${moveX}px, ${moveY}px, 0) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
-              }}
+              style={{ transform: 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)' }}
             >
               <div className="korion-crystal-scene__ring korion-crystal-scene__ring--outer" />
               <div className="korion-crystal-scene__ring korion-crystal-scene__ring--mid" />
@@ -326,6 +330,8 @@ export function HomePage() {
                       src={korionLogo}
                       alt="KORION EK Logo"
                       className="korion-crystal__logo-image"
+                      decoding="async"
+                      fetchPriority="high"
                     />
                   </div>
                 </div>

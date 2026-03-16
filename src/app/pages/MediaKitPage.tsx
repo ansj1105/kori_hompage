@@ -14,8 +14,9 @@ import {
     Wand2,
     } from "lucide-react";
     import { Link } from "react-router";
+    import { ImageWithFallback } from "../components/figma/ImageWithFallback";
     import { useLanguage } from "../contexts/LanguageContext";
-    import logo from "../../assets/logo/logo.png";
+    import { useAssetUrl } from "../utils/assetLoader";
     import "./MediaKitPage.css";
 
     type AssetCard = {
@@ -141,6 +142,10 @@ import {
     export function MediaKitPage() {
     const { language } = useLanguage();
     const isKo = language === "KR";
+    const logo = useAssetUrl(
+        'korion-logo-main',
+        () => import("../../assets/logo/logo.png")
+    );
 
     return (
         <div className="media-kit-page">
@@ -213,7 +218,7 @@ import {
                 <div className="media-kit-showcase__card media-kit-showcase__card--main">
                     <div className="media-kit-showcase__brand">
                     <div className="media-kit-showcase__brand-badge">
-                        <img src={logo} alt="KORION Logo" />
+                        <ImageWithFallback src={logo || undefined} alt="KORION Logo" />
                     </div>
                     <div>
                         <p className="media-kit-showcase__brand-label">KORION</p>
@@ -416,7 +421,7 @@ import {
                 <div className="media-kit-brand__preview-card">
                 <div className="media-kit-brand__preview-top">
                     <div className="media-kit-brand__logo-wrap">
-                    <img src={logo} alt="KORION" />
+                    <ImageWithFallback src={logo || undefined} alt="KORION" />
                     </div>
                     <div>
                     <p>{isKo ? "공식 미디어 표현 기준" : "Official media presentation"}</p>

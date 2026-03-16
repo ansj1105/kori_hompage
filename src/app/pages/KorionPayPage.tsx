@@ -441,7 +441,7 @@ export function KorionPayPage() {
       </section>
 
       <section className="korionpay-section">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-section__head">
             <span className="korionpay-section__label">
               {isKo ? '개요' : 'Overview'}
@@ -531,7 +531,7 @@ export function KorionPayPage() {
       </section>
 
       <section className="korionpay-section korionpay-section--deep">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-section__head">
             <span className="korionpay-section__label">
               {isKo ? '오프라인 비전' : 'Offline Vision'}
@@ -573,7 +573,7 @@ export function KorionPayPage() {
       </section>
 
       <section id="pay-architecture" className="korionpay-section">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-section__head">
             <span className="korionpay-section__label">
               {isKo ? '특허 기반 아키텍처' : 'Patent-Based Architecture'}
@@ -638,7 +638,7 @@ export function KorionPayPage() {
       </section>
 
       <section className="korionpay-section korionpay-section--deep">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-section__head">
             <span className="korionpay-section__label">
               {isKo ? '온라인 확장성' : 'Online Expansion'}
@@ -680,7 +680,7 @@ export function KorionPayPage() {
       </section>
 
       <section id="pay-comparison" className="korionpay-section">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-section__head">
             <span className="korionpay-section__label">
               {isKo ? '비교' : 'Comparison'}
@@ -721,7 +721,7 @@ export function KorionPayPage() {
       </section>
 
       <section className="korionpay-section korionpay-section--deep">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-section__head">
             <span className="korionpay-section__label">
               {isKo ? '활용 환경' : 'Use Cases'}
@@ -758,7 +758,7 @@ export function KorionPayPage() {
       </section>
 
       <section className="korionpay-section">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-simplicity">
             <div className="korionpay-simplicity__left">
               <span className="korionpay-section__label">
@@ -810,7 +810,7 @@ export function KorionPayPage() {
       </section>
 
       <section className="korionpay-section korionpay-section--deep">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-investor">
             <div className="korionpay-investor__panel">
               <span className="korionpay-section__label">
@@ -865,7 +865,7 @@ export function KorionPayPage() {
       </section>
 
       <section className="korionpay-cta-section">
-        <div className="korionpay-page__container">
+        <div className="korionpay-page__container-01">
           <div className="korionpay-cta-box">
             <span className="korionpay-section__label">KORION PAY</span>
             <h2>

@@ -307,7 +307,7 @@ import {
                         <div className="listing-stat-tile__icon">
                         <BarChart3 size={18} />
                         </div>
-                        <span>{isKo ? '24시간 거래량' : '24H Volume'}</span>
+                        <span>{isKo ? '24h 거래량' : '24H Volume'}</span>
                     </div>
                     <strong>{formatCompactUsd(dexStats.volume24hUsd)}</strong>
                     <p>{isKo ? '온체인 기준 참고값' : 'Reference from on-chain volume'}</p>

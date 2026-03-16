@@ -7,6 +7,11 @@
     margin: 0 auto;
     }
 
+    .media-kit-page__container-01 {
+    width: min(1240px, calc(100% - 48px));
+    margin: 0 auto;
+    }
+
     .media-kit-hero {
     position: relative;
     overflow: hidden;
@@ -464,7 +469,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-top: 22px;
+    margin-top: 8px;
     }
 
     .media-kit-asset-card__button {

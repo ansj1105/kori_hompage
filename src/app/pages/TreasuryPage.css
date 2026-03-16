@@ -8,6 +8,12 @@
 
     }
 
+    .treasury-page__container-01 {
+    width: min(100%, 1240px);
+    margin: 0 auto;
+
+    }
+
     .treasury-section {
     position: relative;
     z-index: 2;
@@ -359,11 +365,13 @@
     .treasury-flow-copy h2,
     .treasury-cta__copy h2 {
     margin: 0 0 18px;
-    font-size: clamp(2rem, 3vw, 3.1rem);
+    font-size: clamp(2rem, 3vw, 2.7rem);
     line-height: 1.14;
     letter-spacing: -0.04em;
     font-weight: 850;
     }
+
+
 
     .treasury-section__head p,
     .treasury-flow-copy p,
@@ -584,7 +592,7 @@
     .treasury-cta__copy {
     position: relative;
     z-index: 2;
-    max-width: 860px;
+    max-width: 790px;
     }
 
     .treasury-cta__actions {

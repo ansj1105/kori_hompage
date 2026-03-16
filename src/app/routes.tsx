@@ -2,51 +2,29 @@ import { createBrowserRouter } from "react-router";
 import { Layout } from "./components/Layout";
 
 import { HomePage } from "./pages/HomePage";
-import { EcosystemPage } from "./pages/EcosystemPage";
-import { KorionPayPage } from "./pages/KorionPayPage";
-import { TokenomicsPage } from "./pages/TokenomicsPage";
-import { DevelopersPage } from "./pages/DevelopersPage";
-import { DevelopersApiPage } from "./pages/DevelopersApiPage";
-import { DevelopersSdkPage } from "./pages/DevelopersSdkPage";
-import { DevelopersAuthenticationPage } from "./pages/DevelopersAuthenticationPage";
-import { DevelopersWebhooksPage } from "./pages/DevelopersWebhooksPage";
-import { DevelopersErrorsPage } from "./pages/DevelopersErrorsPage";
-import { DevelopersSandboxPage } from "./pages/DevelopersSandboxPage";
-import { DevelopersExamplesPage } from "./pages/DevelopersExamplesPage";
-import { DevelopersRateLimitsPage } from "./pages/DevelopersRateLimitsPage";
-import { DevelopersPartnersPage } from "./pages/DevelopersPartnersPage";
-import { DevelopersChangelogPage } from "./pages/DevelopersChangelogPage";
-import { DevelopersPreregisterPage } from "./pages/DevelopersPreregisterPage";
 import { DevelopersLayout } from "./pages/developers/DevelopersLayout";
-
-import { RoadmapPage } from "./pages/RoadmapPage";
-import { SupportPage } from "./pages/SupportPage";
-import { TeamSection } from "./pages/TeamSection";
 import { NotFoundPage } from "./pages/NotFoundPage";
-import { DownloadPage } from "./pages/DownloadPage";
-import WhitepaperPage from "./pages/WhitepaperPage";
-import { FoxyyaPage } from "./pages/FoxyyaPage";
-import { MiningPage } from "./pages/MiningPage";
-import { AboutPage } from "./pages/AboutPage";
-import { FoundationPage } from "./pages/FoundationPage";
-import { TreasuryPage } from "./pages/TreasuryPage";
-import { PolicyPage } from "./pages/PolicyPage";
-import { NewsPage } from "./pages/NewsPage";
-import { NewsDetailPage } from "./pages/NewsDetailPage";
-import { SmartContractPage } from "./pages/SmartContractPage";
-import { MediaKitPage } from "./pages/MediaKitPage";
-import { FAQPage } from "./pages/FAQPage";
-import { ContactPage } from "./pages/ContactPage";
-import { ListingInfoPage } from "./pages/ListingInfoPage";
-import { ExplorerPage } from './pages/ExplorerPage';
 
-import {
+type ModuleComponent<T extends string> = Record<T, React.ComponentType>;
 
+function lazyComponent<T extends string>(
+  importer: () => Promise<ModuleComponent<T>>,
+  exportName: T,
+) {
+  return async () => {
+    const module = await importer();
+    return { Component: module[exportName] };
+  };
+}
 
-  SecurityPage,
-
-  
-} from "./pages/ExtraPages";
+function lazyDefaultComponent<T extends React.ComponentType>(
+  importer: () => Promise<{ default: T }>,
+) {
+  return async () => {
+    const module = await importer();
+    return { Component: module.default };
+  };
+}
 
 export const router = createBrowserRouter([
   {
@@ -55,53 +33,55 @@ export const router = createBrowserRouter([
     children: [
       { index: true, Component: HomePage },
 
-      { path: "ecosystem", Component: EcosystemPage },
-      { path: "technology", Component: KorionPayPage },
-      { path: "korionpay", Component: KorionPayPage },
+      { path: "partner", lazy: lazyComponent(() => import("./pages/PartnerPage"), "PartnerPage") },
+      { path: "Partner", lazy: lazyComponent(() => import("./pages/PartnerPage"), "PartnerPage") },
+      { path: "ecosystem", lazy: lazyComponent(() => import("./pages/EcosystemPage"), "EcosystemPage") },
+      { path: "technology", lazy: lazyComponent(() => import("./pages/KorionPayPage"), "KorionPayPage") },
+      { path: "korionpay", lazy: lazyComponent(() => import("./pages/KorionPayPage"), "KorionPayPage") },
 
-      { path: "about", Component: AboutPage },
-      { path: "foundation", Component: FoundationPage },
-      { path: "treasury", Component: TreasuryPage },
-      { path: "policy", Component: PolicyPage },
+      { path: "about", lazy: lazyComponent(() => import("./pages/AboutPage"), "AboutPage") },
+      { path: "foundation", lazy: lazyComponent(() => import("./pages/FoundationPage"), "FoundationPage") },
+      { path: "treasury", lazy: lazyComponent(() => import("./pages/TreasuryPage"), "TreasuryPage") },
+      { path: "policy", lazy: lazyComponent(() => import("./pages/PolicyPage"), "PolicyPage") },
 
-      { path: "SmartContract", Component: SmartContractPage },
-      { path: "smart-contract", Component: SmartContractPage },
+      { path: "SmartContract", lazy: lazyComponent(() => import("./pages/SmartContractPage"), "SmartContractPage") },
+      { path: "smart-contract", lazy: lazyComponent(() => import("./pages/SmartContractPage"), "SmartContractPage") },
 
-      { path: "news", Component: NewsPage },
-      { path: "news/:slug", Component: NewsDetailPage },
+      { path: "news", lazy: lazyComponent(() => import("./pages/NewsPage"), "NewsPage") },
+      { path: "news/:slug", lazy: lazyComponent(() => import("./pages/NewsDetailPage"), "NewsDetailPage") },
 
-      { path: "tokenomics", Component: TokenomicsPage },
-      { path: "roadmap", Component: RoadmapPage },
-      { path: "support", Component: SupportPage },
-      { path: "team", Component: TeamSection },
-      { path: "download", Component: DownloadPage },
+      { path: "tokenomics", lazy: lazyComponent(() => import("./pages/TokenomicsPage"), "TokenomicsPage") },
+      { path: "roadmap", lazy: lazyComponent(() => import("./pages/RoadmapPage"), "RoadmapPage") },
+      { path: "support", lazy: lazyComponent(() => import("./pages/SupportPage"), "SupportPage") },
+      { path: "team", lazy: lazyComponent(() => import("./pages/TeamSection"), "TeamSection") },
+      { path: "download", lazy: lazyComponent(() => import("./pages/DownloadPage"), "DownloadPage") },
 
-      { path: "foxyya", Component: FoxyyaPage },
-      { path: "mining", Component: MiningPage },
+      { path: "foxyya", lazy: lazyComponent(() => import("./pages/FoxyyaPage"), "FoxyyaPage") },
+      { path: "mining", lazy: lazyComponent(() => import("./pages/MiningPage"), "MiningPage") },
 
-      { path: "media-kit", Component: MediaKitPage },
-      { path: "faq", Component: FAQPage },
-      { path: "contact", Component: ContactPage },
-      { path: "explorer", Component: ExplorerPage },
-      { path: "listing-info", Component: ListingInfoPage },
-      { path: "security", Component: SecurityPage },
+      { path: "media-kit", lazy: lazyComponent(() => import("./pages/MediaKitPage"), "MediaKitPage") },
+      { path: "faq", lazy: lazyComponent(() => import("./pages/FAQPage"), "FAQPage") },
+      { path: "contact", lazy: lazyComponent(() => import("./pages/ContactPage"), "ContactPage") },
+      { path: "explorer", lazy: lazyComponent(() => import("./pages/ExplorerPage"), "ExplorerPage") },
+      { path: "listing-info", lazy: lazyComponent(() => import("./pages/ListingInfoPage"), "ListingInfoPage") },
+      { path: "security", lazy: lazyComponent(() => import("./pages/SecurityPage"), "SecurityPage") },
 
       {
         path: "developers",
         Component: DevelopersLayout,
         children: [
-          { index: true, Component: DevelopersPage },
-          { path: "api", Component: DevelopersApiPage },
-          { path: "sdk", Component: DevelopersSdkPage },
-          { path: "authentication", Component: DevelopersAuthenticationPage },
-          { path: "webhooks", Component: DevelopersWebhooksPage },
-          { path: "errors", Component: DevelopersErrorsPage },
-          { path: "sandbox", Component: DevelopersSandboxPage },
-          { path: "examples", Component: DevelopersExamplesPage },
-          { path: "rate-limits", Component: DevelopersRateLimitsPage },
-          { path: "partners", Component: DevelopersPartnersPage },
-          { path: "changelog", Component: DevelopersChangelogPage },
-          { path: "preregister", Component: DevelopersPreregisterPage },
+          { index: true, lazy: lazyComponent(() => import("./pages/DevelopersPage"), "DevelopersPage") },
+          { path: "api", lazy: lazyComponent(() => import("./pages/DevelopersApiPage"), "DevelopersApiPage") },
+          { path: "sdk", lazy: lazyComponent(() => import("./pages/DevelopersSdkPage"), "DevelopersSdkPage") },
+          { path: "authentication", lazy: lazyComponent(() => import("./pages/DevelopersAuthenticationPage"), "DevelopersAuthenticationPage") },
+          { path: "webhooks", lazy: lazyComponent(() => import("./pages/DevelopersWebhooksPage"), "DevelopersWebhooksPage") },
+          { path: "errors", lazy: lazyComponent(() => import("./pages/DevelopersErrorsPage"), "DevelopersErrorsPage") },
+          { path: "sandbox", lazy: lazyComponent(() => import("./pages/DevelopersSandboxPage"), "DevelopersSandboxPage") },
+          { path: "examples", lazy: lazyComponent(() => import("./pages/DevelopersExamplesPage"), "DevelopersExamplesPage") },
+          { path: "rate-limits", lazy: lazyComponent(() => import("./pages/DevelopersRateLimitsPage"), "DevelopersRateLimitsPage") },
+          { path: "partners", lazy: lazyComponent(() => import("./pages/DevelopersPartnersPage"), "DevelopersPartnersPage") },
+          { path: "changelog", lazy: lazyComponent(() => import("./pages/DevelopersChangelogPage"), "DevelopersChangelogPage") },
+          { path: "preregister", lazy: lazyComponent(() => import("./pages/DevelopersPreregisterPage"), "DevelopersPreregisterPage") },
         ],
       },
     ],
@@ -110,7 +90,7 @@ export const router = createBrowserRouter([
   // Layout 바깥으로 분리
   {
     path: "/whitepaper",
-    Component: WhitepaperPage,
+    lazy: lazyDefaultComponent(() => import("./pages/WhitepaperPage")),
   },
 
   // 전체 404

@@ -20,12 +20,10 @@ import {
     Star,
     } from 'lucide-react';
     import { Link } from 'react-router';
+    import { ImageWithFallback } from '../components/figma/ImageWithFallback';
     import { useLanguage } from '../contexts/LanguageContext';
     import './FoxyyaPage.css';
-
-    import foxyyaLogo from '../../assets/foxyya/foxyya-logo.png';
-    import foxyyaHomeImage from '../../assets/foxyya/foxyya-home.png';
-    import foxyyaCommunityImage from '../../assets/foxyya/foxyya-community.png';
+    import { useAssetUrl } from '../utils/assetLoader';
     import { FaGooglePlay, FaApple } from 'react-icons/fa';
     const serviceCards = [
     {
@@ -152,6 +150,18 @@ import {
 
     export function FoxyyaPage() {
     const { t } = useLanguage();
+    const foxyyaLogo = useAssetUrl(
+        'foxyya-logo',
+        () => import('../../assets/foxyya/foxyya-logo.png')
+    );
+    const foxyyaHomeImage = useAssetUrl(
+        'foxyya-home-image',
+        () => import('../../assets/foxyya/foxyya-home.png')
+    );
+    const foxyyaCommunityImage = useAssetUrl(
+        'foxyya-community-image',
+        () => import('../../assets/foxyya/foxyya-community.png')
+    );
 
     return (
         <div className="foxyya-page">
@@ -178,7 +188,7 @@ import {
                 viewport={{ once: true, amount: 0.45 }}
                 transition={{ duration: 0.7 }}
                 >
-                <img src={foxyyaLogo} alt="Foxyya" className="foxyya-hero__logo" />
+                <ImageWithFallback src={foxyyaLogo || undefined} alt="Foxyya" className="foxyya-hero__logo" />
                 <span className="foxyya-hero__brand-name">Foxyya</span>
                 </motion.div>
 
@@ -263,12 +273,12 @@ import {
             >
                 <div className="foxyya-phone foxyya-phone--home">
                 <div className="foxyya-phone__label">{t('Home', '홈')}</div>
-                <img src={foxyyaHomeImage} alt="Foxyya Home" />
+                <ImageWithFallback src={foxyyaHomeImage || undefined} alt="Foxyya Home" />
                 </div>
 
                 <div className="foxyya-phone foxyya-phone--community">
                 <div className="foxyya-phone__label">{t('Community', '커뮤니티')}</div>
-                <img src={foxyyaCommunityImage} alt="Foxyya Community" />
+                <ImageWithFallback src={foxyyaCommunityImage || undefined} alt="Foxyya Community" />
                 </div>
 
                 <div className="foxyya-floating-badge foxyya-floating-badge--pay">
@@ -369,7 +379,7 @@ import {
                     <Mic size={18} />
                     <span>{t('Home Screen Inspiration', '홈 화면 구조')}</span>
                 </div>
-                <img src={foxyyaHomeImage} alt="Foxyya home preview" className="foxyya-preview-card__image" />
+                <ImageWithFallback src={foxyyaHomeImage || undefined} alt="Foxyya home preview" className="foxyya-preview-card__image" />
                 <div className="foxyya-preview-card__text">
                     <h3>{t('Service Entry Hub', '서비스 진입 허브')}</h3>
                     <p>
@@ -386,7 +396,7 @@ import {
                     <MessagesSquare size={18} />
                     <span>{t('Community Screen Inspiration', '커뮤니티 화면 구조')}</span>
                 </div>
-                <img
+                <ImageWithFallback
                     src={foxyyaCommunityImage}
                     alt="Foxyya community preview"
                     className="foxyya-preview-card__image"

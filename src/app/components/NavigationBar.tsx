@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import {
   Menu,
@@ -53,7 +53,7 @@ interface NavGroup {
 
 type LanguageOption = 'EN' | 'KO';
 
-export function NavigationBar() {
+export const NavigationBar = memo(function NavigationBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -282,6 +282,14 @@ export function NavigationBar() {
           desc: 'Customer support center',
           descKo: '고객 지원 센터',
           icon: <LifeBuoy size={18} />,
+        },
+        {
+          label: 'Security',
+          labelKo: '보안',
+          path: '/security',
+          desc: 'Account protection and wallet safety guide',
+          descKo: '계정 보호 및 지갑 보안 가이드',
+          icon: <ShieldCheck size={18} />,
         },
         {
           label: 'Contact',
@@ -791,7 +799,7 @@ export function NavigationBar() {
       </div>
     </nav>
   );
-}
+})
 
 function MailIcon(props: { size?: number }) {
   return (

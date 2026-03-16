@@ -12,6 +12,11 @@
   margin: 0 auto;
 }
 
+.korionpay-page__container-01 {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
 .korionpay-section {
   position: relative;
   padding: 110px 0;
@@ -88,6 +93,7 @@
   background-size: 64px 64px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 92%);
   opacity: 0.18;
+  
 }
 
 .korionpay-hero .korionpay-page__container {
@@ -98,6 +104,8 @@
   gap: 46px;
   align-items: center;
 }
+
+
 
 .korionpay-hero__content {
   position: relative;

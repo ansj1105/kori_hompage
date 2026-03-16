@@ -366,47 +366,10 @@ import {
             </div>
         </section>
 
-        <section className="smart-contract-banner">
-            <div className="smart-contract-page__container">
-            <div className="smart-contract-banner__wrap">
-                <div className="smart-contract-banner__left">
-                <span className="smart-contract-banner__label">
-                    {isKo ? 'ON-CHAIN REFERENCE' : 'ON-CHAIN REFERENCE'}
-                </span>
-                <h2>
-                    {isKo
-                    ? 'KORION 스마트 컨트랙트의 공개 온체인 기준점'
-                    : 'The public on-chain reference point of the KORION smart contract'}
-                </h2>
-                <p>
-                    {isKo
-                    ? '공개 컨트랙트 주소와 익스플로러 연결을 통해 KORION의 온체인 배포 기준을 직관적으로 확인할 수 있습니다.'
-                    : 'The public contract address and explorer linkage provide a direct reference to the on-chain deployment surface of KORION.'}
-                </p>
-                </div>
 
-                <div className="smart-contract-banner__right">
-                <div className="smart-contract-banner__address-box">
-                    <span>{isKo ? 'Contract Address' : 'Contract Address'}</span>
-                    <strong>{CONTRACT_ADDRESS}</strong>
-                </div>
-
-                <a
-                    href={TRONSCAN_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="smart-contract-banner__button"
-                >
-                    <span>{isKo ? 'Tronscan 바로가기' : 'Open TRONSCAN'}</span>
-                    <ArrowRight size={16} />
-                </a>
-                </div>
-            </div>
-            </div>
-        </section>
 
         <section className="smart-contract-section smart-contract-section--elevated">
-            <div className="smart-contract-page__container">
+            <div className="smart-contract-page__container-01">
             <div className="smart-contract-section__heading">
                 <span className="smart-contract-section__label">
                 {isKo ? 'ARCHITECTURAL PILLARS' : 'ARCHITECTURAL PILLARS'}
@@ -448,7 +411,7 @@ import {
         </section>
 
         <section className="smart-contract-section">
-            <div className="smart-contract-page__container">
+            <div className="smart-contract-page__container-01">
             <div className="smart-contract-flow">
                 <div className="smart-contract-flow__intro">
                 <span className="smart-contract-section__label">
@@ -482,7 +445,7 @@ import {
         </section>
 
         <section className="smart-contract-section smart-contract-section--panel">
-            <div className="smart-contract-page__container">
+            <div className="smart-contract-page__container-01">
             <div className="smart-contract-specs">
                 <div className="smart-contract-specs__header">
                 <span className="smart-contract-section__label">
@@ -504,7 +467,7 @@ import {
         </section>
 
         <section className="smart-contract-section smart-contract-section--access">
-            <div className="smart-contract-page__container">
+            <div className="smart-contract-page__container-01">
             <div className="smart-contract-section__heading">
                 <span className="smart-contract-section__label">
                 {isKo ? 'CONTRACT ACCESS' : 'CONTRACT ACCESS'}
@@ -575,7 +538,7 @@ import {
         </section>
 
         <section className="smart-contract-section">
-            <div className="smart-contract-page__container">
+            <div className="smart-contract-page__container-01">
             <div className="smart-contract-trust">
                 <div className="smart-contract-trust__content">
                 <span className="smart-contract-section__label">

@@ -10,13 +10,14 @@
 
 .home-shell {
   position: relative;
-  width: min(1400px, calc(100% - 40px));
+  width: min(1240px, calc(100% - 40px));
   margin: 0 auto;
 }
 
 .home-section {
   position: relative;
   padding: 110px 0;
+  
 }
 
 .korion-hero {
@@ -29,6 +30,7 @@
     radial-gradient(circle at 78% 24%, rgba(158, 87, 255, 0.2), transparent 30%),
     radial-gradient(circle at 50% 90%, rgba(0, 214, 255, 0.1), transparent 24%),
     linear-gradient(180deg, #040713 0%, #090d1d 35%, #050913 100%);
+  
 }
 
 .korion-hero__container {
@@ -814,6 +816,8 @@
   background:
     radial-gradient(circle at 18% 20%, rgba(78, 111, 255, 0.06), transparent 28%),
     linear-gradient(180deg, #060a13 0%, #070c16 100%);
+
+  
 }
 
 .home-company-glow {
@@ -822,6 +826,7 @@
   background:
     radial-gradient(circle at 78% 30%, rgba(157, 96, 255, 0.08), transparent 26%);
   pointer-events: none;
+
 }
 
 .home-company-grid {

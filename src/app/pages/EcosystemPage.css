@@ -320,6 +320,8 @@
 
     .ecosystem-page__section {
     padding: 34px 0 28px;
+    max-width: 1240px;
+    margin: 0 auto;
     }
 
     .ecosystem-page__section--last {

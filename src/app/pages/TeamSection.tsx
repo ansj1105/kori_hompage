@@ -18,10 +18,9 @@ import {
   Telegram,  
 } from 'lucide-react';
 import { Link } from 'react-router';
+import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 import { useLanguage } from '../contexts/LanguageContext';
-import ceoImage from '../../assets/team/jang.jpeg';
-import devDirectorImage from '../../assets/team/seo.jpeg';
-import partnerAvatarImage from '../../assets/team/avatar.jpg';
+import { useAssetUrl } from '../utils/assetLoader';
 import './TeamSection.css';
 
 const fadeUp = {
@@ -240,6 +239,22 @@ const partnerProfiles = [
 export function TeamSection() {
   const { language, t } = useLanguage();
   const isKo = language === 'KR';
+  const ceoImage = useAssetUrl('team-ceo-image', () => import('../../assets/team/jang.jpeg'));
+  const devDirectorImage = useAssetUrl('team-dev-director-image', () => import('../../assets/team/seo.jpeg'));
+  const partnerAvatarImage = useAssetUrl('team-partner-avatar-image', () => import('../../assets/team/avatar.jpg'));
+
+  const leadershipWithAssets = leadership.map((member) => ({
+    ...member,
+    image:
+      member.name === 'Richard Jang'
+        ? ceoImage
+        : devDirectorImage,
+  }));
+
+  const partnerProfilesWithAssets = partnerProfiles.map((profile) => ({
+    ...profile,
+    image: profile.image ? partnerAvatarImage : null,
+  }));
 
   return (
     <main className="team-section">
@@ -306,7 +321,7 @@ export function TeamSection() {
           </motion.div>
 
           <div className="team-section__leadership-list">
-            {leadership.map((member, index) => {
+            {leadershipWithAssets.map((member, index) => {
               const Icon = member.icon;
               return (
                 <motion.article
@@ -319,8 +334,8 @@ export function TeamSection() {
                 >
                   <div className="team-section__leader-photo-panel">
                     <div className="team-section__leader-photo-frame">
-                      <img
-                        src={member.image}
+                      <ImageWithFallback
+                        src={member.image || undefined}
                         alt={member.name}
                         className="team-section__leader-photo"
                       />
@@ -433,7 +448,7 @@ export function TeamSection() {
           </motion.div>
 
           <div className="team-section__profiles-grid">
-            {partnerProfiles.map((item, index) => {
+            {partnerProfilesWithAssets.map((item, index) => {
               const Icon = item.icon;
               return (
                 <motion.article
@@ -446,8 +461,8 @@ export function TeamSection() {
                 >
                   <div className="team-section__profile-avatar">
                     {item.image ? (
-                      <img
-                        src={item.image}
+                      <ImageWithFallback
+                        src={item.image || undefined}
                         alt={item.name}
                         className="team-section__profile-image"
                       />

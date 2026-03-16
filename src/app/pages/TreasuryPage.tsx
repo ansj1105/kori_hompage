@@ -305,7 +305,7 @@ import {
         </section>
 
         <section className="treasury-section treasury-section--principles">
-            <div className="treasury-page__container">
+            <div className="treasury-page__container-01">
             <div className="treasury-section__head treasury-section__head--center">
                 <span className="treasury-section__kicker">
                 {isKo ? 'TREASURY PHILOSOPHY' : 'TREASURY PHILOSOPHY'}
@@ -347,7 +347,7 @@ import {
         </section>
 
         <section id="treasury-wallets" className="treasury-section treasury-section--wallets">
-            <div className="treasury-page__container">
+            <div className="treasury-page__container-01">
             <div className="treasury-section__head">
                 <span className="treasury-section__kicker">
                 {isKo ? 'TREASURY LAYERS' : 'TREASURY LAYERS'}
@@ -392,7 +392,7 @@ import {
         </section>
 
         <section className="treasury-section treasury-section--flow">
-            <div className="treasury-page__container treasury-flow-layout">
+            <div className="treasury-page__container-01 treasury-flow-layout">
             <div className="treasury-flow-copy">
                 <span className="treasury-section__kicker">
                 {isKo ? 'OPERATION MODEL' : 'OPERATION MODEL'}
@@ -437,7 +437,7 @@ import {
         </section>
 
         <section className="treasury-section treasury-section--safeguards">
-            <div className="treasury-page__container">
+            <div className="treasury-page__container-01">
             <div className="treasury-section__head treasury-section__head--center">
                 <span className="treasury-section__kicker">
                 {isKo ? 'SAFEGUARD SYSTEM' : 'SAFEGUARD SYSTEM'}
@@ -481,7 +481,7 @@ import {
         </section>
 
         <section className="treasury-section treasury-section--cta">
-            <div className="treasury-page__container">
+            <div className="treasury-page__container-01">
             <motion.div
                 className="treasury-cta"
                 initial={{ opacity: 0, y: 24 }}

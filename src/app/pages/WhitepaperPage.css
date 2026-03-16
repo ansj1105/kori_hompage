@@ -9,7 +9,7 @@
     }
 
     .whitepaper-page__container {
-    max-width: 1600px;
+    max-width: 1480px;
     margin: 0 auto;
     padding-left: 16px;
     padding-right: 16px;
@@ -529,7 +529,11 @@
 
     .whitepaper-page__viewer-section {
     padding: 0;
+    padding-bottom: 0px !important;
+
+
     }
+
 
     .whitepaper-page__viewer-shell {
     overflow: hidden;
@@ -583,6 +587,41 @@
     height: calc(100vh - 168px);
     background:
         linear-gradient(180deg, #0a1222 0%, #0b1324 100%);
+    }
+
+    .whitepaper-page__viewer-placeholder {
+    min-height: inherit;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    }
+
+    .whitepaper-page__viewer-placeholder-card {
+    width: min(560px, 100%);
+    display: grid;
+    justify-items: center;
+    gap: 14px;
+    padding: 32px;
+    text-align: center;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
+    }
+
+    .whitepaper-page__viewer-placeholder-card h4 {
+    margin: 0;
+    font-size: 1.18rem;
+    font-weight: 700;
+    }
+
+    .whitepaper-page__viewer-placeholder-card p {
+    margin: 0;
+    color: #b8c5d9;
+    line-height: 1.8;
     }
 
     .whitepaper-page__iframe {
