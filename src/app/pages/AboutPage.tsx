@@ -274,7 +274,7 @@ import {
                     <div className="about-company__item">
                         <label>{isKo ? '회사명' : 'Company Name'}</label>
                         <strong>
-                        {isKo ? '주식회사 다이아나인틴컴퍼니' : 'Dianainteen Company Ltd.'}
+                        {isKo ? '주식회사 다이아나인틴컴퍼니' : 'Dianainteen Company Co., Ltd.'}
                         </strong>
                     </div>
 
