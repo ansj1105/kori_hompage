@@ -109,7 +109,67 @@ body {
   overflow-x: hidden;
 }
 
-/* Prevent layout shift during "mode=wait" transitions */
+@keyframes route-loader {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(420%);
+  }
+}
+
+@keyframes route-skeleton-shine {
+  0% {
+    transform: translateX(-120%);
+  }
+
+  100% {
+    transform: translateX(180%);
+  }
+}
+
+@keyframes route-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.route-skeleton__pulse {
+  position: relative;
+}
+
+.route-skeleton__shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.route-skeleton__shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 42%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 58%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  animation: route-skeleton-shine 1.5s ease-in-out infinite;
+}
+
+.route-skeleton__spinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  border-top-color: rgba(125, 211, 252, 0.95);
+  animation: route-spinner 0.8s linear infinite;
+}
+
+/* Prevent layout shift during route transitions */
 main {
   min-height: calc(100vh - 80px);
   /* 80px is nav height */

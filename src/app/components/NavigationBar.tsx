@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { prefetchRoute } from '../utils/routePrefetch';
 
 import logo from '../../assets/logo/logo.png';
 import './NavigationBar.css';
@@ -397,7 +398,13 @@ export const NavigationBar = memo(function NavigationBar() {
     }
 
     return (
-      <Link key={key} to={item.path} className={className}>
+      <Link
+        key={key}
+        to={item.path}
+        className={className}
+        onMouseEnter={() => prefetchRoute(item.path)}
+        onFocus={() => prefetchRoute(item.path)}
+      >
         <div className="korion-nav__dropdown-icon">{item.icon}</div>
         <div className="korion-nav__dropdown-content">
           <div className="korion-nav__dropdown-title">
@@ -435,7 +442,13 @@ export const NavigationBar = memo(function NavigationBar() {
     }
 
     return (
-      <Link key={key} to={item.path} className={className}>
+      <Link
+        key={key}
+        to={item.path}
+        className={className}
+        onMouseEnter={() => prefetchRoute(item.path)}
+        onFocus={() => prefetchRoute(item.path)}
+      >
         <span className="korion-nav__mobile-item-icon">{item.icon}</span>
         <div className="korion-nav__mobile-item-content">
           <span className="korion-nav__mobile-item-title">
@@ -457,7 +470,12 @@ export const NavigationBar = memo(function NavigationBar() {
       <div className="korion-nav__container">
         <div className="korion-nav__inner">
           <div className="korion-nav__left">
-            <Link to="/" className="korion-nav__logo">
+            <Link
+              to="/"
+              className="korion-nav__logo"
+              onMouseEnter={() => prefetchRoute('/')}
+              onFocus={() => prefetchRoute('/')}
+            >
               <div className="korion-nav__logo-mark">
                 <img src={logo} alt="KORION" className="korion-nav__logo-image" />
               </div>
@@ -737,6 +755,8 @@ export const NavigationBar = memo(function NavigationBar() {
                   <Link
                     to="/roadmap"
                     className={`korion-nav__mobile-item korion-nav__mobile-item--single ${location.pathname === '/roadmap' ? 'is-active' : ''}`}
+                    onMouseEnter={() => prefetchRoute('/roadmap')}
+                    onFocus={() => prefetchRoute('/roadmap')}
                   >
                     <span className="korion-nav__mobile-item-icon">
                       <ScrollText size={18} />

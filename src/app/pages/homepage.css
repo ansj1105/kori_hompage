@@ -17,7 +17,8 @@
 .home-section {
   position: relative;
   padding: 110px 0;
-  
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1080px;
 }
 
 .korion-hero {

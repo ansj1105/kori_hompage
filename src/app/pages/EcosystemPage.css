@@ -14,6 +14,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
+    contain: paint;
     }
 
     .ecosystem-page__noise {
@@ -200,6 +201,9 @@
     justify-content: center;
     margin-right: auto;
     margin-left: 120px;
+    contain: layout paint;
+    will-change: transform;
+    transform: translateZ(0);
     }
 
     .wallet-stage {
@@ -209,6 +213,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    contain: layout paint;
+    will-change: transform;
+    transform: translateZ(0);
     }
 
     .wallet-stage__beam {
@@ -237,6 +244,8 @@
     position: absolute;
     border-radius: 9999px;
     border: 1px solid rgba(255, 255, 255, 0.08);
+    will-change: transform;
+    transform: translateZ(0);
     }
 
     .wallet-stage__ring--one {
@@ -322,6 +331,8 @@
     padding: 34px 0 28px;
     max-width: 1240px;
     margin: 0 auto;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 860px;
     }
 
     .ecosystem-page__section--last {

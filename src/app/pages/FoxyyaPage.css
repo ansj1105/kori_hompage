@@ -214,6 +214,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    contain: layout paint;
+    will-change: transform;
+    transform: translateZ(0);
     }
 
     .foxyya-phone {
@@ -226,6 +229,9 @@
     box-shadow:
         0 30px 70px rgba(179, 140, 255, 0.16),
         0 6px 18px rgba(0, 0, 0, 0.05);
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
     }
 
     .foxyya-phone img {
@@ -292,6 +298,8 @@
 
     .foxyya-section {
     padding: 110px 0;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 920px;
     }
 
     .foxyya-section--deep {

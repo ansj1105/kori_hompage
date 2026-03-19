@@ -20,6 +20,7 @@ import { SiX, SiThreads } from 'react-icons/si';
 
 import logo from '../../assets/logo/logo.png';
 import { useLanguage } from '../contexts/LanguageContext';
+import { prefetchRoute } from '../utils/routePrefetch';
 import './FooterNew.css';
 
 export const FooterNew = memo(function FooterNew() {
@@ -149,7 +150,13 @@ export const FooterNew = memo(function FooterNew() {
     }
 
     return (
-      <Link key={item.to} to={item.to} className={`footer-new__link ${extraClassName}`.trim()}>
+      <Link
+        key={item.to}
+        to={item.to}
+        className={`footer-new__link ${extraClassName}`.trim()}
+        onMouseEnter={() => prefetchRoute(item.to)}
+        onFocus={() => prefetchRoute(item.to)}
+      >
         <span className="footer-new__link-left">
           <ChevronRight size={14} className="footer-new__link-arrow" />
           {item.label}
@@ -172,7 +179,12 @@ export const FooterNew = memo(function FooterNew() {
 
         <div className="footer-new__grid">
           <div className="footer-new__brand-card">
-            <Link to="/" className="footer-new__brand">
+            <Link
+              to="/"
+              className="footer-new__brand"
+              onMouseEnter={() => prefetchRoute('/')}
+              onFocus={() => prefetchRoute('/')}
+            >
               <div className="footer-new__logo-box">
                 <img src={logo} alt="KORION" className="footer-new__logo" />
               </div>

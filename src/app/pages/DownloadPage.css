@@ -51,6 +51,7 @@
     position: relative;
     z-index: 2;
     padding: 100px 0 100px;
+    contain: layout paint;
     }
 
     .download-page__hero {
@@ -124,6 +125,8 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 22px;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 560px;
     }
 
     .download-card {

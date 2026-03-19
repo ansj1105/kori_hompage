@@ -86,6 +86,8 @@
     .news-page__toolbar,
     .news-page__list-section {
     padding-bottom: 32px;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 860px;
     }
 
     .news-page__section-head {
