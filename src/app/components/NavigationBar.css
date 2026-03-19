@@ -710,8 +710,8 @@
   }
 
   .korion-nav__logo-mark {
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
     border-radius: 12px;
   }
 
@@ -729,11 +729,11 @@
   }
 
   .korion-nav__mobile-group {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .korion-nav__mobile-group-button {
-    min-height: 52px;
+    min-height: 45px;
     padding: 0 16px;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.025);
@@ -799,11 +799,19 @@
   }
 
   .korion-nav__mobile-cta {
-    min-height: 50px;
+    min-height: 43px;
+    max-width: 125px;
     border-radius: 16px;
     margin-top: 10px;
-    
+    top: 6px;
+    right: 20%;
+    position: absolute;
+
+
   }
+
+
+
 
   .korion-nav__dropdown--grid,
   .korion-nav__dropdown--more {

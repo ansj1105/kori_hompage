@@ -815,84 +815,39 @@
     text-align: right;
     }
 
-    @media (max-width: 1199px) {
+
+
+
+    
+
+@media (max-width: 1024px) {
+    .ecosystem-page {
+        padding-top: 96px;
+    }
+
+    .ecosystem-page__container {
+        padding: 0 20px;
+    }
+
+    .ecosystem-page__hero {
+        padding: 8px 0 36px;
+    }
+
+    .ecosystem-page__hero-layout,
+    .ecosystem-highlight,
     .ecosystem-button-layout {
         grid-template-columns: 1fr;
-    }
-
-    .ecosystem-button-content__grid,
-    .ecosystem-button-actions {
-        grid-template-columns: 1fr 1fr;
-    }
-    }
-
-    @media (max-width: 767px) {
-    .ecosystem-button-section {
-        padding: 20px;
-        border-radius: 22px;
-    }
-
-    .ecosystem-button-orbit {
-        min-height: 320px;
-    }
-
-    .ecosystem-button-orbit__ring--outer {
-        width: 260px;
-        height: 260px;
-    }
-
-    .ecosystem-button-orbit__ring--inner {
-        width: 170px;
-        height: 170px;
-    }
-
-    .ecosystem-button-orbit__core {
-        width: 100px;
-        height: 100px;
-    }
-
-    .ecosystem-button-orbit__node {
-        width: 46px;
-        height: 46px;
-    }
-
-    .ecosystem-button-content__grid,
-    .ecosystem-button-actions {
-        grid-template-columns: 1fr;
-    }
-
-    .ecosystem-button-actions__item {
-        min-height: 54px;
-        padding: 0 14px;
-    }
-
-    .ecosystem-button-actions__value {
-        font-size: 0.8rem;
-    }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @media (max-width: 1199px) {
-    .ecosystem-page__hero-layout,
-    .ecosystem-highlight {
-        grid-template-columns: 1fr;
+        gap: 24px;
     }
 
     .ecosystem-page__hero-copy {
         max-width: 100%;
+    }
+
+    .ecosystem-page__hero-visual {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
     }
 
     .ecosystem-page__feature-grid {
@@ -905,17 +860,22 @@
 
     .ecosystem-cta {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
     }
 
-    .wallet-stage {
-        min-height: auto;
+    .ecosystem-cta__actions {
+        width: 100%;
+    }
+
+    .ecosystem-button-content__grid,
+    .ecosystem-button-actions {
+        grid-template-columns: 1fr 1fr;
     }
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 768px) {
     .ecosystem-page {
-        padding-top: 94px;
+        padding-top: 88px;
     }
 
     .ecosystem-page__container {
@@ -923,53 +883,455 @@
     }
 
     .ecosystem-page__hero {
-        padding: 10px 0 30px;
+        padding: 0 0 26px;
+    }
+
+    .ecosystem-page__badge {
+        min-height: 34px;
+        padding: 0 12px;
+        margin-bottom: 14px;
+        font-size: 11px;
+    }
+
+    .ecosystem-page__title {
+        margin-bottom: 12px;
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        line-height: 1.02;
+    }
+
+    .ecosystem-page__title-gradient {
+        font-size: inherit;
     }
 
     .ecosystem-page__subtitle {
-        font-size: 0.95rem;
-        line-height: 1.76;
+        font-size: 0.94rem;
+        line-height: 1.72;
     }
 
     .ecosystem-page__hero-actions {
-        flex-direction: column;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-top: 20px;
     }
 
     .ecosystem-page__button {
         width: 100%;
+        min-height: 46px;
+        padding: 0 16px;
+        font-size: 0.9rem;
     }
 
-    .ecosystem-page__feature-grid {
-        grid-template-columns: 1fr;
+    .ecosystem-page__hero-points {
+        margin-top: 28px;
+        gap: 8px;
+    }
+
+    .ecosystem-page__hero-point {
+        font-size: 0.86rem;
+        align-items: flex-start;
     }
 
     .wallet-stage {
         width: 100%;
+        min-height: 440px;
     }
 
-    .wallet-stage__frame,
-    .ecosystem-highlight__image-card {
-        max-width: 330px;
+    .wallet-stage__beam {
+        width: 360px;
+        height: 320px;
+        opacity: 0.34;
+        filter: blur(44px);
+    }
+
+    .wallet-stage__ring--one {
+        width: 300px;
+        height: 300px;
+    }
+
+    .wallet-stage__ring--two {
+        width: 380px;
+        height: 380px;
+    }
+
+    .wallet-stage__frame {
+        max-width: 280px;
+        padding: 12px;
+        border-radius: 28px;
+    }
+
+    .wallet-stage__frame-shine {
+        border-radius: 28px;
+    }
+
+    .wallet-stage__image {
+        border-radius: 20px;
+    }
+
+    .wallet-stage__chip {
+        min-height: 32px;
+        padding: 0 10px;
+        gap: 8px;
+        font-size: 11px;
     }
 
     .wallet-stage__chip--top {
         top: 18px;
-        right: 4px;
+        right: 0;
     }
 
     .wallet-stage__chip--bottom {
-        bottom: 22px;
-        left: 4px;
+        bottom: 18px;
+        left: 0;
+    }
+
+    .ecosystem-page__section {
+        padding: 24px 0 22px;
+    }
+
+    .ecosystem-page__section--last {
+        padding-bottom: 70px;
+    }
+
+    .ecosystem-page__section-heading {
+        margin-bottom: 18px;
+    }
+
+    .ecosystem-page__section-heading h2 {
+        font-size: clamp(1.45rem, 6vw, 2rem);
+        line-height: 1.2;
+    }
+
+    .ecosystem-page__feature-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .ecosystem-feature {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .ecosystem-feature__icon {
+        width: 46px;
+        height: 46px;
+        margin-bottom: 12px;
+        border-radius: 14px;
+    }
+
+    .ecosystem-feature h3 {
+        font-size: 0.98rem;
+    }
+
+    .ecosystem-feature p {
+        font-size: 0.88rem;
+        line-height: 1.68;
     }
 
     .ecosystem-highlight__copy,
-    .ecosystem-trust-box {
+    .ecosystem-trust-box,
+    .ecosystem-button-section {
         padding: 20px;
         border-radius: 22px;
     }
 
+    .ecosystem-highlight__title,
+    .ecosystem-cta__title,
+    .ecosystem-button-section__title {
+        font-size: clamp(1.3rem, 5.6vw, 1.8rem);
+        line-height: 1.24;
+    }
+
+    .ecosystem-highlight__desc,
+    .ecosystem-cta__desc,
+    .ecosystem-button-section__desc,
+    .ecosystem-trust p {
+        font-size: 0.9rem;
+        line-height: 1.72;
+    }
+
+    .ecosystem-highlight__list {
+        margin-top: 14px;
+        line-height: 1.8;
+        font-size: 0.9rem;
+    }
+
+    .ecosystem-highlight__image-card {
+        max-width: 300px;
+        padding: 12px;
+        border-radius: 24px;
+    }
+
+    .ecosystem-highlight__image {
+        border-radius: 18px;
+    }
+
+    .ecosystem-trust-grid {
+        gap: 12px;
+        margin-top: 14px;
+    }
+
+    .ecosystem-trust {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .ecosystem-trust__icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+    }
+
+    .ecosystem-cta {
+        margin-top: 18px;
+        gap: 16px;
+        padding-top: 18px;
+    }
+
+    .ecosystem-button-layout {
+        gap: 18px;
+    }
+
+    .ecosystem-button-orbit {
+        min-height: 280px;
+    }
+
+    .ecosystem-button-orbit__ring--outer {
+        width: 240px;
+        height: 240px;
+    }
+
+    .ecosystem-button-orbit__ring--inner {
+        width: 160px;
+        height: 160px;
+    }
+
+    .ecosystem-button-orbit__core {
+        width: 92px;
+        height: 92px;
+    }
+
+    .ecosystem-button-orbit__core span {
+        font-size: 0.72rem;
+    }
+
+    .ecosystem-button-orbit__node {
+        width: 42px;
+        height: 42px;
+    }
+
+    .ecosystem-button-orbit__node--top {
+        top: 10px;
+    }
+
+    .ecosystem-button-orbit__node--bottom {
+        bottom: 10px;
+    }
+
+    .ecosystem-button-orbit__node--left {
+        left: 10px;
+    }
+
+    .ecosystem-button-orbit__node--right {
+        right: 10px;
+    }
+
+    .ecosystem-button-orbit__node--tap {
+        right: 32px;
+        top: 44px;
+    }
+
+    .ecosystem-button-orbit__node--hold {
+        left: 32px;
+        bottom: 44px;
+    }
+
+    .ecosystem-button-orbit__node--alert {
+        right: 44px;
+        bottom: 38px;
+    }
+
+    .ecosystem-button-content {
+        gap: 14px;
+    }
+
+    .ecosystem-button-content__grid,
+    .ecosystem-button-actions {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .ecosystem-button-card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .ecosystem-button-card__icon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+    }
+
+    .ecosystem-button-card h3 {
+        font-size: 0.94rem;
+    }
+
+    .ecosystem-button-card p {
+        font-size: 0.86rem;
+        line-height: 1.66;
+    }
+
+    .ecosystem-button-actions__item {
+        min-height: 52px;
+        padding: 0 14px;
+        border-radius: 16px;
+    }
+
+    .ecosystem-button-actions__left strong {
+        font-size: 0.84rem;
+    }
+
+    .ecosystem-button-actions__value {
+        font-size: 0.78rem;
+    }
+
+    .ecosystem-page__glow--blue {
+        width: 180px;
+        height: 180px;
+        top: 70px;
+        left: -8%;
+    }
+
+    .ecosystem-page__glow--purple {
+        width: 220px;
+        height: 220px;
+        top: 120px;
+        right: -10%;
+    }
+
+    .ecosystem-page__glow--violet {
+        width: 260px;
+        height: 160px;
+        top: 360px;
+        left: 18%;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .ecosystem-page__container {
+        padding: 0 14px;
+    }
+
     .ecosystem-page__title {
-        font-size: clamp(2rem, 9vw, 3rem);
+        font-size: 1.9rem;
+    }
+
+    .ecosystem-page__subtitle {
+        font-size: 0.9rem;
+    }
+
+    .wallet-stage {
+        min-height: 380px;
+    }
+
+    .wallet-stage__ring--one {
+        width: 250px;
+        height: 250px;
+    }
+
+    .wallet-stage__ring--two {
+        width: 320px;
+        height: 320px;
+    }
+
+    .wallet-stage__frame {
+        max-width: 240px;
+        padding: 10px;
+        border-radius: 24px;
+    }
+
+    .wallet-stage__frame-shine {
+        border-radius: 24px;
+    }
+
+    .wallet-stage__image {
+        border-radius: 16px;
+    }
+
+    .wallet-stage__chip {
+        min-height: 30px;
+        padding: 0 9px;
+        font-size: 10px;
+    }
+
+    .wallet-stage__chip--top {
+        top: 14px;
+        right: -2px;
+    }
+
+    .wallet-stage__chip--bottom {
+        bottom: 14px;
+        left: -2px;
+    }
+
+    .ecosystem-feature,
+    .ecosystem-highlight__copy,
+    .ecosystem-trust-box,
+    .ecosystem-button-section,
+    .ecosystem-trust,
+    .ecosystem-button-card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .ecosystem-button-orbit {
+        min-height: 240px;
+    }
+
+    .ecosystem-button-orbit__ring--outer {
+        width: 200px;
+        height: 200px;
+    }
+
+    .ecosystem-button-orbit__ring--inner {
+        width: 132px;
+        height: 132px;
+    }
+
+    .ecosystem-button-orbit__core {
+        width: 80px;
+        height: 80px;
+    }
+
+    .ecosystem-button-orbit__core span {
+        font-size: 0.66rem;
+    }
+
+    .ecosystem-button-orbit__node {
+        width: 36px;
+        height: 36px;
+    }
+
+    .ecosystem-button-orbit__node--tap {
+        right: 22px;
+        top: 34px;
+    }
+
+    .ecosystem-button-orbit__node--hold {
+        left: 22px;
+        bottom: 34px;
+    }
+
+    .ecosystem-button-orbit__node--alert {
+        right: 28px;
+        bottom: 28px;
+    }
+
+    .ecosystem-cta__actions .ecosystem-page__button,
+    .ecosystem-page__hero-actions .ecosystem-page__button {
+        min-height: 44px;
+        font-size: 0.86rem;
     }
     }

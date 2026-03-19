@@ -1,11 +1,13 @@
 import { useMemo, useRef, useState, useEffect } from "react";
 import { NavLink, Outlet, useLocation } from "react-router";
-import logo from '../../../assets/logo/logo.png';
+import logo from "../../../assets/logo/logo.png";
 import {
     ChevronDown,
     Globe,
     ShieldCheck,
     Boxes,
+    Menu,
+    X,
     } from "lucide-react";
     import { useLanguage } from "../../contexts/LanguageContext";
     import "./DevelopersLayout.css";
@@ -27,8 +29,13 @@ import {
     export function DevelopersLayout() {
     const { language, toggleLanguage, t } = useLanguage();
     const location = useLocation();
+
     const [openGroup, setOpenGroup] = useState<string | null>(null);
+    const [mobileOpenGroup, setMobileOpenGroup] = useState<string | null>(null);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
     const navRef = useRef<HTMLDivElement | null>(null);
+    const mobileMenuRef = useRef<HTMLDivElement | null>(null);
 
     const pathname = location.pathname;
 
@@ -86,21 +93,46 @@ import {
         setOpenGroup((prev) => (prev === groupKey ? null : groupKey));
     };
 
+    const handleToggleMobileGroup = (groupKey: string) => {
+        setMobileOpenGroup((prev) => (prev === groupKey ? null : groupKey));
+    };
+
+    const handleCloseMobileMenu = () => {
+        setMobileMenuOpen(false);
+        setMobileOpenGroup(null);
+    };
+
     useEffect(() => {
         setOpenGroup(null);
+        setMobileOpenGroup(null);
+        setMobileMenuOpen(false);
     }, [pathname]);
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
-        if (!navRef.current) return;
-        if (!navRef.current.contains(event.target as Node)) {
+        const target = event.target as Node;
+
+        const clickedOutsideDesktop =
+            navRef.current && !navRef.current.contains(target);
+
+        const clickedOutsideMobile =
+            mobileMenuRef.current && !mobileMenuRef.current.contains(target);
+
+        if (clickedOutsideDesktop) {
             setOpenGroup(null);
+        }
+
+        if (mobileMenuOpen && clickedOutsideMobile) {
+            setMobileMenuOpen(false);
+            setMobileOpenGroup(null);
         }
         };
 
         const handleEsc = (event: KeyboardEvent) => {
         if (event.key === "Escape") {
             setOpenGroup(null);
+            setMobileMenuOpen(false);
+            setMobileOpenGroup(null);
         }
         };
 
@@ -111,7 +143,7 @@ import {
         document.removeEventListener("mousedown", handleClickOutside);
         document.removeEventListener("keydown", handleEsc);
         };
-    }, []);
+    }, [mobileMenuOpen]);
 
     return (
         <div className="developers-layout">
@@ -119,17 +151,18 @@ import {
             <div className="developers-layout__inner">
             <NavLink to="/" className="developers-layout__brand">
                 <div className="developers-layout__brand-badge">
-                    <img
+                <img
                     src={logo}
                     alt="KORION logo"
                     className="developers-layout__brand-logo"
-                    />
+                />
                 </div>
                 <span className="developers-layout__brand-text">
                 {t("KORION Developers", "KORION 개발자")}
                 </span>
             </NavLink>
 
+            {/* PC NAV */}
             <nav className="developers-layout__nav" ref={navRef}>
                 {directNavItems.map((item) => (
                 <NavLink
@@ -189,6 +222,7 @@ import {
                 })}
             </nav>
 
+            {/* PC ACTIONS */}
             <div className="developers-layout__actions">
                 <button
                 type="button"
@@ -205,6 +239,106 @@ import {
                 >
                 {t("Pre-register", "사전등록")}
                 </NavLink>
+            </div>
+
+            {/* MOBILE TOGGLE */}
+            <button
+                type="button"
+                className="developers-layout__mobile-toggle"
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
+                onClick={() => {
+                setMobileMenuOpen((prev) => !prev);
+                if (mobileMenuOpen) {
+                    setMobileOpenGroup(null);
+                }
+                }}
+            >
+                {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+            </div>
+
+            {/* MOBILE MENU */}
+            <div
+            ref={mobileMenuRef}
+            className={`developers-layout__mobile-menu ${mobileMenuOpen ? "is-open" : ""}`}
+            >
+            <div className="developers-layout__mobile-menu-inner">
+                {directNavItems.map((item) => (
+                <NavLink
+                    key={item.to}
+                    to={item.to}
+                    end={item.end}
+                    onClick={handleCloseMobileMenu}
+                    className={({ isActive }) =>
+                    `developers-layout__mobile-link ${isActive ? "is-active" : ""}`
+                    }
+                >
+                    {item.label}
+                </NavLink>
+                ))}
+
+                {navGroups.map((group) => {
+                const Icon = group.icon;
+                const active = isGroupActive(group);
+                const open = mobileOpenGroup === group.key;
+
+                return (
+                    <div
+                    key={group.key}
+                    className={`developers-layout__mobile-group ${active ? "is-active" : ""} ${open ? "is-open" : ""}`}
+                    >
+                    <button
+                        type="button"
+                        className="developers-layout__mobile-group-trigger"
+                        onClick={() => handleToggleMobileGroup(group.key)}
+                    >
+                        <span className="developers-layout__mobile-group-trigger-left">
+                        <Icon size={15} />
+                        <span>{group.label}</span>
+                        </span>
+                        <ChevronDown
+                        size={16}
+                        className="developers-layout__mobile-group-chevron"
+                        />
+                    </button>
+
+                    <div className="developers-layout__mobile-group-menu">
+                        {group.items.map((item) => (
+                        <NavLink
+                            key={item.to}
+                            to={item.to}
+                            onClick={handleCloseMobileMenu}
+                            className={({ isActive }) =>
+                            `developers-layout__mobile-sublink ${isActive ? "is-active" : ""}`
+                            }
+                        >
+                            {item.label}
+                        </NavLink>
+                        ))}
+                    </div>
+                    </div>
+                );
+                })}
+
+                <div className="developers-layout__mobile-actions">
+                <button
+                    type="button"
+                    className="developers-layout__translate developers-layout__translate--mobile"
+                    onClick={toggleLanguage}
+                >
+                    <Globe size={16} />
+                    <span>{language}</span>
+                </button>
+
+                <NavLink
+                    to="/developers/preregister"
+                    className="developers-layout__preregister developers-layout__preregister--mobile"
+                    onClick={handleCloseMobileMenu}
+                >
+                    {t("Pre-register", "사전등록")}
+                </NavLink>
+                </div>
             </div>
             </div>
         </header>

@@ -464,67 +464,204 @@
     }
     }
 
-    @media (max-width: 1280px) {
-    .mining-feature-grid,
-    .mining-flow-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+
+
+    @media (max-width: 768px) {
+
+    /* 전체 */
+    .mining-page {
+        overflow-x: hidden;
     }
 
-    @media (max-width: 1100px) {
-    .mining-hero .mining-page__container {
-        grid-template-columns: 1fr;
+    .mining-page__container,
+    .mining-page__container-01 {
+        width: calc(100% - 20px);
     }
 
-    .mining-hero__visual {
-        min-height: 560px;
-    }
-    }
-
-    @media (max-width: 900px) {
+    /* HERO */
     .mining-hero {
-        padding: 100px 0 82px;
+        padding: 90px 0 60px;
     }
 
-    .mining-section {
-        padding: 86px 0;
-    }
-
-    .mining-hero__stats,
-    .mining-feature-grid,
-    .mining-flow-grid {
-        grid-template-columns: 1fr;
-    }
-    }
-
-    @media (max-width: 640px) {
-    .mining-page__container {
-        width: min(100% - 24px, 1440px);
+    .mining-hero .mining-page__container {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        text-align: center;
     }
 
     .mining-hero__title {
-        font-size: clamp(2.5rem, 11vw, 3.6rem);
+        font-size: clamp(2rem, 10vw, 2.6rem);
         line-height: 1.08;
     }
 
-    .mining-hero__subtitle,
-    .mining-section__head p,
-    .mining-cta-box p {
-        font-size: 0.96rem;
-        line-height: 1.82;
+    .mining-hero__subtitle {
+        font-size: 0.95rem;
+        line-height: 1.7;
     }
 
-    .mining-core-card,
-    .mining-feature-card,
-    .mining-flow-card,
-    .mining-value-item,
-    .mining-cta-box {
+    /* 버튼 */
+    .mining-hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .mining-btn {
+        width: 100%;
+        min-height: 48px;
+        border-radius: 14px;
+    }
+
+    /* stats */
+    .mining-hero__stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .mining-stat {
+        padding: 16px;
+        text-align: left;
+        border-radius: 18px;
+    }
+
+    /* 비주얼 (핵심) */
+    .mining-hero__visual {
+        min-height: 360px;
+    }
+
+    .mining-orbit--one {
+        width: 260px;
+        height: 260px;
+    }
+
+    .mining-orbit--two {
+        width: 200px;
+        height: 200px;
+    }
+
+    .mining-glow--one {
+        width: 140px;
+        height: 140px;
+    }
+
+    .mining-glow--two {
+        width: 100px;
+        height: 100px;
+        top: 10%;
+        right: 10%;
+    }
+
+    .mining-core-card {
+        width: 90%;
         padding: 22px;
         border-radius: 22px;
     }
 
+    /* 떠다니는 요소 제거 (모바일 핵심) */
     .mining-float {
-        font-size: 0.74rem;
-        padding: 0 12px;
+        display: none;
+    }
+
+    /* 섹션 */
+    .mining-section {
+        padding: 70px 0;
+    }
+
+    .mining-section__head {
+        margin-bottom: 28px;
+    }
+
+    .mining-section__head h2 {
+        font-size: clamp(1.6rem, 7vw, 2.3rem);
+    }
+
+    .mining-section__head p {
+        font-size: 0.92rem;
+    }
+
+    /* 카드 */
+    .mining-feature-grid,
+    .mining-flow-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .mining-feature-card,
+    .mining-flow-card,
+    .mining-value-item {
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .mining-feature-card h3,
+    .mining-flow-card h3 {
+        font-size: 1rem;
+    }
+
+    .mining-feature-card p,
+    .mining-flow-card p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    /* 화살표 제거 */
+    .mining-flow-card__arrow {
+        display: none;
+    }
+
+    /* 리스트 */
+    .mining-value-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    /* CTA */
+    .mining-cta-box {
+        padding: 26px 20px;
+        border-radius: 24px;
+    }
+
+    .mining-cta-box h2 {
+        font-size: clamp(1.7rem, 7vw, 2.4rem);
+    }
+
+    .mining-cta-box__actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mining-cta-box__actions .mining-btn {
+        width: 100%;
+    }
+    }
+
+
+    /* 초소형 */
+    @media (max-width: 480px) {
+
+    .mining-hero {
+        padding: 80px 0 50px;
+    }
+
+    .mining-hero__title {
+        font-size: clamp(1.7rem, 10vw, 2.2rem);
+    }
+
+    .mining-hero__visual {
+        min-height: 300px;
+    }
+
+    .mining-core-card {
+        padding: 18px;
+    }
+
+    .mining-feature-card,
+    .mining-flow-card,
+    .mining-value-item,
+    .mining-cta-box {
+        padding: 16px;
     }
     }

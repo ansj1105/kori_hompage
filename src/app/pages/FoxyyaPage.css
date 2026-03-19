@@ -426,9 +426,16 @@
     background: #fff;
     margin: 0 auto;   
     background: #fff;
+    
+    }
+    .overflow-hidden .foxyya-preview-card__image{
+    width: 55%;
+    display: block;
+    background: #fff;
+    margin: 0 auto;   
+    background: #fff;
     border: 3px solid rgba(179, 148, 228, 0.651);
     border-radius: 28px;
-    
     }
 
     .foxyya-preview-card__text {
@@ -501,73 +508,37 @@
     margin-top: 28px;
     }
 
-    @media (max-width: 1280px) {
-    .foxyya-service-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+
+    @media (max-width: 1024px) {
+    .foxyya-page__container,
+    .foxyya-page__container-01 {
+        width: min(100% - 32px, 1440px);
     }
 
-    .foxyya-layout-grid,
-    .foxyya-mining-grid {
-        grid-template-columns: 1fr;
-    }
+    .foxyya-hero {
+        padding: 120px 0 80px;
     }
 
-    @media (max-width: 1100px) {
     .foxyya-hero .foxyya-page__container {
         grid-template-columns: 1fr;
+        gap: 38px;
     }
 
-    .foxyya-hero__visual {
-        min-height: 720px;
+    .foxyya-hero__content {
+        text-align: center;
     }
 
-    .foxyya-phone--home {
-        left: 40px;
+    .foxyya-hero__brand {
+        justify-content: center;
     }
 
-    .foxyya-phone--community {
-        right: 40px;
-    }
-    }
-
-    @media (max-width: 900px) {
-    .foxyya-hero {
-        padding: 100px 0 82px;
+    .foxyya-hero__actions {
+        justify-content: center;
     }
 
-    .foxyya-section {
-        padding: 86px 0;
-    }
-
-    .foxyya-hero__stats,
-    .foxyya-service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .foxyya-hero__visual {
-        min-height: 620px;
-    }
-
-    .foxyya-phone {
-        width: 240px;
-    }
-    }
-
-    @media (max-width: 640px) {
-    .foxyya-page__container {
-        width: min(100% - 24px, 1440px);
-    }
-
-    .foxyya-hero__title {
-        font-size: clamp(2.5rem, 11vw, 3.6rem);
-        line-height: 1.08;
-    }
-
-    .foxyya-hero__subtitle,
-    .foxyya-section__head p,
-    .foxyya-cta-box p {
-        font-size: 0.96rem;
-        line-height: 1.82;
+    .foxyya-hero__stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .foxyya-hero__visual {
@@ -575,28 +546,368 @@
     }
 
     .foxyya-phone {
-        width: 180px;
-        border-radius: 26px;
-        padding: 8px;
-    }
-
-    .foxyya-phone img {
-        border-radius: 20px;
+        width: 220px;
     }
 
     .foxyya-phone--home {
-        left: 0;
-        top: 30px;
+        left: 70px;
+        top: 28px;
     }
 
     .foxyya-phone--community {
-        right: 0;
-        bottom: 36px;
+        right: 70px;
+        bottom: 28px;
+    }
+
+    .foxyya-service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .foxyya-mining-grid,
+    .foxyya-layout-grid {
+        grid-template-columns: 1fr;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .foxyya-page__container,
+    .foxyya-page__container-01 {
+        width: calc(100% - 24px);
+    }
+
+    .foxyya-page {
+        overflow-x: hidden;
+    }
+
+    .foxyya-hero {
+        padding: 100px 0 70px;
+    }
+
+    .foxyya-hero::before {
+        height: 90px;
+    }
+
+    .foxyya-hero .foxyya-page__container {
+        gap: 28px;
+    }
+
+    .foxyya-hero__badge {
+        font-size: 0.72rem;
+        padding: 8px 12px;
+        letter-spacing: 0.1em;
+    }
+
+    .foxyya-hero__brand {
+        margin-top: 18px;
+        gap: 12px;
+    }
+
+    .foxyya-hero__logo {
+        width: 56px;
+        height: 56px;
+    }
+
+    .foxyya-hero__brand-name {
+        font-size: 1.45rem;
+    }
+
+    .foxyya-hero__title {
+        margin: 16px 0 14px;
+        font-size: clamp(2.1rem, 9vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+    }
+
+    .foxyya-hero__subtitle {
+        max-width: 100%;
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+
+    .foxyya-hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 24px;
+    }
+
+    .foxyya-btn {
+        width: 100%;
+        min-height: 50px;
+        padding: 0 18px;
+        border-radius: 14px;
+    }
+
+    .foxyya-hero__stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .foxyya-stat {
+        padding: 16px;
+        border-radius: 18px;
+        text-align: left;
+    }
+
+    .foxyya-stat strong {
+        font-size: 0.95rem;
+    }
+
+    .foxyya-stat span {
+        font-size: 0.88rem;
+    }
+
+    .foxyya-hero__visual {
+        min-height: 460px;
+    }
+
+    .foxyya-phone {
+        width: 170px;
+        padding: 8px;
+        border-radius: 24px;
+    }
+
+    .foxyya-phone img {
+        border-radius: 18px;
+    }
+
+    .foxyya-phone__label {
+        min-height: 28px;
+        padding: 0 10px;
+        font-size: 0.68rem;
+        top: -20px;
+        left: 6px;
+    }
+
+    .foxyya-phone--home {
+        left: 10px;
+        top: 34px;
+        transform: rotate(-5deg);
+    }
+
+    .foxyya-phone--community {
+        right: 10px;
+        bottom: 40px;
+        transform: rotate(5deg);
     }
 
     .foxyya-floating-badge {
-        font-size: 0.74rem;
+        min-height: 34px;
+        padding: 0 10px;
+        font-size: 0.72rem;
+        gap: 6px;
+    }
+
+ 
+
+    .foxyya-floating-badge--mine {
+        left: 20;
+        bottom: 20px;
+    }
+
+    .foxyya-section {
+        padding: 72px 0;
+    }
+
+    .foxyya-section__head {
+        margin: 0 auto 30px;
+    }
+
+    .foxyya-section__label {
+        min-height: 30px;
         padding: 0 12px;
+        font-size: 0.72rem;
+    }
+
+    .foxyya-section__head h2 {
+        margin: 14px 0 12px;
+        font-size: clamp(1.7rem, 7vw, 2.5rem);
+        line-height: 1.12;
+    }
+
+    .foxyya-section__head p {
+        font-size: 0.94rem;
+        line-height: 1.72;
+    }
+
+    .foxyya-service-grid,
+    .foxyya-mining-grid,
+    .foxyya-layout-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .foxyya-service-card,
+    .foxyya-mining-card,
+    .foxyya-value-item,
+    .foxyya-cta-box {
+        padding: 20px;
+        border-radius: 22px;
+    }
+
+    .foxyya-service-card__icon,
+    .foxyya-mining-card__icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 15px;
+        margin-bottom: 14px;
+    }
+
+    .foxyya-service-card h3,
+    .foxyya-mining-card h3,
+    .foxyya-preview-card__text h3,
+    .foxyya-value-item h3 {
+        font-size: 1.02rem;
+        margin-bottom: 8px;
+    }
+
+    .foxyya-service-card p,
+    .foxyya-mining-card p,
+    .foxyya-preview-card__text p,
+    .foxyya-value-item p {
+        font-size: 0.92rem;
+        line-height: 1.65;
+    }
+
+    .foxyya-preview-card {
+        border-radius: 22px;
+    }
+
+    .foxyya-preview-card__header {
+        padding: 14px 16px;
+        font-size: 0.8rem;
+    }
+
+    .foxyya-preview-card__image {
+        width: min(82%, 260px);
+        
+    }
+
+    .overflow-hidden .foxyya-preview-card__image {
+        width: min(82%, 260px);
+        border-radius: 22px;
+        
+        
+    }
+    
+
+    .foxyya-preview-card__text {
+        padding: 18px;
+    }
+
+    .foxyya-value-list {
+        gap: 14px;
+    }
+
+    .foxyya-value-item {
+        gap: 12px;
+        padding: 18px;
+    }
+
+    .foxyya-cta-box {
+        padding: 26px 20px;
+    }
+
+    .foxyya-cta-box__label {
+        min-height: 30px;
+        padding: 0 12px;
+        font-size: 0.72rem;
+    }
+
+    .foxyya-cta-box h2 {
+        margin: 14px 0 12px;
+        font-size: clamp(1.8rem, 7vw, 2.6rem);
+        line-height: 1.12;
+    }
+
+    .foxyya-cta-box p {
+        font-size: 0.93rem;
+        line-height: 1.72;
+    }
+
+    .foxyya-cta-box__actions {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .foxyya-cta-box__actions .foxyya-btn {
+        width: 100%;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .foxyya-page__container,
+    .foxyya-page__container-01 {
+        width: calc(100% - 18px);
+    }
+
+    .foxyya-hero {
+        padding: 88px 0 56px;
+    }
+
+    .foxyya-hero__title {
+        font-size: clamp(1.8rem, 10vw, 2.4rem);
+    }
+
+    .foxyya-hero__subtitle {
+        font-size: 0.9rem;
+        line-height: 1.68;
+    }
+
+    .foxyya-hero__visual {
+        min-height: 390px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .foxyya-phone {
+        width: 132px;
+        padding: 6px;
+        border-radius: 20px;
+    }
+
+    .foxyya-phone img {
+        border-radius: 14px;
+    }
+
+    .foxyya-phone--home {
+        left: 2px;
+        top: 56px;
+        transform: rotate(-4deg);
+    }
+
+    .foxyya-phone--community {
+        right: 2px;
+        bottom: 50px;
+        transform: rotate(4deg);
+    }
+
+    .foxyya-phone__label {
+        font-size: 0.62rem;
+        min-height: 24px;
+        padding: 0 8px;
+    }
+
+    .foxyya-floating-badge {
+        min-height: 28px;
+        padding: 0 8px;
+        font-size: 0.64rem;
+        border-radius: 999px;
+    }
+
+    .foxyya-floating-badge--pay {
+        top: 0px;
+        left: -300;
+    }
+
+    .foxyya-floating-badge--mine {
+        bottom: 18px;
+    }
+
+    .foxyya-section {
+        padding: 56px 0;
     }
 
     .foxyya-service-card,
@@ -604,7 +915,23 @@
     .foxyya-preview-card__text,
     .foxyya-value-item,
     .foxyya-cta-box {
-        padding: 22px;
-        border-radius: 22px;
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .foxyya-preview-card__header {
+        padding: 12px 14px;
+    }
+
+    .foxyya-preview-card__image,
+    .overflow-hidden .foxyya-preview-card__image {
+        width: min(88%, 220px);
+        border-width: 2px;
+        border-radius: 18px;
+    }
+
+    .foxyya-value-item {
+        flex-direction: column;
+        align-items: flex-start;
     }
     }

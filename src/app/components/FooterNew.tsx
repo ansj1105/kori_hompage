@@ -172,72 +172,70 @@ export const FooterNew = memo(function FooterNew() {
 
         <div className="footer-new__grid">
           <div className="footer-new__brand-card">
-  
-          <Link to="/" className="footer-new__brand">
-            <div className="footer-new__logo-box">
-              <img src={logo} alt="KORION" className="footer-new__logo" />
-            </div>
-
-            <div>
-              <div className="footer-new__brand-title">KORION</div>
-              <div className="footer-new__brand-subtitle">FOUNDATION</div>
-            </div>
-          </Link>
-
-          <div className="footer-new__column footer-new__column--wide">
-            <div className="footer-new__trust-card">
-              <div className="footer-new__trust-title">
-                <ShieldCheck size={16} className="footer-new__trust-icon" />
-                {t('Trust & Transparency', '신뢰와 투명성')}
+            <Link to="/" className="footer-new__brand">
+              <div className="footer-new__logo-box">
+                <img src={logo} alt="KORION" className="footer-new__logo" />
               </div>
 
-              <p className="footer-new__trust-desc">
-                {t(
-                  'Public documentation, ecosystem updates, developer information, and market visibility are continuously expanded for users, builders, and partners.',
-                  '공개 문서, 생태계 업데이트, 개발자 자료, 마켓 가시성은 사용자와 빌더, 파트너를 위해 지속적으로 확장됩니다.'
-                )}
-              </p>
+              <div>
+                <div className="footer-new__brand-title">KORION</div>
+                <div className="footer-new__brand-subtitle">FOUNDATION</div>
+              </div>
+            </Link>
+
+            <div className="footer-new__column footer-new__column--wide">
+              <div className="footer-new__trust-card">
+                <div className="footer-new__trust-title">
+                  <ShieldCheck size={16} className="footer-new__trust-icon" />
+                  {t('Trust & Transparency', '신뢰와 투명성')}
+                </div>
+
+                <p className="footer-new__trust-desc">
+                  {t(
+                    'Public documentation, ecosystem updates, developer information, and market visibility are continuously expanded for users, builders, and partners.',
+                    '공개 문서, 생태계 업데이트, 개발자 자료, 마켓 가시성은 사용자와 빌더, 파트너를 위해 지속적으로 확장됩니다.'
+                  )}
+                </p>
+              </div>
             </div>
           </div>
 
-        </div>
+          <div className="footer-new__nav-grid">
+            <div className="footer-new__column">
+              <h3 className="footer-new__heading">{t('Company', '회사')}</h3>
+              <div className="footer-new__links">
+                {companyLinks.map((item) => renderFooterLink(item))}
+              </div>
+            </div>
 
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">{t('Company', '회사')}</h3>
-            <div className="footer-new__links">
-              {companyLinks.map((item) => renderFooterLink(item))}
+            <div className="footer-new__column">
+              <h3 className="footer-new__heading">{t('Ecosystem', '생태계')}</h3>
+              <div className="footer-new__links">
+                {ecosystemLinks.map((item) => renderFooterLink(item))}
+              </div>
+            </div>
+
+            <div className="footer-new__column">
+              <h3 className="footer-new__heading">{t('Resources', '자료')}</h3>
+              <div className="footer-new__links">
+                {resourceLinks.map((item) => renderFooterLink(item))}
+              </div>
+            </div>
+
+            <div className="footer-new__column">
+              <h3 className="footer-new__heading">{t('Support', '지원')}</h3>
+              <div className="footer-new__links">
+                {supportLinks.map((item) => renderFooterLink(item))}
+              </div>
+            </div>
+
+            <div className="footer-new__column">
+              <h3 className="footer-new__heading">{t('Market', '마켓')}</h3>
+              <div className="footer-new__links">
+                {marketLinks.map((item) => renderFooterLink(item))}
+              </div>
             </div>
           </div>
-
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">{t('Ecosystem', '생태계')}</h3>
-            <div className="footer-new__links">
-              {ecosystemLinks.map((item) => renderFooterLink(item))}
-            </div>
-          </div>
-
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">{t('Resources', '자료')}</h3>
-            <div className="footer-new__links">
-              {resourceLinks.map((item) => renderFooterLink(item))}
-            </div>
-          </div>
-
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">{t('Support', '지원')}</h3>
-            <div className="footer-new__links">
-              {supportLinks.map((item) => renderFooterLink(item))}
-            </div>
-          </div>
-
-          <div className="footer-new__column">
-            <h3 className="footer-new__heading">{t('Market', '마켓')}</h3>
-            <div className="footer-new__links">
-              {marketLinks.map((item) => renderFooterLink(item))}
-            </div>
-          </div>
-
-
         </div>
 
         <div className="footer-new__subscribe">

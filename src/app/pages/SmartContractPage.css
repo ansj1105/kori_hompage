@@ -1037,59 +1037,216 @@
     }
     }
 
-    /* responsive */
 
-    @media (max-width: 1260px) {
-    .smart-contract-hero__layout,
-    .smart-contract-flow,
-    .smart-contract-trust {
-        grid-template-columns: 1fr;
-    }
 
-    .smart-contract-pillars {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
 
-    .smart-contract-specs__grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    }
 
-    @media (max-width: 1100px) {
-    .smart-contract-access {
-        grid-template-columns: 1fr;
-    }
-    }
 
-    @media (max-width: 960px) {
-    .smart-contract-banner__wrap {
-        grid-template-columns: 1fr;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media (max-width: 900px) {
+    .smart-contract-page {
+        overflow-x: hidden;
     }
 
-    .smart-contract-banner__right {
-        justify-content: flex-start;
+    .smart-contract-page__container,
+    .smart-contract-page__container-01 {
+        width: calc(100% - 24px);
     }
 
-    .smart-contract-banner__address-box {
-        min-width: 0;
-        width: 100%;
-    }
-    }
-
-    @media (max-width: 860px) {
+    /* hero */
     .smart-contract-hero {
-        padding: 114px 0 74px;
+        padding: 96px 0 72px;
     }
 
-    .smart-contract-pillars,
-    .smart-contract-specs__grid,
-    .smart-contract-trust__grid {
+    .smart-contract-hero__layout {
         grid-template-columns: 1fr;
+        gap: 28px;
     }
 
+    .smart-contract-hero__content {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .smart-contract-hero__eyebrow {
+        margin-bottom: 14px;
+        padding: 8px 12px;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+    }
+
+    .smart-contract-hero__title {
+        font-size: clamp(2rem, 8.5vw, 2.8rem);
+        line-height: 1.08;
+        letter-spacing: -0.05em;
+    }
+
+    .smart-contract-hero__description {
+        margin-top: 18px;
+        max-width: 100%;
+        font-size: 0.94rem;
+        line-height: 1.74;
+    }
+
+    .smart-contract-hero__identity {
+        margin-top: 24px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .smart-contract-hero__identity-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .smart-contract-hero__identity-head > span {
+        font-size: 0.8rem;
+    }
+
+    .smart-contract-hero__identity-badges {
+        gap: 6px;
+    }
+
+    .smart-contract-hero__identity-badges span {
+        padding: 6px 9px;
+        font-size: 0.66rem;
+    }
+
+    .smart-contract-hero__address {
+        margin-top: 14px;
+        min-height: auto;
+        padding: 12px;
+        border-radius: 16px;
+        align-items: flex-start;
+    }
+
+    .smart-contract-hero__address code {
+        font-size: 0.84rem;
+        line-height: 1.55;
+    }
+
+    .smart-contract-hero__copy {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+        flex-shrink: 0;
+    }
+
+    .smart-contract-hero__identity-actions {
+        margin-top: 14px;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    .smart-contract-hero__link {
+        width: 100%;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 14px;
+        border-radius: 13px;
+        font-size: 0.9rem;
+    }
+
+    .smart-contract-hero__visual {
+        margin-bottom: 0;
+    }
+
+    /* chamber */
     .contract-chamber {
+        width: 100%;
+        min-height: 500px;
         aspect-ratio: auto;
-        min-height: 620px;
+        margin-right: 0;
+        border-radius: 24px;
+    }
+
+    .contract-chamber__grid {
+        background-size: 30px 30px;
+    }
+
+    .contract-chamber__beam {
+        display: none;
+    }
+
+    .contract-chamber__core-wrap {
+        width: 220px;
+        height: 220px;
+    }
+
+    .contract-chamber__core {
+        width: 164px;
+        height: 164px;
+        border-radius: 22px;
+        gap: 12px;
+    }
+
+    .contract-chamber__core-top {
+        font-size: 0.7rem;
+    }
+
+    .contract-chamber__hexagon {
+        width: 68px;
+        height: 68px;
+    }
+
+    .contract-chamber__hexagon-inner {
+        width: 52px;
+        height: 52px;
+    }
+
+    .contract-chamber__core-bottom span {
+        font-size: 0.68rem;
+        letter-spacing: 0.12em;
+    }
+
+    .contract-chamber__core-bottom strong {
+        font-size: 0.84rem;
+    }
+
+    .contract-chamber__node {
+        min-width: 0;
+        width: calc(100% - 24px);
+        padding: 12px;
+        gap: 10px;
+        border-radius: 16px;
+    }
+
+    .contract-chamber__node-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+    }
+
+    .contract-chamber__node strong {
+        font-size: 0.84rem;
+    }
+
+    .contract-chamber__node p {
+        font-size: 0.74rem;
+        line-height: 1.5;
+    }
+
+    .contract-chamber__node--top {
+        top: 4%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .contract-chamber__node--left,
@@ -1105,30 +1262,419 @@
 
     .contract-chamber__node--right {
         top: auto;
-        bottom: 20%;
-    }
-
-    .contract-chamber__node--top {
-        top: 6%;
+        bottom: 18%;
     }
 
     .contract-chamber__node--bottom {
-        bottom: 6%;
+        bottom: 4%;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .smart-contract-hero__identity-head {
+    .contract-chamber__data {
+        width: 8px;
+        height: 8px;
+    }
+
+    /* banner */
+    .smart-contract-banner {
+        padding-bottom: 8px;
+    }
+
+    .smart-contract-banner__wrap {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .smart-contract-banner__label {
+        margin-bottom: 10px;
+        font-size: 0.68rem;
+    }
+
+    .smart-contract-banner__left h2 {
+        font-size: clamp(1.35rem, 6vw, 2rem);
+        line-height: 1.2;
+    }
+
+    .smart-contract-banner__left p {
+        margin-top: 10px;
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+    .smart-contract-banner__right {
+        justify-content: flex-start;
+        gap: 10px;
+    }
+
+    .smart-contract-banner__address-box {
+        min-width: 0;
+        width: 100%;
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .smart-contract-banner__address-box span {
+        font-size: 0.68rem;
+    }
+
+    .smart-contract-banner__address-box strong {
+        font-size: 0.84rem;
+        line-height: 1.5;
+    }
+
+    .smart-contract-banner__button {
+        width: 100%;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 14px;
+        border-radius: 13px;
+        font-size: 0.88rem;
+    }
+
+    /* sections */
+    .smart-contract-section {
+        padding: 28px 0;
+    }
+
+    .smart-contract-section--panel,
+    .smart-contract-section--access {
+        padding-top: 28px;
+    }
+
+    .smart-contract-section__label {
+        margin-bottom: 10px;
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+    }
+
+    .smart-contract-section__heading h2,
+    .smart-contract-flow__intro h2,
+    .smart-contract-trust__content h2,
+    .smart-contract-specs__header h2 {
+        font-size: clamp(1.5rem, 6.8vw, 2.1rem);
+        line-height: 1.16;
+    }
+
+    .smart-contract-section__heading p,
+    .smart-contract-flow__intro p,
+    .smart-contract-trust__content p {
+        margin-top: 12px;
+        font-size: 0.92rem;
+        line-height: 1.72;
+    }
+
+    /* pillars */
+    .smart-contract-pillars {
+        margin-top: 24px;
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .smart-contract-pillars__card {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .smart-contract-pillars__icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 14px;
+        border-radius: 14px;
+    }
+
+    .smart-contract-pillars__card h3 {
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+
+    .smart-contract-pillars__card p {
+        font-size: 0.9rem;
+        line-height: 1.68;
+    }
+
+    /* flow */
+    .smart-contract-flow {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .smart-contract-flow__steps {
+        gap: 12px;
+    }
+
+    .smart-contract-step {
+        grid-template-columns: 56px minmax(0, 1fr);
+        gap: 12px;
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .smart-contract-step__no {
+        font-size: 1.15rem;
+        justify-content: center;
+    }
+
+    .smart-contract-step__body h3 {
+        margin-bottom: 8px;
+        font-size: 0.96rem;
+    }
+
+    .smart-contract-step__body p {
+        font-size: 0.88rem;
+        line-height: 1.66;
+    }
+
+    /* specs */
+    .smart-contract-specs {
+        padding: 18px;
+        border-radius: 22px;
+    }
+
+    .smart-contract-specs__header {
+        margin-bottom: 16px;
+    }
+
+    .smart-contract-specs__grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .smart-contract-specs__item {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .smart-contract-specs__item span {
+        margin-bottom: 8px;
+        font-size: 0.7rem;
+    }
+
+    .smart-contract-specs__item strong {
+        font-size: 0.88rem;
+        line-height: 1.5;
+    }
+
+    /* access */
+    .smart-contract-access {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 24px;
+    }
+
+    .smart-contract-access__card {
+        min-height: auto;
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    .smart-contract-access__icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 14px;
+        border-radius: 14px;
+    }
+
+    .smart-contract-access__card h3 {
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+
+    .smart-contract-access__card p {
+        max-width: 100%;
+        font-size: 0.9rem;
+        line-height: 1.68;
+    }
+
+    .smart-contract-access__arrow {
+        right: 16px;
+        bottom: 16px;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+    }
+
+    /* trust */
+    .smart-contract-trust {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 18px;
+        border-radius: 24px;
+    }
+
+    .smart-contract-trust__grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .smart-contract-trust__card {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .smart-contract-trust__icon {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 12px;
+        border-radius: 12px;
+    }
+
+    .smart-contract-trust__card h3 {
+        margin-bottom: 8px;
+        font-size: 0.96rem;
+    }
+
+    .smart-contract-trust__card p {
+        font-size: 0.88rem;
+        line-height: 1.66;
+    }
+
+    /* note + cta */
+    .smart-contract-note {
+        gap: 12px;
+        margin-top: 20px;
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .smart-contract-note__icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+    }
+
+    .smart-contract-note__body h3 {
+        margin-bottom: 6px;
+        font-size: 0.94rem;
+    }
+
+    .smart-contract-note__body p {
+        font-size: 0.88rem;
+        line-height: 1.66;
+    }
+
+    .smart-contract-cta {
+        margin-top: 20px;
+        gap: 10px;
         flex-direction: column;
-        align-items: flex-start;
+    }
+
+    .smart-contract-cta__button {
+        width: 100%;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 14px;
+        border-radius: 13px;
+        font-size: 0.88rem;
     }
     }
 
     @media (max-width: 560px) {
-    .smart-contract-page__container {
-        width: min(100% - 20px, 1440px);
+    .smart-contract-page__container,
+    .smart-contract-page__container-01 {
+        width: calc(100% - 16px);
+    }
+
+    .smart-contract-hero {
+        padding: 84px 0 60px;
+    }
+
+    .smart-contract-hero__ambient--one,
+    .smart-contract-hero__ambient--two,
+    .smart-contract-hero__ambient--three {
+        filter: blur(48px);
+        opacity: 0.55;
     }
 
     .smart-contract-hero__title {
-        font-size: clamp(2.2rem, 11vw, 3.4rem);
+        font-size: clamp(1.72rem, 9.8vw, 2.2rem);
+    }
+
+    .smart-contract-hero__description,
+    .smart-contract-banner__left p,
+    .smart-contract-section__heading p,
+    .smart-contract-flow__intro p,
+    .smart-contract-trust__content p,
+    .smart-contract-pillars__card p,
+    .smart-contract-step__body p,
+    .smart-contract-access__card p,
+    .smart-contract-trust__card p,
+    .smart-contract-note__body p {
+        font-size: 0.86rem;
+        line-height: 1.64;
+    }
+
+    .contract-chamber {
+        min-height: 430px;
+        border-radius: 20px;
+    }
+
+    .contract-chamber__core-wrap {
+        width: 180px;
+        height: 180px;
+    }
+
+    .contract-chamber__core {
+        width: 136px;
+        height: 136px;
+        border-radius: 18px;
+        gap: 10px;
+    }
+
+    .contract-chamber__hexagon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .contract-chamber__hexagon-inner {
+        width: 42px;
+        height: 42px;
+    }
+
+    .contract-chamber__node {
+        width: calc(100% - 16px);
+        padding: 10px;
+        gap: 8px;
+        border-radius: 14px;
+    }
+
+    .contract-chamber__node-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+    }
+
+    .contract-chamber__node strong {
+        font-size: 0.78rem;
+    }
+
+    .contract-chamber__node p {
+        font-size: 0.7rem;
+    }
+
+    .contract-chamber__node--left {
+        top: 19%;
+    }
+
+    .contract-chamber__node--right {
+        bottom: 17%;
+    }
+
+    .smart-contract-banner__wrap,
+    .smart-contract-specs,
+    .smart-contract-trust,
+    .smart-contract-note {
+        padding: 14px;
+    }
+
+    .smart-contract-pillars__card,
+    .smart-contract-step,
+    .smart-contract-access__card,
+    .smart-contract-trust__card {
+        padding: 14px;
     }
 
     .smart-contract-step {
@@ -1139,29 +1685,61 @@
         justify-content: flex-start;
     }
 
-    .contract-chamber {
-        min-height: 570px;
-        border-radius: 28px;
+    .smart-contract-hero__identity,
+    .smart-contract-specs,
+    .smart-contract-trust {
+        border-radius: 18px;
+    }
     }
 
-    .contract-chamber__core-wrap {
-        width: 250px;
-        height: 250px;
+    @media (max-width: 420px) {
+    .smart-contract-page__container,
+    .smart-contract-page__container-01 {
+        width: calc(100% - 14px);
     }
 
-    .contract-chamber__core {
-        width: 184px;
-        height: 184px;
-    }
-
-    .contract-chamber__node {
-        min-width: 0;
-        width: calc(100% - 28px);
+    .smart-contract-hero__identity {
+        padding: 14px;
     }
 
     .smart-contract-hero__address {
-        align-items: flex-start;
-        padding-top: 14px;
-        padding-bottom: 14px;
+        padding: 10px;
+    }
+
+    .smart-contract-hero__address code {
+        font-size: 0.78rem;
+    }
+
+    .contract-chamber {
+        min-height: 380px;
+    }
+
+    /* 아주 작은 화면에서는 장식 노드 2개만 유지 */
+    .contract-chamber__node--left,
+    .contract-chamber__node--right {
+        display: none;
+    }
+
+    .contract-chamber__node--top {
+        top: 5%;
+    }
+
+    .contract-chamber__node--bottom {
+        bottom: 5%;
+    }
+
+    .smart-contract-banner__left h2,
+    .smart-contract-section__heading h2,
+    .smart-contract-flow__intro h2,
+    .smart-contract-trust__content h2,
+    .smart-contract-specs__header h2 {
+        font-size: 1.34rem;
+    }
+
+    .smart-contract-banner__button,
+    .smart-contract-cta__button,
+    .smart-contract-hero__link {
+        min-height: 42px;
+        font-size: 0.84rem;
     }
     }

@@ -51,9 +51,9 @@ const leadership = [
       'Ecosystem Leadership',
     ],
     highlightsKo: ['전략 총괄', '기획 및 실행', '생태계 리더십'],
-    email: 'mailto:richard@korion.io',
-    linkedin: 'https://www.linkedin.com/',
-    instagram: 'https://www.instagram.com/',
+    email: 'mailto:jang2020111@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/richard-jang-36a1b02a1/',
+    instagram: 'https://www.instagram.com/cats__j/',
   },
   {
     role: 'Development Director',
@@ -66,9 +66,9 @@ const leadership = [
     summaryKo:
       '플랫폼 아키텍처와 개발 전반을 포함한 생태계의 전체 기술 실행을 총괄합니다.',
     bio:
-      'Seo-Jeong Ahn, a graduate of Myongji University, is responsible for leading the development across all KORION project domains. He manages system design, technical execution, and platform development at the ecosystem level.',
+      'Seo-jeong Ahn, a graduate of Korea University, serves as the Development Director of the KORION project, overseeing the overall development, including system architecture, technical execution, and platform development at the ecosystem level.',
     bioKo:
-      '명지대학교 졸업자인 안서정 개발이사는 KORION 프로젝트 전반의 개발을 총괄하며, 시스템 설계, 기술 실행, 플랫폼 개발을 생태계 단위에서 책임지고 있습니다.',
+      '고려대학교 졸업자인 안서정 개발이사는 KORION 프로젝트 전반의 개발을 총괄하며, 시스템 설계, 기술 실행, 플랫폼 개발을 생태계 단위에서 책임지고 있습니다.',
     highlights: [
       'Architecture Design',
       'Platform Development',
