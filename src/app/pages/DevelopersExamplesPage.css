@@ -4,7 +4,7 @@
         radial-gradient(circle at top left, rgba(72, 114, 255, 0.08), transparent 24%),
         radial-gradient(circle at top right, rgba(106, 76, 255, 0.08), transparent 22%),
         linear-gradient(180deg, #f6f8fc 0%, #eef2f8 100%);
-    color: #142033;
+    color: #ffffff;
     }
 
     .developers-doc-page__container {
@@ -13,12 +13,14 @@
     }
 
     .developers-doc-hero {
-    padding: 110px 0 68px;
+    padding: 58px 0 68px;
     border-bottom: 1px solid rgba(18, 35, 64, 0.08);
     background:
-        radial-gradient(circle at 10% 0%, rgba(87, 119, 255, 0.12), transparent 26%),
-        radial-gradient(circle at 90% 10%, rgba(86, 216, 255, 0.11), transparent 24%),
-        linear-gradient(180deg, #f8fbff 0%, #f2f6fc 100%);
+        radial-gradient(circle at 20% 20%, rgba(124,146,255,0.18), transparent 24%),
+        radial-gradient(circle at 80% 10%, rgba(125,92,255,0.18), transparent 24%),
+        linear-gradient(180deg, #0b1325 0%, #101b34 100%);
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .developers-doc-hero__crumbs {
@@ -26,14 +28,14 @@
     align-items: center;
     gap: 8px;
     margin-bottom: 22px;
-    color: #6d7890;
+    color: #ffffff;
     font-size: 0.92rem;
     font-weight: 700;
     flex-wrap: wrap;
     }
 
     .developers-doc-hero__crumbs a {
-    color: #32405e;
+    color: #ffffff;
     text-decoration: none;
     }
 
@@ -50,6 +52,7 @@
     font-weight: 800;
     margin-bottom: 18px;
     backdrop-filter: blur(10px);
+    margin-left: 10px;
     }
 
     .developers-doc-hero h1 {
@@ -57,7 +60,7 @@
     font-size: clamp(2.4rem, 5vw, 3.8rem);
     line-height: 1.06;
     letter-spacing: -0.05em;
-    color: #0f1b31;
+    color: #ffffff;
     font-weight: 900;
     max-width: 860px;
     }
@@ -67,7 +70,7 @@
     max-width: 900px;
     font-size: 1.05rem;
     line-height: 1.85;
-    color: #53617b;
+    color: #ffffff;
     }
 
     .developers-doc-body {
@@ -109,7 +112,7 @@
     display: block;
     padding: 10px 12px;
     border-radius: 12px;
-    color: #5f6d86;
+    color: #445266;
     font-size: 0.95rem;
     font-weight: 700;
     text-decoration: none;
@@ -316,50 +319,310 @@
     font-weight: 900;
     }
 
-    @media (max-width: 1180px) {
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .developers-doc-page,
+    .developers-doc-page * {
+        box-sizing: border-box;
+    }
+
+    .developers-doc-page {
+        overflow-x: hidden;
+    }
+
+    .developers-doc-page__container {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .developers-doc-hero {
+        padding: 72px 0 34px;
+    }
+
+    .developers-doc-hero__crumbs {
+        gap: 6px;
+        margin-bottom: 12px;
+        font-size: 0.78rem;
+    }
+
+    .developers-doc-hero__eyebrow {
+        padding: 7px 10px;
+        font-size: 0.72rem;
+        margin-bottom: 12px;
+    }
+
+    .developers-doc-hero h1 {
+        max-width: 100%;
+        font-size: clamp(1.55rem, 8vw, 2rem);
+        line-height: 1.12;
+        word-break: keep-all;
+    }
+
+    .developers-doc-hero p {
+        max-width: 100%;
+        font-size: 0.88rem;
+        line-height: 1.58;
+        word-break: keep-all;
+    }
+
+    .developers-doc-body {
+        padding: 18px 0 40px;
+    }
+
     .developers-doc-layout {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        max-width: 100%;
     }
 
     .developers-doc-sidebar {
         position: static;
-    }
-
-    .developers-doc-grid--triple,
-    .developers-doc-grid--dual {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    }
-
-    @media (max-width: 760px) {
-    .developers-doc-page__container {
-        width: min(100% - 28px, 1320px);
-    }
-
-    .developers-doc-hero {
-        padding: 96px 0 52px;
-    }
-
-    .developers-doc-hero h1 {
-        font-size: clamp(2rem, 9vw, 3rem);
-    }
-
-    .developers-doc-section {
-        padding: 22px 18px;
-        border-radius: 22px;
+        top: auto;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
     }
 
     .developers-doc-sidebar__box {
-        padding: 16px;
-        border-radius: 20px;
+        width: 100%;
+        max-width: 100%;
+        padding: 14px;
+        border-radius: 16px;
+        
     }
 
+    .developers-doc-sidebar__title {
+        font-size: 0.86rem;
+        margin-bottom: 4px;
+    }
+
+    .developers-doc-sidebar__box a {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        padding: 10px 11px;
+        font-size: 0.88rem;
+        border-radius: 10px;
+    }
+
+    .developers-doc-main {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .developers-doc-section {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 16px 14px;
+        border-radius: 18px;
+        overflow: hidden;
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .developers-doc-section__heading {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .developers-doc-section__heading-block {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        gap: 7px;
+    }
+
+    .developers-doc-section__icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+
+    .developers-doc-section h2 {
+        font-size: 1.05rem;
+        line-height: 1.28;
+        word-break: keep-all;
+    }
+
+    .developers-doc-section p {
+        max-width: 100%;
+        font-size: 0.87rem;
+        line-height: 1.58;
+        overflow-wrap: anywhere;
+    }
+
+    .developers-doc-grid,
     .developers-doc-grid--triple,
     .developers-doc-grid--dual {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 10px;
+        margin-top: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .developers-doc-grid > div {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 13px;
+        border-radius: 14px;
+        overflow: hidden;
+    }
+
+    .developers-doc-grid span {
+        margin-bottom: 6px;
+        font-size: 0.76rem;
+    }
+
+    .developers-doc-grid strong {
+        display: block;
+        font-size: 0.88rem;
+        line-height: 1.48;
+        overflow-wrap: anywhere;
+    }
+
+    .developers-doc-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .developers-doc-list > div {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 13px;
+        border-radius: 13px;
+        font-size: 0.87rem;
+        line-height: 1.52;
+        overflow-wrap: anywhere;
+    }
+
+    .developers-doc-note {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 16px;
+        padding: 13px;
+        border-radius: 13px;
+        font-size: 0.87rem;
+        line-height: 1.56;
+        overflow-wrap: anywhere;
+    }
+
+    .developers-doc-code {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin-top: 16px;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+
+    .developers-doc-code__top {
+        padding: 12px 12px 0;
+    }
+
+    .developers-doc-code pre {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 13px 12px 16px;
+        font-size: 0.74rem;
+        line-height: 1.5;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: pre;
+        word-break: normal;
+    }
+
+    .developers-doc-table-wrap {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 16px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
     }
 
     .developers-doc-table {
-        min-width: 620px;
+        min-width: 560px;
+    }
+
+    .developers-doc-table thead th,
+    .developers-doc-table tbody td {
+        padding: 10px 11px;
+        font-size: 0.82rem;
+    }
+    }
+
+    @media (max-width: 420px) {
+    .developers-doc-page__container {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .developers-doc-hero {
+        padding: 66px 0 30px;
+    }
+
+    .developers-doc-hero h1 {
+        font-size: 1.42rem;
+    }
+
+    .developers-doc-hero p {
+        font-size: 0.84rem;
+    }
+
+    .developers-doc-section {
+        padding: 14px 12px;
+        border-radius: 16px;
+    }
+
+    .developers-doc-section h2 {
+        font-size: 1rem;
+    }
+
+    .developers-doc-code pre {
+        font-size: 0.71rem;
+        padding: 12px 11px 14px;
+    }
+
+    .developers-doc-table {
+        min-width: 520px;
     }
     }

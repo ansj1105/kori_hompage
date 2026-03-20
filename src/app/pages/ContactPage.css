@@ -480,20 +480,80 @@
     background: rgba(255,255,255,0.08);
     }
 
-    @media (max-width: 1200px) {
-    .contact-page__summary,
-    .contact-page__channels,
-    .contact-faq-list {
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1) large tablet */
+@media (max-width: 1200px) {
+    .contact-page {
+        overflow-x: clip;
+    }
+
+    .contact-page__container {
+        width: min(100% - 32px, 1440px);
+        padding: 112px 0 48px;
+    }
+
+    .contact-page__intro {
+        max-width: 100%;
+        margin-bottom: 32px;
+    }
+
+    .contact-page__title {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        line-height: 1.18;
+    }
+
+    .contact-page__description {
+        max-width: 100%;
+        font-size: 0.98rem;
+        line-height: 1.75;
+    }
+
+    .contact-page__summary {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 44px !important;
+        margin-bottom: 64px !important;
+    }
+
+    .contact-page__channels {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 64px !important;
     }
 
     .contact-page__policy {
         grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 64px !important;
+    }
+
+    .contact-faq-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .contact-page__faq {
+        margin-bottom: 64px !important;
     }
 
     .contact-page__cta-card {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 18px;
+        padding: 22px;
+        border-radius: 24px;
     }
 
     .contact-page__cta-actions {
@@ -501,37 +561,322 @@
     }
     }
 
+    /* 2) tablet / mobile */
     @media (max-width: 768px) {
-    .contact-page__container {
-        width: min(100% - 28px, 100%);
-        padding: 108px 0 84px;
+    .contact-page {
+        overflow-x: hidden;
     }
 
-    .contact-page__summary,
-    .contact-page__channels,
-    .contact-faq-list {
-        grid-template-columns: 1fr;
+    .contact-page__glow--one {
+        width: 220px;
+        height: 220px;
+        left: -80px;
+        top: 110px;
+        filter: blur(56px);
+        opacity: 0.55;
+    }
+
+    .contact-page__glow--two {
+        width: 220px;
+        height: 220px;
+        right: -90px;
+        top: 280px;
+        filter: blur(56px);
+        opacity: 0.45;
+    }
+
+    .contact-page__grid {
+        background-size: 32px 32px;
+    }
+
+    .contact-page__container {
+        width: calc(100% - 20px);
+        padding: 92px 0 40px;
+    }
+
+    .contact-page__intro {
+        margin-bottom: 26px;
+    }
+
+    .contact-page__eyebrow {
+        min-height: 32px;
+        padding: 0 11px;
+        font-size: 0.72rem;
     }
 
     .contact-page__title {
-        font-size: clamp(2rem, 8vw, 2.9rem);
+        margin: 16px 0 12px;
+        font-size: clamp(1.7rem, 9vw, 2.2rem);
+        line-height: 1.14;
     }
 
-    .contact-channel-card,
-    .contact-policy-card,
-    .contact-faq-item,
-    .contact-page__summary-card,
+    .contact-page__description {
+        font-size: 0.9rem;
+        line-height: 1.68;
+    }
+
+    .contact-page__summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 28px !important;
+        margin-bottom: 44px !important;
+    }
+
+    .contact-page__summary-card {
+        padding: 16px 14px;
+        border-radius: 18px;
+        gap: 12px;
+    }
+
+    .contact-page__summary-icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+    }
+
+    .contact-page__summary-card h3 {
+        margin: 0 0 6px;
+        font-size: 0.94rem;
+    }
+
+    .contact-page__summary-card p {
+        font-size: 0.86rem;
+        line-height: 1.62;
+    }
+
+    .contact-page__channels {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 44px !important;
+    }
+
+    .contact-channel-card {
+        min-height: auto;
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .contact-channel-card__top {
+        margin-bottom: 12px;
+        gap: 10px;
+    }
+
+    .contact-channel-card__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    .contact-channel-card__badge {
+        min-height: 28px;
+        padding: 0 9px;
+        font-size: 0.68rem;
+    }
+
+    .contact-channel-card__title {
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+
+    .contact-channel-card__desc {
+        font-size: 0.86rem;
+        line-height: 1.64;
+    }
+
+    .contact-channel-card__email {
+        width: 100%;
+        justify-content: center;
+        margin-top: 16px;
+        padding: 0 12px;
+        min-height: 42px;
+        border-radius: 12px;
+        font-size: 0.84rem;
+    }
+
+    .contact-page__policy {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 44px !important;
+    }
+
+    .contact-policy-card {
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .contact-policy-card__header {
+        margin-bottom: 12px;
+    }
+
+    .contact-policy-card__header h3 {
+        font-size: 0.96rem;
+    }
+
+    .contact-policy-card__list {
+        padding-left: 1rem;
+        font-size: 0.86rem;
+        line-height: 1.68;
+    }
+
+    .contact-policy-card__list li + li {
+        margin-top: 8px;
+    }
+
+    .contact-policy-card__meta {
+        gap: 10px;
+    }
+
+    .contact-policy-card__meta-item {
+        padding: 12px 14px;
+        border-radius: 14px;
+    }
+
+    .contact-policy-card__meta-item span {
+        margin-bottom: 6px;
+        font-size: 0.74rem;
+    }
+
+    .contact-policy-card__meta-item strong {
+        font-size: 0.86rem;
+        line-height: 1.55;
+        word-break: break-word;
+    }
+
+    .contact-page__faq {
+        margin-bottom: 44px !important;
+    }
+
+    .contact-page__section-heading {
+        margin-bottom: 14px;
+    }
+
+    .contact-page__section-heading span,
+    .contact-page__cta-copy span {
+        margin-bottom: 8px;
+        font-size: 0.72rem;
+    }
+
+    .contact-page__section-heading h2,
+    .contact-page__cta-copy h2 {
+        font-size: clamp(1.24rem, 6.4vw, 1.8rem);
+        line-height: 1.18;
+    }
+
+    .contact-faq-list {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .contact-faq-item {
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .contact-faq-item h3 {
+        margin-bottom: 8px;
+        font-size: 0.94rem;
+        line-height: 1.42;
+    }
+
+    .contact-faq-item p {
+        font-size: 0.86rem;
+        line-height: 1.64;
+    }
+
+    .contact-page__cta {
+        margin-top: 0;
+    }
+
     .contact-page__cta-card {
-        border-radius: 22px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 18px 14px;
+        border-radius: 20px;
+    }
+
+    .contact-page__cta-copy p {
+        max-width: 100%;
+        font-size: 0.86rem;
+        line-height: 1.66;
     }
 
     .contact-page__cta-actions {
         width: 100%;
         flex-direction: column;
         align-items: stretch;
+        gap: 10px;
     }
 
     .contact-page__cta-button {
+        width: 100%;
         justify-content: center;
+        min-height: 44px;
+        padding: 0 14px;
+        border-radius: 12px;
+        font-size: 0.84rem;
+    }
+    }
+
+    /* 3) very small mobile */
+    @media (max-width: 420px) {
+    .contact-page__container {
+        width: calc(100% - 16px);
+        padding: 84px 0 32px;
+    }
+
+    .contact-page__eyebrow {
+        min-height: 30px;
+        padding: 0 10px;
+        font-size: 0.68rem;
+    }
+
+    .contact-page__title {
+        font-size: 1.48rem;
+    }
+
+    .contact-page__description,
+    .contact-page__summary-card p,
+    .contact-channel-card__desc,
+    .contact-policy-card__list,
+    .contact-faq-item p,
+    .contact-page__cta-copy p {
+        font-size: 0.82rem;
+        line-height: 1.58;
+    }
+
+    .contact-page__summary-card,
+    .contact-channel-card,
+    .contact-policy-card,
+    .contact-faq-item,
+    .contact-page__cta-card {
+        padding: 14px 12px;
+        border-radius: 16px;
+    }
+
+    .contact-page__summary-icon,
+    .contact-channel-card__icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+    }
+
+    .contact-page__summary-card h3,
+    .contact-channel-card__title,
+    .contact-policy-card__header h3,
+    .contact-faq-item h3 {
+        font-size: 0.88rem;
+    }
+
+    .contact-page__section-heading h2,
+    .contact-page__cta-copy h2 {
+        font-size: 1.16rem;
+    }
+
+    .contact-channel-card__email,
+    .contact-page__cta-button {
+        min-height: 40px;
+        font-size: 0.8rem;
+        border-radius: 10px;
     }
     }

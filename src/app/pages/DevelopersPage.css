@@ -733,11 +733,6 @@
 
 
 
-/* =========================
-   DEVELOPERS DOCS
-   MOBILE REBUILD FINAL
-   기존 CSS 맨 아래 추가
-========================= */
 
 /* tablet */
 @media (max-width: 980px) {
@@ -892,7 +887,8 @@
   }
 
   .developers-docs-quickgrid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, 1fr) !important; /* 4개씩 */
+    grid-template-rows: repeat(2, auto) !important ;   /* 2행 */
   }
 
   .developers-docs-api-grid,
@@ -987,8 +983,10 @@
   }
 
   .developers-docs-categories__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important; /* 4개씩 */
+    grid-template-rows: repeat(2, auto);   /* 2행 */
+    gap: 14px;
   }
 
   .developers-docs-categories__card {
@@ -1050,7 +1048,9 @@
   /* sidebar */
   .developers-docs-sidebar {
     padding: 12px;
+    margin-bottom: 60px !important;
     border-radius: 14px;
+    background-color: #dad8d8;
   }
 
   .developers-docs-sidebar__group + .developers-docs-sidebar__group {
@@ -1116,7 +1116,7 @@
 
   /* content grids */
   .developers-docs-quickgrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 3fr;
     gap: 10px;
     margin-top: 14px;
   }

@@ -453,4 +453,10 @@
         height: 44px;
         justify-content: center;
     }
+
+    .developers-layout__mobile-group-trigger-left{
+        display: flex;
+        align-items: center;   /* 세로 가운데 정렬 */
+        gap: 8px;              /* 아이콘-텍스트 간격 */
+    }
     }

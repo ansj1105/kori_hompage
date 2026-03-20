@@ -261,22 +261,405 @@
     line-height: 1.75;
     }
 
-    @media (max-width: 920px) {
-    .developers-webhooks-page__container {
-        width: min(100%, calc(100% - 24px));
+
+    
+
+
+
+
+
+
+@media (max-width: 1024px) {
+    .developers-webhooks-page {
+        overflow-x: hidden;
     }
 
-    .developers-webhooks-body__grid,
-    .developers-webhooks-events,
-    .developers-webhooks-recommendations {
+    .developers-webhooks-page__container {
+        width: calc(100% - 28px);
+    }
+
+    /* topbar */
+    .developers-webhooks-topbar__inner {
+        min-height: auto;
+        padding: 12px 0;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .developers-webhooks-topbar__brand {
+        flex: 0 0 auto;
+        min-width: 0;
+    }
+
+    .developers-webhooks-topbar__nav {
+        order: 3;
+        width: 100%;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .developers-webhooks-topbar__nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .developers-webhooks-topbar__nav a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+        padding: 8px 10px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    /* hero */
+    .developers-webhooks-hero .developers-webhooks-page__container {
+        padding: 34px 0 34px;
+    }
+
+    .developers-webhooks-hero__crumbs {
+        margin-bottom: 14px;
+        font-size: 0.84rem;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .developers-webhooks-hero h1 {
+        font-size: clamp(2rem, 6vw, 2.9rem);
+        line-height: 1.1;
+        margin-bottom: 12px;
+    }
+
+    .developers-webhooks-hero p {
+        max-width: 100%;
+        font-size: 0.96rem;
+        line-height: 1.72;
+    }
+
+    /* body */
+    .developers-webhooks-body__grid {
         grid-template-columns: 1fr;
+        gap: 18px;
+        padding-top: 18px;
+        padding-bottom: 36px;
     }
 
     .developers-webhooks-sidebar {
         position: static;
+        top: auto;
+    }
+
+    .developers-webhooks-sidebar__box {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 16px;
+        border-radius: 16px;
+    }
+
+    .developers-webhooks-sidebar__title {
+        grid-column: 1 / -1;
+        margin-bottom: 4px;
+    }
+
+    .developers-webhooks-sidebar__box a {
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-size: 0.88rem;
+        line-height: 1.35;
+        background: #fafbfd;
     }
 
     .developers-webhooks-main {
-        padding: 24px 18px;
+        padding: 24px 20px 18px;
+        border-radius: 16px;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+    .developers-webhooks-section + .developers-webhooks-section {
+        margin-top: 30px;
+    }
+
+    .developers-webhooks-section h2 {
+        font-size: 1.5rem;
+        line-height: 1.16;
+        margin-bottom: 10px;
+    }
+
+    .developers-webhooks-section p {
+        font-size: 0.94rem;
+        line-height: 1.72;
+    }
+
+    .developers-webhooks-divider {
+        margin-bottom: 14px;
+    }
+
+    .developers-webhooks-section__heading {
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .developers-webhooks-section__icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 10px;
+    }
+
+    .developers-webhooks-events,
+    .developers-webhooks-recommendations {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .developers-webhooks-event,
+    .developers-webhooks-recommendations div {
+        padding: 16px 14px;
+        border-radius: 14px;
+    }
+
+    .developers-webhooks-event code {
+        font-size: 0.76rem;
+        padding: 7px 9px;
+        border-radius: 8px;
+    }
+
+    .developers-webhooks-event span,
+    .developers-webhooks-list,
+    .developers-webhooks-recommendations div {
+        font-size: 0.92rem;
+        line-height: 1.72;
+    }
+
+    .developers-webhooks-code {
+        border-radius: 16px;
+    }
+
+    .developers-webhooks-code__top {
+        padding: 12px 14px;
+    }
+
+    .developers-webhooks-code pre {
+        padding: 16px;
+        font-size: 0.84rem;
+        line-height: 1.66;
+    }
+    }
+
+    /* mobile */
+    @media (max-width: 768px) {
+    .developers-webhooks-page__container {
+        width: calc(100% - 20px);
+    }
+
+    /* topbar */
+    .developers-webhooks-topbar__inner {
+        padding: 10px 0;
+        gap: 10px;
+    }
+
+    .developers-webhooks-topbar__brand {
+        gap: 8px;
+        font-size: 0.94rem;
+    }
+
+    .developers-webhooks-topbar__brand-badge {
+        width: 26px;
+        height: 26px;
+        border-radius: 7px;
+        font-size: 0.82rem;
+    }
+
+    .developers-webhooks-topbar__nav a {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+    }
+
+    /* hero */
+    .developers-webhooks-hero .developers-webhooks-page__container {
+        padding: 26px 0 28px;
+    }
+
+    .developers-webhooks-hero__crumbs {
+        margin-bottom: 12px;
+        font-size: 0.78rem;
+    }
+
+    .developers-webhooks-hero h1 {
+        font-size: clamp(1.7rem, 8.4vw, 2.2rem);
+        line-height: 1.12;
+        margin-bottom: 10px;
+    }
+
+    .developers-webhooks-hero p {
+        font-size: 0.9rem;
+        line-height: 1.66;
+    }
+
+    /* body */
+    .developers-webhooks-body__grid {
+        gap: 14px;
+        padding-top: 14px;
+        padding-bottom: 28px;
+    }
+
+    .developers-webhooks-sidebar__box {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 14px;
+        border-radius: 14px;
+        background-color: #cbcfd8; 
+    }
+
+    .developers-webhooks-sidebar__title {
+        font-size: 0.76rem;
+        margin-bottom: 6px;
+    }
+
+    .developers-webhooks-sidebar__box a {
+        width: 100%;
+        display: block;
+        padding: 10px 12px;
+        border-radius: 10px;
+        font-size: 0.86rem;
+        white-space: normal;
+        background-color: #cbcfd8; 
+    }
+
+    .developers-webhooks-main {
+        padding: 16px 14px 12px;
+        border-radius: 14px;
+    }
+
+    .developers-webhooks-section + .developers-webhooks-section {
+        margin-top: 24px;
+    }
+
+    .developers-webhooks-section h2 {
+        font-size: 1.18rem;
+        margin-bottom: 8px;
+    }
+
+    .developers-webhooks-section p {
+        font-size: 0.88rem;
+        line-height: 1.64;
+    }
+
+    .developers-webhooks-section__heading {
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+
+    .developers-webhooks-section__icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+
+    .developers-webhooks-events,
+    .developers-webhooks-recommendations {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .developers-webhooks-event,
+    .developers-webhooks-recommendations div {
+        padding: 14px 12px;
+        border-radius: 12px;
+    }
+
+    .developers-webhooks-event code {
+        max-width: 100%;
+        font-size: 0.72rem;
+        line-height: 1.45;
+        white-space: normal;
+        word-break: break-word;
+        padding: 7px 8px;
+    }
+
+    .developers-webhooks-event span,
+    .developers-webhooks-list,
+    .developers-webhooks-recommendations div {
+        font-size: 0.86rem;
+        line-height: 1.66;
+    }
+
+    .developers-webhooks-list {
+        padding-left: 16px;
+    }
+
+    .developers-webhooks-code {
+        border-radius: 14px;
+    }
+
+    .developers-webhooks-code__top {
+        padding: 11px 12px;
+    }
+
+    .developers-webhooks-code pre {
+        padding: 14px;
+        font-size: 0.76rem;
+        line-height: 1.56;
+    }
+    }
+
+    /* very small */
+    @media (max-width: 420px) {
+    .developers-webhooks-page__container {
+        width: calc(100% - 16px);
+    }
+
+    .developers-webhooks-topbar__brand {
+        font-size: 0.9rem;
+    }
+
+    .developers-webhooks-hero .developers-webhooks-page__container {
+        padding: 22px 0 24px;
+    }
+
+    .developers-webhooks-hero h1 {
+        font-size: 1.52rem;
+    }
+
+    .developers-webhooks-hero p,
+    .developers-webhooks-section p,
+    .developers-webhooks-event span,
+    .developers-webhooks-list,
+    .developers-webhooks-recommendations div {
+        font-size: 0.82rem;
+        line-height: 1.56;
+    }
+
+    .developers-webhooks-sidebar__box,
+    .developers-webhooks-main,
+    .developers-webhooks-event,
+    .developers-webhooks-recommendations div,
+    .developers-webhooks-code {
+        border-radius: 12px;
+    }
+
+    .developers-webhooks-sidebar__box {
+        padding: 12px;
+    }
+
+    .developers-webhooks-main {
+        padding: 14px 12px 10px;
+    }
+
+    .developers-webhooks-event,
+    .developers-webhooks-recommendations div {
+        padding: 12px;
+    }
+
+    .developers-webhooks-section h2 {
+        font-size: 1.06rem;
+    }
+
+    .developers-webhooks-code pre {
+        padding: 12px;
+        font-size: 0.72rem;
     }
     }

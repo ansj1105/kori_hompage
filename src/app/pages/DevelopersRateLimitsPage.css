@@ -1,40 +1,61 @@
-    .developers-doc-page {
+.developers-doc-page {
     min-height: 100vh;
-    background:
-        radial-gradient(circle at top left, rgba(72, 114, 255, 0.08), transparent 24%),
-        radial-gradient(circle at top right, rgba(106, 76, 255, 0.08), transparent 22%),
-        linear-gradient(180deg, #f6f8fc 0%, #eef2f8 100%);
-    color: #142033;
+    background: #f4f5f7;
+    color: #ffffff;
     }
 
     .developers-doc-page__container {
     width: min(1320px, calc(100% - 40px));
     margin: 0 auto;
+    
     }
 
     .developers-doc-hero {
-    padding: 110px 0 68px;
-    border-bottom: 1px solid rgba(18, 35, 64, 0.08);
+    position: relative;
+    overflow: hidden;
+    padding: 46px 0 64px;
+    border-bottom: 1px solid rgba(18, 35, 64, 0.06);
     background:
-        radial-gradient(circle at 10% 0%, rgba(87, 119, 255, 0.12), transparent 26%),
-        radial-gradient(circle at 90% 10%, rgba(86, 216, 255, 0.11), transparent 24%),
-        linear-gradient(180deg, #f8fbff 0%, #f2f6fc 100%);
+        radial-gradient(circle at 20% 20%, rgba(124,146,255,0.18), transparent 24%),
+        radial-gradient(circle at 80% 10%, rgba(125,92,255,0.18), transparent 24%),
+        linear-gradient(180deg, #0b1325 0%, #101b34 100%);
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .developers-doc-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(102, 122, 163, 0.18) 20%,
+        rgba(102, 122, 163, 0.18) 80%,
+        transparent 100%
+    );
     }
 
     .developers-doc-hero__crumbs {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 22px;
-    color: #6d7890;
+    margin-bottom: 20px;
+    color: #ffffff;
     font-size: 0.92rem;
     font-weight: 700;
     flex-wrap: wrap;
     }
 
     .developers-doc-hero__crumbs a {
-    color: #32405e;
+    color: #ffffff;
     text-decoration: none;
+    transition: color 0.16s ease;
+    }
+
+    .developers-doc-hero__crumbs a:hover {
+    color: #ffffff;
     }
 
     .developers-doc-hero__eyebrow {
@@ -43,21 +64,22 @@
     gap: 8px;
     padding: 9px 14px;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.82);
-    border: 1px solid rgba(88, 112, 158, 0.14);
-    color: #3452a5;
+    background: rgba(255, 255, 255, 0);
+    border: 1px solid rgba(88, 112, 158, 0.12);
+    color: #ffffff;
     font-size: 0.84rem;
     font-weight: 800;
     margin-bottom: 18px;
     backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(34, 56, 99, 0.05);
     }
 
     .developers-doc-hero h1 {
     margin: 0;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-size: clamp(2.35rem, 5vw, 3.7rem);
     line-height: 1.06;
     letter-spacing: -0.05em;
-    color: #0f1b31;
+    color: #ffffff;
     font-weight: 900;
     max-width: 860px;
     }
@@ -65,9 +87,9 @@
     .developers-doc-hero p {
     margin: 18px 0 0;
     max-width: 900px;
-    font-size: 1.05rem;
-    line-height: 1.85;
-    color: #53617b;
+    font-size: 1.04rem;
+    line-height: 1.82;
+    color: #ffffff;
     }
 
     .developers-doc-body {
@@ -91,7 +113,7 @@
     gap: 8px;
     padding: 20px;
     border-radius: 24px;
-    background: rgba(255, 255, 255, 0.82);
+    background: rgba(255, 255, 255, 0.84);
     border: 1px solid rgba(32, 52, 88, 0.08);
     box-shadow: 0 12px 36px rgba(24, 38, 71, 0.07);
     backdrop-filter: blur(14px);
@@ -130,7 +152,7 @@
     .developers-doc-section {
     border-radius: 28px;
     padding: 30px;
-    background: rgba(255, 255, 255, 0.86);
+    background: rgba(255, 255, 255, 0.88);
     border: 1px solid rgba(27, 43, 77, 0.08);
     box-shadow: 0 12px 38px rgba(25, 42, 74, 0.07);
     backdrop-filter: blur(12px);
@@ -242,7 +264,8 @@
     color: #dbe7ff;
     font-size: 0.95rem;
     line-height: 1.75;
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    -webkit-overflow-scrolling: touch;
     }
 
     .developers-doc-list {
@@ -265,7 +288,7 @@
     .developers-doc-note {
     margin-top: 22px;
     border-radius: 18px;
-    padding: 18px 18px;
+    padding: 18px;
     background: linear-gradient(180deg, #eef4ff 0%, #f7faff 100%);
     border: 1px solid #dce8fb;
     color: #203866;
@@ -277,6 +300,8 @@
     .developers-doc-table-wrap {
     margin-top: 22px;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 18px;
     }
 
     .developers-doc-table {
@@ -297,6 +322,7 @@
     font-weight: 900;
     padding: 15px 16px;
     border-bottom: 1px solid #e3eaf4;
+    white-space: nowrap;
     }
 
     .developers-doc-table tbody td {
@@ -305,6 +331,7 @@
     font-size: 0.95rem;
     line-height: 1.65;
     border-bottom: 1px solid #edf2f7;
+    vertical-align: top;
     }
 
     .developers-doc-table tbody tr:last-child td {
@@ -316,13 +343,22 @@
     font-weight: 900;
     }
 
+
+
+
+
+
+
+
     @media (max-width: 1180px) {
     .developers-doc-layout {
         grid-template-columns: 1fr;
+        gap: 22px;
     }
 
     .developers-doc-sidebar {
         position: static;
+        top: auto;
     }
 
     .developers-doc-grid--triple,
@@ -331,27 +367,112 @@
     }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 768px) {
+    .developers-doc-page {
+        overflow-x: hidden;
+    }
+
     .developers-doc-page__container {
-        width: min(100% - 28px, 1320px);
+        width: calc(100% - 24px);
     }
 
     .developers-doc-hero {
-        padding: 96px 0 52px;
+        padding: 82px 0 42px;
+        background:
+        radial-gradient(circle at 20% 18%, rgba(124,146,255,0.14), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(125,92,255,0.14), transparent 28%),
+        linear-gradient(180deg, #0b1325 0%, #101b34 100%);
+    }
+
+    .developers-doc-hero__crumbs {
+        gap: 6px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+    }
+
+    .developers-doc-hero__eyebrow {
+        padding: 8px 12px;
+        font-size: 0.76rem;
+        margin-bottom: 14px;
     }
 
     .developers-doc-hero h1 {
-        font-size: clamp(2rem, 9vw, 3rem);
+        font-size: clamp(1.75rem, 8.2vw, 2.45rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+        max-width: 100%;
     }
 
-    .developers-doc-section {
-        padding: 22px 18px;
-        border-radius: 22px;
+    .developers-doc-hero p {
+        margin-top: 14px;
+        max-width: 100%;
+        font-size: 0.92rem;
+        line-height: 1.68;
+        color: rgba(255, 255, 255, 0.84);
+    }
+
+    .developers-doc-body {
+        padding: 24px 0 56px;
+    }
+
+    .developers-doc-layout {
+        gap: 16px;
     }
 
     .developers-doc-sidebar__box {
         padding: 16px;
+        border-radius: 18px;
+        background-color: #cbcfd8; 
+    }
+
+    .developers-doc-sidebar__title {
+        font-size: 0.88rem;
+        margin-bottom: 4px;
+    }
+
+    .developers-doc-sidebar__box a {
+        padding: 10px 11px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .developers-doc-main {
+        gap: 16px;
+    }
+
+    .developers-doc-section {
+        padding: 18px 16px;
         border-radius: 20px;
+    }
+
+    .developers-doc-section__heading {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .developers-doc-section__heading-block {
+        gap: 8px;
+    }
+
+    .developers-doc-section__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    .developers-doc-section h2 {
+        font-size: 1.18rem;
+        line-height: 1.25;
+    }
+
+    .developers-doc-section p {
+        font-size: 0.93rem;
+        line-height: 1.68;
+    }
+
+    .developers-doc-grid {
+        gap: 12px;
+        margin-top: 18px;
     }
 
     .developers-doc-grid--triple,
@@ -359,7 +480,171 @@
         grid-template-columns: 1fr;
     }
 
+    .developers-doc-grid > div {
+        padding: 15px;
+        border-radius: 14px;
+    }
+
+    .developers-doc-grid span {
+        font-size: 0.79rem;
+        margin-bottom: 6px;
+    }
+
+    .developers-doc-grid strong {
+        font-size: 0.93rem;
+        line-height: 1.5;
+    }
+
+    .developers-doc-code {
+        margin-top: 18px;
+        border-radius: 18px;
+    }
+
+    .developers-doc-code__top {
+        padding: 14px 14px 0;
+    }
+
+    .developers-doc-code pre {
+        padding: 14px 14px 18px;
+        font-size: 0.82rem;
+        line-height: 1.6;
+    }
+
+    .developers-doc-list {
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .developers-doc-list > div {
+        padding: 13px 14px;
+        border-radius: 14px;
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .developers-doc-note {
+        margin-top: 18px;
+        padding: 14px;
+        border-radius: 14px;
+        font-size: 0.9rem;
+        line-height: 1.62;
+    }
+
+    .developers-doc-table-wrap {
+        margin-top: 18px;
+    }
+
     .developers-doc-table {
         min-width: 620px;
+    }
+
+    .developers-doc-table thead th {
+        padding: 12px 13px;
+        font-size: 0.84rem;
+    }
+
+    .developers-doc-table tbody td {
+        padding: 12px 13px;
+        font-size: 0.88rem;
+        line-height: 1.55;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .developers-doc-page__container {
+        width: calc(100% - 18px);
+    }
+
+    .developers-doc-hero {
+        padding: 12px 0 34px;
+    }
+
+    .developers-doc-hero__crumbs {
+        font-size: 0.74rem;
+        margin-bottom: 12px;
+    }
+
+    .developers-doc-hero__eyebrow {
+        padding: 7px 10px;
+        font-size: 0.72rem;
+        gap: 6px;
+    }
+
+    .developers-doc-hero h1 {
+        font-size: clamp(1.5rem, 9.5vw, 2rem);
+        line-height: 1.12;
+    }
+
+    .developers-doc-hero p {
+        font-size: 0.86rem;
+        line-height: 1.58;
+    }
+
+    .developers-doc-body {
+        padding: 18px 0 42px;
+    }
+
+    .developers-doc-sidebar__box {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .developers-doc-sidebar__box a {
+        font-size: 0.86rem;
+        padding: 9px 10px;
+    }
+
+    .developers-doc-section {
+        padding: 16px 13px;
+        border-radius: 16px;
+    }
+
+    .developers-doc-section__icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+    }
+
+    .developers-doc-section h2 {
+        font-size: 1.05rem;
+    }
+
+    .developers-doc-section p {
+        font-size: 0.87rem;
+        line-height: 1.6;
+    }
+
+    .developers-doc-grid > div {
+        padding: 13px;
+    }
+
+    .developers-doc-grid span {
+        font-size: 0.76rem;
+    }
+
+    .developers-doc-grid strong {
+        font-size: 0.88rem;
+    }
+
+    .developers-doc-code pre {
+        padding: 13px 12px 16px;
+        font-size: 0.76rem;
+        line-height: 1.55;
+    }
+
+    .developers-doc-list > div,
+    .developers-doc-note {
+        font-size: 0.86rem;
+        line-height: 1.55;
+    }
+
+    .developers-doc-table {
+        min-width: 560px;
+    }
+
+    .developers-doc-table thead th,
+    .developers-doc-table tbody td {
+        padding: 10px 11px;
+        font-size: 0.82rem;
     }
     }

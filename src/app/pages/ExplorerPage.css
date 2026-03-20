@@ -253,23 +253,216 @@
 
     /* mobile */
 
-    @media (max-width: 768px) {
+
+    
+
+
+
+
+
+@media (max-width: 1024px) {
+    .explorer-page {
+        overflow-x: hidden;
+    }
+
+    .explorer-page__container {
+        width: calc(100% - 28px);
+    }
 
     .explorer-hero {
-        padding-top: 110px;
-        padding-bottom: 90px;
+        padding-top: 120px;
+        padding-bottom: 96px;
+    }
+
+    .explorer-hero__content {
+        max-width: 100%;
     }
 
     .explorer-hero__title {
-        font-size: 34px;
+        font-size: clamp(30px, 6vw, 46px);
+        line-height: 1.2;
+        margin-top: 22px;
+        margin-bottom: 16px;
     }
 
     .explorer-hero__description {
+        max-width: 100%;
         font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .explorer-hero__actions {
+        margin-top: 24px;
+        gap: 12px;
+    }
+
+    .explorer-hero__button {
+        height: 48px;
+        padding: 0 18px;
+        border-radius: 12px;
+        font-size: 14px;
+    }
+
+    .explorer-hero__contract-strip {
+        margin-top: 28px;
+        max-width: 100%;
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .explorer-hero__contract-row {
+        gap: 10px;
+    }
+
+    .explorer-hero__contract-value {
+        min-width: 0;
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        text-align: center;
+    }
+
+    .explorer-hero__copy-button {
+        height: 40px;
+        padding: 0 14px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+    }
+
+    @media (max-width: 768px) {
+    .explorer-page__container {
+        width: calc(100% - 20px);
+    }
+
+    .explorer-hero {
+        padding-top: 96px;
+        padding-bottom: 72px;
+    }
+
+    .explorer-hero__eyebrow {
+        padding: 7px 12px;
+        font-size: 12px;
+        gap: 7px;
+    }
+
+    .explorer-hero__eyebrow-dot {
+        width: 7px;
+        height: 7px;
+    }
+
+    .explorer-hero__title {
+        font-size: clamp(26px, 8vw, 36px);
+        line-height: 1.16;
+        margin-top: 18px;
+        margin-bottom: 14px;
+    }
+
+    .explorer-hero__description {
+        font-size: 14px;
+        line-height: 1.68;
+    }
+
+    .explorer-hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 22px;
+    }
+
+    .explorer-hero__button {
+        width: 100%;
+        justify-content: center;
+        height: 46px;
+        padding: 0 16px;
+        border-radius: 12px;
+        font-size: 14px;
+    }
+
+    .explorer-hero__contract-strip {
+        margin-top: 24px;
+        padding: 16px 14px;
+        border-radius: 16px;
+    }
+
+    .explorer-hero__contract-label {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+    }
+
+    .explorer-hero__contract-row {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .explorer-hero__contract-value {
+        min-width: 0;
+        width: 100%;
+        font-size: 13px;
+        line-height: 1.55;
+        padding: 10px 12px;
+        text-align: left;
+    }
+
+    .explorer-hero__copy-button {
+        width: 100%;
+        justify-content: center;
+        height: 42px;
+        font-size: 13px;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .explorer-page__container {
+        width: calc(100% - 16px);
+    }
+
+    .explorer-hero {
+        padding-top: 84px;
+        padding-bottom: 60px;
+    }
+
+    .explorer-hero__eyebrow {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+
+    .explorer-hero__title {
+        font-size: clamp(22px, 9vw, 30px);
+        line-height: 1.14;
+        margin-top: 16px;
+        margin-bottom: 12px;
+    }
+
+    .explorer-hero__description {
+        font-size: 13px;
+        line-height: 1.62;
+    }
+
+    .explorer-hero__button {
+        height: 42px;
+        font-size: 13px;
+        border-radius: 10px;
+    }
+
+    .explorer-hero__contract-strip {
+        padding: 14px 12px;
+        border-radius: 14px;
     }
 
     .explorer-hero__contract-value {
         font-size: 12px;
+        padding: 9px 10px;
+        border-radius: 10px;
     }
 
+    .explorer-hero__copy-button {
+        height: 40px;
+        font-size: 12px;
+        border-radius: 10px;
+    }
     }
